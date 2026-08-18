@@ -126,6 +126,51 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 
 /* POURQUOI MOI — trois differences nommables, meme grille que les declencheurs. */
 
+/* LE RYTHME SOMBRE/CLAIR — full-bleed depuis une colonne centree. ⚠ 50vw compte la
+   barre de defilement : overflow-x:clip sur body l'empeche de creer un defilement
+   horizontal fantome. */
+.sombre{background:var(--encre);color:#e8e2d5;
+   margin:66px calc(50% - 50vw) 0;padding:58px calc(50vw - 50%) 64px}
+.sombre h2{color:#fff;margin-top:0}
+body.accueil .sombre h2::before{color:#d8b25e}
+.sombre .decl{border-color:#3a362f}
+.sombre .d{border-color:#3a362f}
+.sombre .d h3{color:#fff}
+.sombre .d p{color:#cfc7b8}
+
+/* SURLIGNAGE du mot-cle du titre — UN geste, pas dix. */
+h1 em{font-style:normal;
+   background:linear-gradient(transparent 64%,#ead9ab 64%)}
+
+/* BARRE DE PROGRESSION de lecture — 3 px d'or, en haut de tout. */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--or);z-index:9}
+
+/* PIED DE PAGE EDITORIAL — bande sombre structuree, il repond au bandeau du haut. */
+footer.pied{background:var(--encre);color:#cfc7b8;
+   margin:0 calc(50% - 50vw);padding:52px calc(50vw - 50%) 46px;border-top:0}
+footer.pied .cols{display:flex;flex-wrap:wrap;gap:34px 70px;justify-content:space-between}
+footer.pied .marque{color:#d8b25e}
+footer.pied .filet{background:#d8b25e;width:80px;height:4px;margin:14px 0 0}
+footer.pied h4{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
+   text-transform:uppercase;color:#8f887b;margin:0 0 12px}
+footer.pied a{display:block;color:#e8e2d5;border-bottom:0;font-size:14px;
+   padding:4px 0}
+footer.pied a:hover{color:#d8b25e}
+footer.pied .bas{margin-top:40px;padding-top:18px;border-top:1px solid #3a362f;
+   font-size:12.5px;color:#8f887b;display:flex;flex-wrap:wrap;gap:8px 26px}
+footer.pied .bas a{display:inline;color:#8f887b;font-size:12.5px;padding:0}
+footer.pied .bas a:hover{color:#d8b25e}
+
+/* FINITIONS */
+body{overflow-x:clip}
+[id]{scroll-margin-top:70px}
+.bandeau:hover .piste{animation-play-state:paused}
+::selection{background:#ead9ab;color:var(--encre)}
+.m .v,.mi .ch b,.calc .res b{font-variant-numeric:tabular-nums}
+.temoin{position:relative}
+.temoin::before{content:" ab";position:absolute;left:-10px;top:-30px;
+   font:800 84px/1 Georgia,serif;color:var(--or);opacity:.14;pointer-events:none}
+
 /* A EMPORTER — trois documents offerts, en cartes. */
 .kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:0;
    margin:26px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
@@ -256,6 +301,7 @@ footer a{color:var(--muet)}
        .tete{flex-direction:column;gap:14px}}
 </style>
 </head><body class="accueil">
+<div id="prog"></div>
 <div class="bandeau" role="complementary" aria-label="Le marché du pilotage, aujourd'hui"><div class="piste"><i>3 062</i>missions de pilotage en ligne<s>&middot;</s><i>550 €</i>TJM médian affiché<s>&middot;</s><i>37 %</i>disparaissent en 7 jours<s>&middot;</s><i>8 %</i>de full remote<s>&middot;</s><i>700 €</i>le rôle le mieux payé<s>&middot;</s><i>21</i>plateformes suivies<s>&middot;</s><i>3 062</i>missions de pilotage en ligne<s>&middot;</s><i>550 €</i>TJM médian affiché<s>&middot;</s><i>37 %</i>disparaissent en 7 jours<s>&middot;</s><i>8 %</i>de full remote<s>&middot;</s><i>700 €</i>le rôle le mieux payé<s>&middot;</s><i>21</i>plateformes suivies<s>&middot;</s></div></div>
 <div class="page">
 <header>
@@ -272,7 +318,7 @@ footer a{color:var(--muet)}
 <nav class="snav"><a href="#mesures">Mesures</a><a href="#releve">Le relevé</a><a href="#kit">À emporter</a><a href="#quand">Quand m’appeler</a><a href="#livre">Livré</a><a href="#temoignages">Ils en parlent</a><a href="#contact">Contact</a></nav>
 <div class="intro">
   <div>
-    <h1>Je pilote des projets, et je mesure le marché qui les porte.</h1>
+    <h1>Je pilote des projets, et je <em>mesure</em> le marché qui les porte.</h1>
   </div>
   <span class="cadre"><img class="portrait" src="portrait.jpg" width="480"
        height="591" alt="Portrait de Claire Van De Sype" loading="eager" decoding="async"></span>
@@ -323,7 +369,7 @@ function calcMaj(i,b){
 <p>J’interviens sur des projets qui ont besoin d’un pilote, pas d’un observateur.</p>
 <ul><li><strong>Direction de projet et de programme</strong> &mdash; cadrage, jalons, comités, arbitrages. Le pilotage qui tient quand le planning bouge.</li><li><strong>PMO et gouvernance de portefeuille</strong> &mdash; instances, indicateurs, reporting COMEX. Rendre lisible ce qui est en cours.</li><li><strong>Pilotage financier de projet</strong> &mdash; budget, CAPEX/OPEX, contrôle de gestion. La trajectoire coûts autant que la trajectoire délais.</li><li><strong>Transformation et conduite du changement</strong> &mdash; ERP, SI RH, migration de données, organisation cible.</li></ul>
 
-<h2>Pourquoi moi</h2><div class="decl"><div class="d"><h3>Je mesure le marché que je vous facture</h3><p>Mon TJM est aligné sur la médiane que je publie — vérifiable sur cette page, recalculée à chaque relevé. Vous ne négociez pas dans le brouillard, ni moi non plus.</p></div><div class="d"><h3>Je construis pour partir</h3><p>Les rituels, les outils et les référentiels que j’installe restent après moi — transmission comprise. Un PMO qui se rend indispensable a échoué.</p></div><div class="d"><h3>Un pilotage outillé par l’IA</h3><p>Reporting automatisé, veille de marché quotidienne, outils de pilotage générés — ce site entier est produit par mon propre système. C’est cet outillage que j’apporte en mission.</p></div></div>
+<section class="sombre"><h2>Pourquoi moi</h2><div class="decl"><div class="d"><h3>Je mesure le marché que je vous facture</h3><p>Mon TJM est aligné sur la médiane que je publie — vérifiable sur cette page, recalculée à chaque relevé. Vous ne négociez pas dans le brouillard, ni moi non plus.</p></div><div class="d"><h3>Je construis pour partir</h3><p>Les rituels, les outils et les référentiels que j’installe restent après moi — transmission comprise. Un PMO qui se rend indispensable a échoué.</p></div><div class="d"><h3>Un pilotage outillé par l’IA</h3><p>Reporting automatisé, veille de marché quotidienne, outils de pilotage générés — ce site entier est produit par mon propre système. C’est cet outillage que j’apporte en mission.</p></div></div></section>
 
 <h2 id="livre">Ce que j’ai livré</h2>
 <p>Six missions parmi les douze de mon dossier technique, avec leurs clients — les mêmes que sur mon profil LinkedIn. Les chiffres sont ceux de mon périmètre d’intervention.</p>
@@ -345,15 +391,37 @@ function calcMaj(i,b){
 </div>
 <a class="flottant" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
 
-<footer>
-  Claire Van De Sype &middot; PMO · direction de projet &middot; <a href="mailto:claire.vandesype@pmo-laboratory.com">claire.vandesype@pmo-laboratory.com</a>
-  &middot; <a href="https://www.linkedin.com/in/claire-vandesype" rel="noopener">LinkedIn</a>
-  <div class="nav">
-    <a href="./">Accueil</a><a href="./conditions.html">Conditions d'utilisation</a>
+</div>
+<footer class="pied">
+<div class="page">
+  <div class="cols">
+    <div>
+      <div class="marque">Claire Van De Sype</div>
+      <div class="filet"></div>
+      <a href="mailto:claire.vandesype@pmo-laboratory.com" style="margin-top:16px">claire.vandesype@pmo-laboratory.com</a>
+      <a href="tel:+33643653506">Appeler</a>
+      <a href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
+    </div>
+    <div>
+      <h4>Naviguer</h4>
+      <a href="./">Accueil</a>
+      <a href="https://www.linkedin.com/in/claire-vandesype" rel="noopener">LinkedIn</a>
+      <a href="https://www.malt.fr/profile/clairevandesype" rel="noopener">Malt</a>
+    </div>
+    <div>
+      <h4>Documents</h4>
+      <a href="dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier technique — FR (PDF)</a>
+      <a href="dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier technique — EN (PDF)</a>
+      <a href="releve/le-releve.pdf" download>Le relevé du marché</a>
+    </div>
+  </div>
+  <div class="bas">
+    <span>Claire Van De Sype &middot; PMO · direction de projet</span>
+    <a href="./conditions.html">Conditions d'utilisation</a>
     <a href="./confidentialite.html">Confidentialité</a>
   </div>
-</footer>
 </div>
+</footer>
 <script>
 (function(){
  if(matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -364,6 +432,12 @@ function calcMaj(i,b){
    if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target);}});},
    {rootMargin:'0px 0px -8% 0px'});
  els.forEach(function(el){el.classList.add('rv');io.observe(el);});
+})();
+(function(){
+ var pr=document.getElementById('prog');if(!pr)return;
+ addEventListener('scroll',function(){var h=document.documentElement;
+   var m=h.scrollHeight-h.clientHeight;
+   pr.style.width=(m>0?(h.scrollTop/m)*100:0)+'%';},{passive:true});
 })();
 </script>
 </body></html>
