@@ -108,6 +108,24 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 .flottant:hover{filter:brightness(.92);border-bottom:0}
 @media print{.flottant{display:none}}
 
+/* COMPARATEUR DE TJM — l'offre que personne d'autre ne peut faire : la mediane
+   MESUREE du jour, par role. Donnees embarquees a la generation, zero appel reseau. */
+.calc{border:1px solid var(--grille);padding:24px 22px;margin:26px 0}
+.calc h3{margin:0 0 6px}
+.calc .roles{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
+.calc .roles button{border:1px solid var(--grille);background:var(--fond);
+   color:var(--encre2);padding:9px 14px;cursor:pointer;font-size:14px;font-weight:600}
+.calc .roles button:hover{border-color:var(--or)}
+.calc .roles button[aria-pressed="true"]{border-color:var(--or);color:var(--encre);
+   box-shadow:inset 0 -3px 0 var(--or)}
+.calc .res{display:flex;flex-wrap:wrap;gap:14px 44px;align-items:baseline}
+.calc .res b{font-weight:800;font-size:38px;line-height:1;color:var(--or);
+   letter-spacing:-1px}
+.calc .res span{font-size:14px;color:var(--muet)}
+.calc .ecart{font-size:14px;color:var(--encre2);margin-top:12px}
+
+/* POURQUOI MOI — trois differences nommables, meme grille que les declencheurs. */
+
 /* NAVIGATION COLLANTE — composant transpose de chanel.com : chaque section est a un
    clic, le defilement n'est plus le seul chemin. Pleine largeur de la colonne. */
 .snav{position:sticky;top:0;z-index:6;background:var(--fond);
@@ -235,6 +253,26 @@ footer a{color:var(--muet)}
 <h2 id="releve">Le relevé</h2>
 <p>Le relevé est ma veille, rendue publique. Je collecte chaque jour les annonces de missions de pilotage, je suis chacune jusqu’à sa disparition, et j’en publie les chiffres — tarifs, durée de vie, télétravail, territoires.</p>
 <div class="car-tete"><p class="legende">Les planches du dernier relevé — faites-les défiler.</p><div class="car-fl"><button type="button" aria-label="Planche précédente" onclick="document.getElementById('car').scrollBy({left:-450,behavior:'smooth'})">&#8592;</button><button type="button" aria-label="Planche suivante" onclick="document.getElementById('car').scrollBy({left:450,behavior:'smooth'})">&#8594;</button></div></div><div class="carrousel" id="car"><figure><img src="releve/survie.jpg" alt="Durée de vie des missions PMO — courbe de survie" width="880" height="1100"><figcaption>Durée de vie des missions PMO — courbe de survie</figcaption></figure><figure><img src="releve/tjm.jpg" alt="Distribution des TJM des missions PMO" width="880" height="1100" loading="lazy" decoding="async"><figcaption>Distribution des TJM des missions PMO</figcaption></figure><figure><img src="releve/remote.jpg" alt="La part réelle du full remote" width="880" height="1100" loading="lazy" decoding="async"><figcaption>La part réelle du full remote</figcaption></figure><figure><img src="releve/bassins.jpg" alt="Le TJM par bassin d’emploi" width="880" height="1100" loading="lazy" decoding="async"><figcaption>Le TJM par bassin d’emploi</figcaption></figure></div>
+<p><a class="cta2" href="releve/le-releve.pdf" download>Télécharger le relevé (PDF)</a></p>
+<div class="calc" id="calc">
+<h3>Combien coûte le marché ?</h3>
+<p class="legende">Choisissez un rôle : la médiane est celle mesurée aujourd’hui, sur les annonces qui publient un tarif.</p>
+<div class="roles"><button type="button" aria-pressed="true" onclick="calcMaj(0,this)">Directeur de projet</button><button type="button" aria-pressed="false" onclick="calcMaj(1,this)">Chef de projet</button><button type="button" aria-pressed="false" onclick="calcMaj(2,this)">Product Owner</button><button type="button" aria-pressed="false" onclick="calcMaj(3,this)">Business Analyst</button><button type="button" aria-pressed="false" onclick="calcMaj(4,this)">PMO / pilotage</button></div>
+<div class="res"><div><b id="calcT">700 €</b> <span>TJM médian affiché</span></div>
+<div><b id="calcN">80</b> <span>annonces avec tarif</span></div></div>
+<div class="ecart" id="calcE">150 € au-dessus de la médiane tous rôles (550 €)</div>
+<script>
+var CALC=[{"nom": "Directeur de projet", "tjm": "700 €", "n": "80", "ecart": "150 € au-dessus de la médiane tous rôles (550 €)"}, {"nom": "Chef de projet", "tjm": "570 €", "n": "433", "ecart": "20 € au-dessus de la médiane tous rôles (550 €)"}, {"nom": "Product Owner", "tjm": "550 €", "n": "227", "ecart": "au niveau de la médiane tous rôles (550 €)"}, {"nom": "Business Analyst", "tjm": "550 €", "n": "165", "ecart": "au niveau de la médiane tous rôles (550 €)"}, {"nom": "PMO / pilotage", "tjm": "540 €", "n": "158", "ecart": "10 € sous la médiane tous rôles (550 €)"}];
+function calcMaj(i,b){
+  document.getElementById("calcT").textContent=CALC[i].tjm;
+  document.getElementById("calcN").textContent=CALC[i].n;
+  document.getElementById("calcE").textContent=CALC[i].ecart;
+  var bs=b.parentNode.querySelectorAll("button");
+  for(var j=0;j<bs.length;j++)bs[j].setAttribute("aria-pressed","false");
+  b.setAttribute("aria-pressed","true");
+}
+</script>
+</div>
 <div class="note">Pourquoi je le publie : parce que personne ne le fait. Un client qui recrute un PMO ne sait pas ce que coûte le marché ni à quelle vitesse il bouge. Un indépendant non plus. Chaque chiffre est publié avec ses limites — c’est ce qui le rend défendable.</div>
 
 <h2 id="quand">Quand m’appeler</h2>
@@ -243,6 +281,8 @@ footer a{color:var(--muet)}
 <h2>Ce que je fais</h2>
 <p>J’interviens sur des projets qui ont besoin d’un pilote, pas d’un observateur.</p>
 <ul><li><strong>Direction de projet et de programme</strong> &mdash; cadrage, jalons, comités, arbitrages. Le pilotage qui tient quand le planning bouge.</li><li><strong>PMO et gouvernance de portefeuille</strong> &mdash; instances, indicateurs, reporting COMEX. Rendre lisible ce qui est en cours.</li><li><strong>Pilotage financier de projet</strong> &mdash; budget, CAPEX/OPEX, contrôle de gestion. La trajectoire coûts autant que la trajectoire délais.</li><li><strong>Transformation et conduite du changement</strong> &mdash; ERP, SI RH, migration de données, organisation cible.</li></ul>
+
+<h2>Pourquoi moi</h2><div class="decl"><div class="d"><h3>Je mesure le marché que je vous facture</h3><p>Mon TJM est aligné sur la médiane que je publie — vérifiable sur cette page, recalculée à chaque relevé. Vous ne négociez pas dans le brouillard, ni moi non plus.</p></div><div class="d"><h3>Je construis pour partir</h3><p>Les rituels, les outils et les référentiels que j’installe restent après moi — transmission comprise. Un PMO qui se rend indispensable a échoué.</p></div><div class="d"><h3>Un pilotage outillé par l’IA</h3><p>Reporting automatisé, veille de marché quotidienne, outils de pilotage générés — ce site entier est produit par mon propre système. C’est cet outillage que j’apporte en mission.</p></div></div>
 
 <h2 id="livre">Ce que j’ai livré</h2>
 <p>Six missions parmi les douze de mon dossier technique, avec leurs clients — les mêmes que sur mon profil LinkedIn. Les chiffres sont ceux de mon périmètre d’intervention.</p>
