@@ -178,6 +178,12 @@ body{overflow-x:clip}
 .temo-nav button{border:1px solid var(--grille);background:var(--fond);
    color:var(--encre2);padding:11px 18px;cursor:pointer;font-size:14px;font-weight:700;
    letter-spacing:.3px;transition:transform .18s ease,box-shadow .18s ease}
+.temo-nav button{display:inline-flex;align-items:center;gap:10px}
+.temo-nav button .mono{display:inline-flex;align-items:center;justify-content:center;
+   width:30px;height:30px;background:var(--encre);color:#fff;
+   font:700 11px/1 'Consolas',ui-monospace,monospace;letter-spacing:.5px;flex:none}
+.temo-nav button[aria-pressed="true"] .mono{background:var(--or)}
+.temo-nav .mlogo{height:22px;width:auto;max-width:76px;object-fit:contain;flex:none}
 .temo-nav button:hover{border-color:var(--or);transform:translateY(-2px);
    box-shadow:0 8px 18px -10px rgba(141,104,24,.5)}
 .temo-nav button[aria-pressed="true"]{border-color:var(--or);color:var(--encre);
