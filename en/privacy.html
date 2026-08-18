@@ -126,6 +126,44 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 
 /* POURQUOI MOI — trois differences nommables, meme grille que les declencheurs. */
 
+/* A EMPORTER — trois documents offerts, en cartes. */
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:0;
+   margin:26px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
+.kit a{display:block;padding:22px 20px;border-right:1px solid var(--grille);
+   border-bottom:1px solid var(--grille);color:var(--encre);
+   border-bottom-style:solid;text-decoration:none}
+.kit a:hover{background:#fbf8f1}
+.kit b{display:block;font-size:20px;font-weight:700;margin-bottom:8px}
+.kit span{display:block;font-size:14px;color:var(--encre2)}
+.kit i{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
+   letter-spacing:1px;color:var(--or);margin-top:14px;font-style:normal}
+
+/* NUMEROTATION EDITORIALE des sections de l'accueil — 01, 02… en chasse fixe or. */
+body.accueil{counter-reset:sec}
+body.accueil h2::before{counter-increment:sec;
+   content:counter(sec,decimal-leading-zero);display:block;
+   font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:3px;
+   color:var(--or);margin-bottom:9px}
+
+/* APPARITION AU DEFILEMENT — la classe .rv est posee PAR le script : sans JavaScript
+   la page est entierement visible, et prefers-reduced-motion coupe tout. */
+.rv{opacity:0;transform:translateY(16px);
+    transition:opacity .55s ease,transform .55s ease}
+.rv.vu{opacity:1;transform:none}
+
+/* MICRO-INTERACTIONS — les gestes se soulevent, le clavier se voit. */
+.cta,.cta2,.kit a{transition:transform .18s ease,box-shadow .18s ease,
+   background .18s ease}
+.cta:hover,.cta2:hover{transform:translateY(-2px);
+   box-shadow:0 10px 22px -10px rgba(141,104,24,.5)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+
+/* LE PORTRAIT recoit un aplat decale — le geste editorial des pages mode. */
+.cadre{position:relative;display:inline-block}
+.cadre::before{content:"";position:absolute;top:16px;left:16px;right:-16px;
+   bottom:-16px;background:#f2ecdd;z-index:-1}
+.cadre .portrait{position:relative}
+
 /* NAVIGATION COLLANTE — composant transpose de chanel.com : chaque section est a un
    clic, le defilement n'est plus le seul chemin. Pleine largeur de la colonne. */
 .snav{position:sticky;top:0;z-index:6;background:var(--fond);
@@ -217,7 +255,7 @@ footer a{color:var(--muet)}
 @media(max-width:640px){body{font-size:17px}.m .v{font-size:32px}
        .tete{flex-direction:column;gap:14px}}
 </style>
-</head><body>
+</head><body class="">
 <div class="bandeau" role="complementary" aria-label="The project-management market, today"><div class="piste"><i>3,062</i>project-management assignments online<s>&middot;</s><i>550 €</i>median published day rate<s>&middot;</s><i>37 %</i>disappear within 7 days<s>&middot;</s><i>8 %</i>fully remote<s>&middot;</s><i>700 €</i>the best-paid role<s>&middot;</s><i>21</i>platforms tracked<s>&middot;</s><i>3,062</i>project-management assignments online<s>&middot;</s><i>550 €</i>median published day rate<s>&middot;</s><i>37 %</i>disappear within 7 days<s>&middot;</s><i>8 %</i>fully remote<s>&middot;</s><i>700 €</i>the best-paid role<s>&middot;</s><i>21</i>platforms tracked<s>&middot;</s></div></div>
 <div class="page">
 <header>
@@ -249,4 +287,17 @@ footer a{color:var(--muet)}
     <a href="./privacy.html">Privacy</a>
   </div>
 </footer>
-</div></body></html>
+</div>
+<script>
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches
+    ||!('IntersectionObserver' in window))return;
+ var els=document.querySelectorAll(
+   'h2,.mesures,.d,.mi,.calc,.carrousel figure,.temoin,.et,.gestes,.kit a');
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+   if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target);}});},
+   {rootMargin:'0px 0px -8% 0px'});
+ els.forEach(function(el){el.classList.add('rv');io.observe(el);});
+})();
+</script>
+</body></html>
