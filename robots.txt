@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pmo-laboratory.com/sitemap.xml
