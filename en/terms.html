@@ -60,6 +60,42 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
    le réglage système l'arrête, il ne la ralentit pas. */
 @media(prefers-reduced-motion:reduce){.piste{animation:none}}
 
+/* BANDE DE CRÉDIBILITÉ + DISPONIBILITÉ — la réassurance en haut de page : SES chiffres
+   de livraison (dossier technique), pas ceux du marché. */
+.bande-preuve{display:flex;flex-wrap:wrap;gap:8px 0;margin:20px 0 0;
+   font:600 14px/1.5 'Consolas',ui-monospace,monospace;color:var(--encre2)}
+.bande-preuve span{white-space:nowrap}
+.bande-preuve i{font-style:normal;color:var(--or);padding:0 10px}
+.dispo{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;
+   border:1px solid var(--grille);padding:7px 14px;font-size:14px;color:var(--encre)}
+.dispo::before{content:"";width:9px;height:9px;border-radius:50%;background:#1e9e5a;flex:none}
+
+/* SECTEURS — légitimité par association, sans nom de client. */
+.secteurs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.secteurs span{border:1px solid var(--grille);padding:6px 12px;font-size:14px;
+   color:var(--encre2);white-space:nowrap}
+
+/* COMMENT ON DÉMARRE — 3 marches numérotées : le premier contact perd son inconnu. */
+.etapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:0;
+   margin:28px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
+.et{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
+.et .n{font-weight:800;font-size:28px;line-height:1;color:var(--orclair);letter-spacing:-.5px}
+.et h3{margin:10px 0 8px;font-size:20px}
+.et p{margin:0;font-size:14px}
+
+/* TÉMOIGNAGES — rendus seulement s'il en existe de vrais. */
+.temoin{border-left:4px solid var(--or);padding:4px 0 4px 20px;margin:24px 0}
+.temoin p{margin:0;font-size:20px;color:var(--encre)}
+.temoin .qui{margin-top:10px;font-size:14px;color:var(--muet)}
+
+/* APPEL FLOTTANT — le geste reste à un clic partout dans la page. Pastille discrète,
+   pas une barre ; masquée à l'impression. */
+.flottant{position:fixed;right:18px;bottom:18px;z-index:5;background:var(--or);
+   color:#fff;font-weight:700;font-size:14px;padding:13px 20px;border-bottom:0;
+   box-shadow:0 6px 22px -6px rgba(28,26,23,.45)}
+.flottant:hover{filter:brightness(.92);border-bottom:0}
+@media print{.flottant{display:none}}
+
 /* SELECTEUR DE LANGUE en haut à droite */
 .langues{display:flex;gap:8px;flex:none;padding-top:2px}
 .langues a,.langues span{display:inline-flex;align-items:center;gap:7px;

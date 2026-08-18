@@ -60,6 +60,42 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
    le réglage système l'arrête, il ne la ralentit pas. */
 @media(prefers-reduced-motion:reduce){.piste{animation:none}}
 
+/* BANDE DE CRÉDIBILITÉ + DISPONIBILITÉ — la réassurance en haut de page : SES chiffres
+   de livraison (dossier technique), pas ceux du marché. */
+.bande-preuve{display:flex;flex-wrap:wrap;gap:8px 0;margin:20px 0 0;
+   font:600 14px/1.5 'Consolas',ui-monospace,monospace;color:var(--encre2)}
+.bande-preuve span{white-space:nowrap}
+.bande-preuve i{font-style:normal;color:var(--or);padding:0 10px}
+.dispo{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;
+   border:1px solid var(--grille);padding:7px 14px;font-size:14px;color:var(--encre)}
+.dispo::before{content:"";width:9px;height:9px;border-radius:50%;background:#1e9e5a;flex:none}
+
+/* SECTEURS — légitimité par association, sans nom de client. */
+.secteurs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.secteurs span{border:1px solid var(--grille);padding:6px 12px;font-size:14px;
+   color:var(--encre2);white-space:nowrap}
+
+/* COMMENT ON DÉMARRE — 3 marches numérotées : le premier contact perd son inconnu. */
+.etapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:0;
+   margin:28px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
+.et{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
+.et .n{font-weight:800;font-size:28px;line-height:1;color:var(--orclair);letter-spacing:-.5px}
+.et h3{margin:10px 0 8px;font-size:20px}
+.et p{margin:0;font-size:14px}
+
+/* TÉMOIGNAGES — rendus seulement s'il en existe de vrais. */
+.temoin{border-left:4px solid var(--or);padding:4px 0 4px 20px;margin:24px 0}
+.temoin p{margin:0;font-size:20px;color:var(--encre)}
+.temoin .qui{margin-top:10px;font-size:14px;color:var(--muet)}
+
+/* APPEL FLOTTANT — le geste reste à un clic partout dans la page. Pastille discrète,
+   pas une barre ; masquée à l'impression. */
+.flottant{position:fixed;right:18px;bottom:18px;z-index:5;background:var(--or);
+   color:#fff;font-weight:700;font-size:14px;padding:13px 20px;border-bottom:0;
+   box-shadow:0 6px 22px -6px rgba(28,26,23,.45)}
+.flottant:hover{filter:brightness(.92);border-bottom:0}
+@media print{.flottant{display:none}}
+
 /* SELECTEUR DE LANGUE en haut à droite */
 .langues{display:flex;gap:8px;flex:none;padding-top:2px}
 .langues a,.langues span{display:inline-flex;align-items:center;gap:7px;
@@ -149,6 +185,12 @@ footer a{color:var(--muet)}
 </div>
 <p class="chapeau">Independent consultant in project direction, PMO and project finance, 12 years of experience. Every morning I record the project-management assignments published in France — here is what the market says today.</p>
 
+<div class="bande-preuve"><span>12 years of experience</span><i>&middot;</i><span>€150M+ of IT budgets managed</span><i>&middot;</i><span>500+ projects steered</span><i>&middot;</i><span>10+ industries</span></div><div class="dispo">Available for a new assignment</div>
+<div class="gestes">
+  <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a>
+  <a class="cta2" href="#livre">See what I have delivered</a>
+</div>
+
 <div class="mesures"><div class="m"><div class="v">3,062</div><div class="l">project-management assignments online</div><div class="s">across 21 platforms tracked</div></div><div class="m"><div class="v">550 €</div><div class="l">median published day rate</div><div class="s">across 1 292 listings that publish it</div></div><div class="m"><div class="v">37 %</div><div class="l">disappear within 7 days</div><div class="s">actual lifespan of listings</div></div><div class="m"><div class="v">8 %</div><div class="l">fully remote</div><div class="s">of those that state it</div></div><div class="m"><div class="v">700 €</div><div class="l">the best-paid role</div><div class="s">Project Director (80 listings)</div></div></div>
 <p class="legende">Measured on 18 August 2026 across 21 platforms, 6 324 listings followed since publication. These figures are recomputed at every record: they are not illustrative.</p>
 
@@ -159,10 +201,15 @@ footer a{color:var(--muet)}
 <p>I take on projects that need someone steering, not someone observing.</p>
 <ul><li><strong>Project and programme direction</strong> &mdash; framing, milestones, steering committees, arbitration. Governance that holds when the schedule moves.</li><li><strong>PMO and portfolio governance</strong> &mdash; forums, indicators, executive reporting. Making what is running legible.</li><li><strong>Project finance</strong> &mdash; budget, CAPEX/OPEX, management control. The cost trajectory as much as the schedule.</li><li><strong>Transformation and change management</strong> &mdash; ERP, HR information systems, data migration, target organisation.</li></ul>
 
-<h2>What I have delivered</h2>
+<h2 id="livre">What I have delivered</h2>
 <p>Six assignments out of the twelve in my capability dossier. Clients are not named: those are their programmes, not mine. The figures are the ones inside my own scope.</p>
+<div class="secteurs"><span>Pharmaceuticals</span><span>Banking & insurance</span><span>Luxury</span><span>Defence & aerospace</span><span>Public services</span><span>Retail & distribution</span><span>Energy</span></div>
 <div class="preuves"><div class="mi"><div class="r">PMO &amp; Cutover Lead — SAP S/4HANA migration</div><div class="meta">Pharmaceutical manufacturing (GMP site) &middot; 2026 · 6 months</div><p>Prepare the ERP cutover of a manufacturing site — one of three in the first French wave of a worldwide programme.</p><div class="ch"><div><b>3</b>sequenced transition phases</div><div><b>12</b>satellite applications orchestrated</div><div><b>0</b>supply interruption targeted</div></div></div><div class="mi"><div class="r">PMO · Group IT — budget framing</div><div class="meta">Pharmaceutical packaging, 15+ countries &middot; 2025-2026 · 12 months</div><p>Build an IT investment budget from scratch across four manufacturing sites and three countries, and get it arbitrated at executive level.</p><div class="ch"><div><b>6.3 M€</b>framed in 6 months</div><div><b>4</b>manufacturing sites</div><div><b>3</b>countries</div></div></div><div class="mi"><div class="r">PMO · Group HR IT — HRIS master plan</div><div class="meta">Public services, around 240,000 employees &middot; 2026 · 3 months</div><p>Build an HRIS master plan to 2030 and get a decision between scenarios nobody could compare.</p><div class="ch"><div><b>≈ 22 M€</b>of framed roadmap</div><div><b>5 → 2</b>scenarios narrowed, then decided</div><div><b>3 mois</b>from kick-off to signed decision</div></div></div><div class="mi"><div class="r">PMO · IT — application rationalisation</div><div class="meta">Retail, garden centre network &middot; 2025 · 8 months</div><p>Qualify an application estate inherited from several mergers and turn the inventory into decided savings.</p><div class="ch"><div><b>155</b>applications qualified</div><div><b>−2.3 M€</b>per year, confirmed</div><div><b>6 M€</b>of identified potential</div></div></div><div class="mi"><div class="r">Cross-functional PMO — capacity visibility</div><div class="meta">Insurance and brokerage &middot; 2022-2023 · 16 months</div><p>Build a PMO from nothing, then make it self-sustaining: audit, rituals, dashboards, arbitration, handover.</p><div class="ch"><div><b>6.6 M€</b>portfolio under control</div><div><b>4</b>phases, from audit to embedding</div><div><b>COMEX</b>weekly executive reporting</div></div></div><div class="mi"><div class="r">PMO — portfolio management</div><div class="meta">Banking and public financing &middot; 2019 · 12 months</div><p>Make an intensively transforming portfolio manageable, and ring-fence the budget of what had to land.</p><div class="ch"><div><b>293</b>projects under management</div><div><b>51.4 M€</b>of budget tracked</div><div><b>≈ 2,800</b>IT staff in scope</div></div></div></div>
 <p class="legende">The full dossier — twelve assignments, sectors, methods and tools — is sent on request.</p>
+
+
+<h2>How we start</h2>
+<div class="etapes"><div class="et"><div class="n">1</div><h3>A 30-minute call</h3><p>You describe the context. I tell you plainly whether I am the right person — and if I am not, I say that too.</p></div><div class="et"><div class="n">2</div><h3>A written proposal</h3><p>Scope, governance, deliverables — and a day rate aligned with the market I measure daily, not an opaque price grid.</p></div><div class="et"><div class="n">3</div><h3>Steering begins</h3><p>On site or remote. First deliverable: a state of play that holds authority — what is running, at risk, and to be decided.</p></div></div>
 
 <h2>The market record</h2>
 <p>The record is my own market watch, made public. Every day I collect the published project-management assignments, follow each one until it disappears, and publish the figures — day rates, time to disappear, remote work, regions.</p>
@@ -175,6 +222,7 @@ footer a{color:var(--muet)}
   <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a>
   <a class="cta2" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Capability%20dossier%20request">Request the dossier</a>
 </div>
+<a class="flottant" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a>
 
 <footer>
   Claire Van De Sype &middot; PMO · direction de projet &middot; <a href="mailto:claire.vandesype@pmo-laboratory.com">claire.vandesype@pmo-laboratory.com</a>

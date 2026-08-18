@@ -60,6 +60,42 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
    le réglage système l'arrête, il ne la ralentit pas. */
 @media(prefers-reduced-motion:reduce){.piste{animation:none}}
 
+/* BANDE DE CRÉDIBILITÉ + DISPONIBILITÉ — la réassurance en haut de page : SES chiffres
+   de livraison (dossier technique), pas ceux du marché. */
+.bande-preuve{display:flex;flex-wrap:wrap;gap:8px 0;margin:20px 0 0;
+   font:600 14px/1.5 'Consolas',ui-monospace,monospace;color:var(--encre2)}
+.bande-preuve span{white-space:nowrap}
+.bande-preuve i{font-style:normal;color:var(--or);padding:0 10px}
+.dispo{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;
+   border:1px solid var(--grille);padding:7px 14px;font-size:14px;color:var(--encre)}
+.dispo::before{content:"";width:9px;height:9px;border-radius:50%;background:#1e9e5a;flex:none}
+
+/* SECTEURS — légitimité par association, sans nom de client. */
+.secteurs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.secteurs span{border:1px solid var(--grille);padding:6px 12px;font-size:14px;
+   color:var(--encre2);white-space:nowrap}
+
+/* COMMENT ON DÉMARRE — 3 marches numérotées : le premier contact perd son inconnu. */
+.etapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:0;
+   margin:28px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
+.et{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
+.et .n{font-weight:800;font-size:28px;line-height:1;color:var(--orclair);letter-spacing:-.5px}
+.et h3{margin:10px 0 8px;font-size:20px}
+.et p{margin:0;font-size:14px}
+
+/* TÉMOIGNAGES — rendus seulement s'il en existe de vrais. */
+.temoin{border-left:4px solid var(--or);padding:4px 0 4px 20px;margin:24px 0}
+.temoin p{margin:0;font-size:20px;color:var(--encre)}
+.temoin .qui{margin-top:10px;font-size:14px;color:var(--muet)}
+
+/* APPEL FLOTTANT — le geste reste à un clic partout dans la page. Pastille discrète,
+   pas une barre ; masquée à l'impression. */
+.flottant{position:fixed;right:18px;bottom:18px;z-index:5;background:var(--or);
+   color:#fff;font-weight:700;font-size:14px;padding:13px 20px;border-bottom:0;
+   box-shadow:0 6px 22px -6px rgba(28,26,23,.45)}
+.flottant:hover{filter:brightness(.92);border-bottom:0}
+@media print{.flottant{display:none}}
+
 /* SELECTEUR DE LANGUE en haut à droite */
 .langues{display:flex;gap:8px;flex:none;padding-top:2px}
 .langues a,.langues span{display:inline-flex;align-items:center;gap:7px;
@@ -149,6 +185,12 @@ footer a{color:var(--muet)}
 </div>
 <p class="chapeau">Consultante indépendante en direction de projet, PMO et pilotage financier, 12 ans d’expérience. Chaque matin, je relève les missions de pilotage publiées en France — voici ce que dit le marché aujourd’hui.</p>
 
+<div class="bande-preuve"><span>12 ans d’expérience</span><i>&middot;</i><span>+150 M€ de budgets IT gérés</span><i>&middot;</i><span>500+ projets pilotés</span><i>&middot;</i><span>10+ secteurs</span></div><div class="dispo">Disponible pour une nouvelle mission</div>
+<div class="gestes">
+  <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
+  <a class="cta2" href="#livre">Voir ce que j’ai livré</a>
+</div>
+
 <div class="mesures"><div class="m"><div class="v">3 062</div><div class="l">missions de pilotage en ligne</div><div class="s">sur 21 plateformes suivies</div></div><div class="m"><div class="v">550 €</div><div class="l">TJM médian affiché</div><div class="s">sur 1 292 annonces qui le publient</div></div><div class="m"><div class="v">37 %</div><div class="l">disparaissent en 7 jours</div><div class="s">durée de vie réelle des annonces</div></div><div class="m"><div class="v">8 %</div><div class="l">de full remote</div><div class="s">sur celles qui précisent</div></div><div class="m"><div class="v">700 €</div><div class="l">le rôle le mieux payé</div><div class="s">Directeur de projet (80 annonces)</div></div></div>
 <p class="legende">Mesuré le 18 août 2026 sur 21 plateformes, 6 324 annonces suivies depuis leur parution. Ces chiffres sont recalculés à chaque relevé : ils ne sont pas illustratifs.</p>
 
@@ -159,10 +201,15 @@ footer a{color:var(--muet)}
 <p>J’interviens sur des projets qui ont besoin d’un pilote, pas d’un observateur.</p>
 <ul><li><strong>Direction de projet et de programme</strong> &mdash; cadrage, jalons, comités, arbitrages. Le pilotage qui tient quand le planning bouge.</li><li><strong>PMO et gouvernance de portefeuille</strong> &mdash; instances, indicateurs, reporting COMEX. Rendre lisible ce qui est en cours.</li><li><strong>Pilotage financier de projet</strong> &mdash; budget, CAPEX/OPEX, contrôle de gestion. La trajectoire coûts autant que la trajectoire délais.</li><li><strong>Transformation et conduite du changement</strong> &mdash; ERP, SI RH, migration de données, organisation cible.</li></ul>
 
-<h2>Ce que j’ai livré</h2>
+<h2 id="livre">Ce que j’ai livré</h2>
 <p>Six missions parmi les douze de mon dossier technique. Les clients ne sont pas nommés : ce sont leurs programmes, pas les miens. Les chiffres, eux, sont ceux de mon périmètre.</p>
+<div class="secteurs"><span>Pharmaceutique</span><span>Banque & assurance</span><span>Luxe</span><span>Défense & aérospatial</span><span>Services publics</span><span>Retail & distribution</span><span>Énergie</span></div>
 <div class="preuves"><div class="mi"><div class="r">PMO &amp; Cutover Lead — bascule SAP S/4HANA</div><div class="meta">Industrie pharmaceutique (site BPF) &middot; 2026 · 6 mois</div><p>Préparer la bascule ERP d’un site industriel, l’un des trois de la première vague France d’un programme mondial.</p><div class="ch"><div><b>3</b>phases de transition séquencées</div><div><b>12</b>applications satellites orchestrées</div><div><b>0</b>rupture d’approvisionnement visée</div></div></div><div class="mi"><div class="r">PMO · DSI Groupe — cadrage budgétaire</div><div class="meta">Packaging pharmaceutique, plus de 15 pays &middot; 2025-2026 · 12 mois</div><p>Cadrer de zéro un budget d’investissement IT sur quatre sites industriels et trois pays, et le faire arbitrer en comité exécutif.</p><div class="ch"><div><b>6,3 M€</b>cadrés en 6 mois</div><div><b>4</b>sites industriels</div><div><b>3</b>pays</div></div></div><div class="mi"><div class="r">PMO · DSI RH Groupe — schéma directeur SIRH</div><div class="meta">Services publics, environ 240 000 collaborateurs &middot; 2026 · 3 mois</div><p>Construire un schéma directeur SIRH à horizon 2030 et faire trancher entre des scénarios que personne n’arrivait à comparer.</p><div class="ch"><div><b>≈ 22 M€</b>de trajectoire cadrée</div><div><b>5 → 2</b>scénarios réduits puis arbitrés</div><div><b>3 mois</b>du lancement à la décision actée</div></div></div><div class="mi"><div class="r">PMO · DSI — rationalisation applicative</div><div class="meta">Retail, réseau de jardineries &middot; 2025 · 8 mois</div><p>Qualifier un parc applicatif hérité de plusieurs fusions et transformer l’inventaire en économies décidées.</p><div class="ch"><div><b>155</b>applications qualifiées</div><div><b>−2,3 M€</b>par an, confirmés</div><div><b>6 M€</b>de potentiel identifié</div></div></div><div class="mi"><div class="r">PMO transverse — vision capacitaire</div><div class="meta">Assurance et courtage &middot; 2022-2023 · 16 mois</div><p>Structurer un PMO qui n’existait pas, puis le rendre autonome : audit, rituels, tableaux de bord, arbitrages, transmission.</p><div class="ch"><div><b>6,6 M€</b>de portefeuille suivi</div><div><b>4</b>phases, de l’audit à l’ancrage</div><div><b>COMEX</b>reporting tenu chaque semaine</div></div></div><div class="mi"><div class="r">PMO — pilotage de portefeuille</div><div class="meta">Banque et financement public &middot; 2019 · 12 mois</div><p>Rendre pilotable un portefeuille en transformation intensive, et sanctuariser le budget de ce qui devait aboutir.</p><div class="ch"><div><b>293</b>projets sous pilotage</div><div><b>51,4 M€</b>de budget suivi</div><div><b>≈ 2 800</b>collaborateurs de la DSI concernés</div></div></div></div>
 <p class="legende">Le dossier technique complet — douze missions, secteurs, méthodes et outils — est envoyé sur demande.</p>
+
+
+<h2>Comment on démarre</h2>
+<div class="etapes"><div class="et"><div class="n">1</div><h3>Un appel de 30 minutes</h3><p>Vous décrivez le contexte. Je vous dis franchement si je suis la bonne personne — et si je ne le suis pas, je vous le dis aussi.</p></div><div class="et"><div class="n">2</div><h3>Une proposition écrite</h3><p>Périmètre, gouvernance, livrables — et un TJM aligné sur le marché que je mesure chaque jour, pas sur une grille opaque.</p></div><div class="et"><div class="n">3</div><h3>Le pilotage démarre</h3><p>Sur site ou à distance. Premier livrable : un état des lieux qui fait autorité — ce qui est en cours, en risque, à décider.</p></div></div>
 
 <h2>Le relevé</h2>
 <p>Le relevé est ma veille, rendue publique. Je collecte chaque jour les annonces de missions de pilotage, je suis chacune jusqu’à sa disparition, et j’en publie les chiffres — tarifs, durée de vie, télétravail, territoires.</p>
@@ -175,6 +222,7 @@ footer a{color:var(--muet)}
   <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
   <a class="cta2" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Demande%20de%20dossier%20technique">Recevoir le dossier technique</a>
 </div>
+<a class="flottant" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
 
 <footer>
   Claire Van De Sype &middot; PMO · direction de projet &middot; <a href="mailto:claire.vandesype@pmo-laboratory.com">claire.vandesype@pmo-laboratory.com</a>
