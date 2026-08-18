@@ -40,7 +40,7 @@ h1{font-weight:800;font-size:clamp(34px,6vw,60px);line-height:1.1;margin:38px 0 
 h2{font-weight:800;font-size:clamp(24px,3.4vw,32px);margin:62px 0 18px;letter-spacing:-.5px}
 h3{font-weight:700;font-size:20px;margin:32px 0 10px}
 p{margin:16px 0;color:var(--encre2)}
-p.chapeau{font-size:clamp(19px,2.4vw,23px);color:var(--encre);margin-top:22px}
+p.chapeau{font-size:20px;color:var(--encre);margin-top:22px}
 strong{color:var(--encre)}
 a{color:var(--or);text-decoration:none;border-bottom:1px solid var(--grille)}
 a:hover{border-bottom-color:var(--or)}
@@ -74,15 +74,17 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 .intro{display:grid;grid-template-columns:1fr 218px;gap:36px;align-items:end;margin-top:26px}
 .portrait{width:218px;height:auto;display:block}
 
-/* ⚠ PAS de fond sur le conteneur pour dessiner les filets : avec 5 mesures dans 3
-   colonnes, la 6e cellule reste vide et ce fond s'y voyait comme un carré gris.
-   Les filets viennent donc des BORDURES de chaque cellule — une case absente
-   n'affiche rien. Même principe pour .decl. */
-.mesures{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
-         gap:0;margin:34px 0;border-right:0;border-bottom:1px solid var(--grille)}
+/* ⚠ LES FILETS SE DESSINENT SUR LES CELLULES, jamais sur le conteneur — deux fois
+   que ce piège a coûté un défaut visible. Un fond de conteneur se voyait en carré gris
+   dans la 6e case vide (v1) ; une bordure basse de conteneur courait sur toute la
+   largeur d'une dernière ligne à moitié remplie (v2). Bordure DROITE + BASSE sur chaque
+   cellule, HAUTE + GAUCHE sur le conteneur : une case absente ne dessine rien, quel que
+   soit le nombre de mesures. Même principe pour .decl. */
+.mesures{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));
+         gap:0;margin:34px 0;
+         border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
 .m{background:var(--fond);padding:24px 20px;
-   border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
-.mesures .m:last-child{border-right:1px solid var(--grille)}
+   border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
 .m .v{font-weight:800;font-size:38px;line-height:1;color:var(--or);letter-spacing:-1px}
 .m .l{font-size:14px;margin-top:9px;color:var(--encre)}
 .m .s{font-size:12.5px;margin-top:4px;color:var(--muet)}
@@ -92,7 +94,7 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
       margin:28px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
 .d{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
 .d h3{margin:0 0 8px;font-size:20px}
-.d p{margin:0;font-size:17px}
+.d p{margin:0}
 
 /* PREUVES — secteur et chiffres, jamais de nom de client. */
 .preuves{border-top:1px solid var(--grille);margin:30px 0}
@@ -100,20 +102,20 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 .mi .r{font-weight:700;font-size:20px;color:var(--encre)}
 .mi .meta{font:600 12.5px/1.5 'Consolas',ui-monospace,monospace;letter-spacing:1px;
           text-transform:uppercase;color:var(--muet);margin-top:6px}
-.mi p{margin:13px 0 15px;font-size:17px}
+.mi p{margin:13px 0 15px}
 .mi .ch{display:flex;flex-wrap:wrap;gap:14px 38px}
 .mi .ch div{font-size:12.5px;color:var(--muet);max-width:210px}
 .mi .ch b{display:block;font-weight:800;font-size:28px;line-height:1.1;color:var(--or);
           letter-spacing:-.5px;margin-bottom:3px}
 
 .note{border-left:4px solid var(--vert);background:#f7faf8;padding:16px 20px;
-      margin:30px 0;font-size:17px;color:var(--encre2)}
+      margin:30px 0;color:var(--encre2)}
 .gestes{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:22px 0 0}
 .cta{display:inline-block;background:var(--or);color:#fff;font-weight:700;
-     padding:16px 30px;border:0;border-bottom:0;font-size:17px}
+     padding:16px 30px;border:0;border-bottom:0}
 .cta:hover{filter:brightness(.92);border-bottom:0}
 .cta2{display:inline-block;border:1px solid var(--or);color:var(--or);font-weight:700;
-      padding:15px 26px;font-size:17px}
+      padding:15px 26px}
 .cta2:hover{background:#fbf8f1;border-bottom-color:var(--or)}
 footer{margin:86px 0 60px;padding-top:26px;border-top:1px solid var(--grille);
        font-size:14px;color:var(--muet)}
