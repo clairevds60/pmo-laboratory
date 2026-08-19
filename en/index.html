@@ -499,7 +499,8 @@ body.p2 [data-grp="quand"],body.p2 [data-grp="livre"],
 body.p2 [data-grp="releve"],
 body.p3 [data-grp="quand"],body.p3 [data-grp="livre"],
 body.p3 [data-grp="kit"]{display:none}
-body.p1 #ctcTypezone{display:none}
+body.p0 #ctcTypezone,body.p1 #ctcTypezone,body.p2 #ctcTypezone,
+body.p3 #ctcTypezone{display:none}
 #ctc.tf:not(.infos) .qf-info,#ctc.tf:not(.infos) #ctcSuite{display:none}
 body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
 body.p3 [data-grp],body.tout [data-grp],
@@ -650,7 +651,7 @@ footer a{color:var(--muet)}
            onchange="ctcType()">Something else</label>
   </div>
   </div>
-  <div class="qbloc" id="qb-mission"><div class="etq">The situation:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Slipping programme">Slipping programme</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Unreadable portfolio">Unreadable portfolio</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Budget to frame">Budget to frame</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Master plan / transformation">Master plan / transformation</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Other">Other</label></div><div class="etq">Timeline:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Urgent (under a month)">Urgent (under a month)</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="1 to 3 months">1 to 3 months</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Exploring">Exploring</label></div><div class="etq">Format:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Remote">Remote</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="On site">On site</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Mixed">Mixed</label></div></div><div class="qbloc" id="qb-formation"><div class="etq qf-info">For:</div><div class="types pt qf-info"><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="Myself">Myself</label><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="My team">My team</label></div><div class="etq">Offer in mind:</div><div class="tarifs flux-tarifs"><label class="to sel"><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Starter" data-pay="" data-lab="Pay Starter — 180 € incl. VAT"><h3>Starter</h3><div class="prix">180 <small>€ incl. VAT</small></div><div class="ht">150 € excl. VAT</div><ul><li>Module 1 on video</li><li>Its exercise workbook</li><li>One group Q&A video session of your choice</li><li>Deducted if you later upgrade</li></ul></label><label class="to sel"><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Complete" data-pay="" data-lab="Pay Complete — 1,290 € incl. VAT"><span class="reco-badge">Recommended</span><h3>Complete</h3><div class="prix">1 290 <small>€ incl. VAT</small></div><div class="ht">1 075 € excl. VAT</div><ul><li>The 4 video modules</li><li>All exercise workbooks and their video corrections</li><li>The toolbox templates</li><li>The bonus module: the real steering market — where the jobs and assignments are, at what rates</li><li>Your questions by email — I answer them</li><li>A weekly group Q&A video session</li><li>A completion certificate</li></ul></label><label class="to sel"><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Guided" data-pay="" data-lab="Pay Guided — 1,680 € incl. VAT"><h3>Guided</h3><div class="prix">1 680 <small>€ incl. VAT</small></div><div class="ht">1 400 € excl. VAT</div><ul><li>Everything in Complete</li><li>Two one-to-one sessions with me (2 × 60 min)</li><li>Your CV and LinkedIn profile, reviewed and annotated</li><li>A mock interview, debriefed</li></ul></label></div><div class="ctc-actes"><a class="cta" id="ctcPayer" hidden target="_blank" rel="noopener"></a><button type="button" class="cta2" onclick="return ctcInfos()">Request information</button></div><div class="garanties"><span>Pay in 3 instalments, no fees</span><span>14-day money-back guarantee</span></div><div class="types pt"><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="To be defined">To be defined</label></div><div class="tarifs-note">The first modules are being recorded. Pre-register: you will be served first, with no commitment.</div><div class="etq qf-info">OPCO funding:</div><div class="types pt qf-info"><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="Yes">Yes</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="No">No</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="To be seen">To be seen</label></div></div>
+  <div class="qbloc" id="qb-mission"><div class="etq">The situation:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Slipping programme">Slipping programme</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Unreadable portfolio">Unreadable portfolio</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Budget to frame">Budget to frame</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Master plan / transformation">Master plan / transformation</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Other">Other</label></div><div class="etq">Timeline:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Urgent (under a month)">Urgent (under a month)</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="1 to 3 months">1 to 3 months</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Exploring">Exploring</label></div><div class="etq">Format:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Remote">Remote</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="On site">On site</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Mixed">Mixed</label></div></div><div class="qbloc" id="qb-formation"><div class="etq qf-info">For:</div><div class="types pt qf-info"><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="Myself">Myself</label><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="My team">My team</label></div><div class="etq">Offer in mind:</div><div class="tarifs flux-tarifs"><label class="to sel"><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Starter" data-pay="" data-lab="Pay Starter — 180 € incl. VAT" data-lab0="Pre-register — Starter"><h3>Starter</h3><div class="prix">180 <small>€ incl. VAT</small></div><div class="ht">150 € excl. VAT</div><ul><li>Module 1 on video</li><li>Its exercise workbook</li><li>One group Q&A video session of your choice</li><li>Deducted if you later upgrade</li></ul></label><label class="to sel"><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Complete" data-pay="" data-lab="Pay Complete — 1,290 € incl. VAT" data-lab0="Pre-register — Complete"><span class="reco-badge">Recommended</span><h3>Complete</h3><div class="prix">1 290 <small>€ incl. VAT</small></div><div class="ht">1 075 € excl. VAT</div><ul><li>The 4 video modules</li><li>All exercise workbooks and their video corrections</li><li>The toolbox templates</li><li>The bonus module: the real steering market — where the jobs and assignments are, at what rates</li><li>Your questions by email — I answer them</li><li>A weekly group Q&A video session</li><li>A completion certificate</li></ul></label><label class="to sel"><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Guided" data-pay="" data-lab="Pay Guided — 1,680 € incl. VAT" data-lab0="Pre-register — Guided"><h3>Guided</h3><div class="prix">1 680 <small>€ incl. VAT</small></div><div class="ht">1 400 € excl. VAT</div><ul><li>Everything in Complete</li><li>Two one-to-one sessions with me (2 × 60 min)</li><li>Your CV and LinkedIn profile, reviewed and annotated</li><li>A mock interview, debriefed</li></ul></label></div><div class="ctc-actes"><a class="cta" id="ctcPayer" hidden rel="noopener" onclick="return ctcPayeClic(this)"></a><button type="button" class="cta2" onclick="return ctcInfos()">Request information</button></div><div class="garanties"><span>Pay in 3 instalments, no fees</span><span>14-day money-back guarantee</span></div><div class="types pt"><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="To be defined">To be defined</label></div><div class="tarifs-note">The first modules are being recorded. Pre-register: you will be served first, with no commitment.</div><div class="etq qf-info">OPCO funding:</div><div class="types pt qf-info"><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="Yes">Yes</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="No">No</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="To be seen">To be seen</label></div></div>
   <div id="ctcSuite">
   <div class="champs">
     <div><span class="etq">Last name</span><input type="text" id="ctcNom"></div>
@@ -786,13 +787,23 @@ var CTCS={"docs": {"Slipping programme": {"t": "Meanwhile: my first 10 moves", "
 function ctcInfos(){
  var c=document.getElementById('ctc');if(c)c.classList.add('infos');
  return false;}
+function ctcPayeClic(a){
+ /* pas encore de lien de paiement : le clic ouvre le formulaire de pre-inscription
+    au lieu de ne rien faire */
+ if(a.getAttribute('data-info')){ctcInfos();
+  var s=document.getElementById('ctcSuite');
+  if(s)s.scrollIntoView({behavior:'smooth',block:'start'});return false;}
+ return true;}
 function ctcMajPayer(){
  var b=document.getElementById('ctcPayer');if(!b)return;
  var r=document.querySelector('input[name=ctcq_formation_1]:checked');
- if(r&&r.getAttribute('data-pay')){
-  b.href=r.getAttribute('data-pay');
-  b.textContent=r.getAttribute('data-lab');b.hidden=false;}
- else{b.hidden=true;}}
+ if(!r){b.hidden=true;return;}
+ var pay=r.getAttribute('data-pay');
+ if(pay){b.href=pay;b.target='_blank';b.removeAttribute('data-info');
+  b.textContent=r.getAttribute('data-lab');}
+ else{b.href='#quand';b.removeAttribute('target');b.setAttribute('data-info','1');
+  b.textContent=r.getAttribute('data-lab0');}
+ b.hidden=false;}
 function ctcSugg(){
  ctcMajPayer();
  var z=document.getElementById('ctcSugg');if(!z)return;
@@ -845,6 +856,10 @@ function porteMaj(i,b){
   if(pu0)pu0.hidden=true;return;}
  b.setAttribute('aria-pressed','true');
  document.body.classList.add('p'+i);
+ /* la porte a qualifie le visiteur : on fixe le type de demande */
+ var tp=['mission','formation','autre','autre'][i];
+ var rt=document.querySelector('input[name=ctct][value='+tp+']');
+ if(rt){rt.checked=true;if(typeof ctcType==='function')ctcType();}
  var pu=document.getElementById('ppuce');
  if(pu){pu.hidden=false;
   var pt=b.querySelector('.ptit');

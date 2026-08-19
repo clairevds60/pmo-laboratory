@@ -499,7 +499,8 @@ body.p2 [data-grp="quand"],body.p2 [data-grp="livre"],
 body.p2 [data-grp="releve"],
 body.p3 [data-grp="quand"],body.p3 [data-grp="livre"],
 body.p3 [data-grp="kit"]{display:none}
-body.p1 #ctcTypezone{display:none}
+body.p0 #ctcTypezone,body.p1 #ctcTypezone,body.p2 #ctcTypezone,
+body.p3 #ctcTypezone{display:none}
 #ctc.tf:not(.infos) .qf-info,#ctc.tf:not(.infos) #ctcSuite{display:none}
 body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
 body.p3 [data-grp],body.tout [data-grp],
@@ -674,13 +675,23 @@ var CTCS={"docs": {"Programme en dérive": {"t": "En attendant ma réponse : me
 function ctcInfos(){
  var c=document.getElementById('ctc');if(c)c.classList.add('infos');
  return false;}
+function ctcPayeClic(a){
+ /* pas encore de lien de paiement : le clic ouvre le formulaire de pre-inscription
+    au lieu de ne rien faire */
+ if(a.getAttribute('data-info')){ctcInfos();
+  var s=document.getElementById('ctcSuite');
+  if(s)s.scrollIntoView({behavior:'smooth',block:'start'});return false;}
+ return true;}
 function ctcMajPayer(){
  var b=document.getElementById('ctcPayer');if(!b)return;
  var r=document.querySelector('input[name=ctcq_formation_1]:checked');
- if(r&&r.getAttribute('data-pay')){
-  b.href=r.getAttribute('data-pay');
-  b.textContent=r.getAttribute('data-lab');b.hidden=false;}
- else{b.hidden=true;}}
+ if(!r){b.hidden=true;return;}
+ var pay=r.getAttribute('data-pay');
+ if(pay){b.href=pay;b.target='_blank';b.removeAttribute('data-info');
+  b.textContent=r.getAttribute('data-lab');}
+ else{b.href='#quand';b.removeAttribute('target');b.setAttribute('data-info','1');
+  b.textContent=r.getAttribute('data-lab0');}
+ b.hidden=false;}
 function ctcSugg(){
  ctcMajPayer();
  var z=document.getElementById('ctcSugg');if(!z)return;
@@ -733,6 +744,10 @@ function porteMaj(i,b){
   if(pu0)pu0.hidden=true;return;}
  b.setAttribute('aria-pressed','true');
  document.body.classList.add('p'+i);
+ /* la porte a qualifie le visiteur : on fixe le type de demande */
+ var tp=['mission','formation','autre','autre'][i];
+ var rt=document.querySelector('input[name=ctct][value='+tp+']');
+ if(rt){rt.checked=true;if(typeof ctcType==='function')ctcType();}
  var pu=document.getElementById('ppuce');
  if(pu){pu.hidden=false;
   var pt=b.querySelector('.ptit');
