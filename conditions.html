@@ -190,6 +190,13 @@ body{overflow-x:clip}
    color:var(--or);letter-spacing:-.5px;margin-bottom:3px;
    font-variant-numeric:tabular-nums}
 
+.mi-reco{position:relative;margin-top:20px;border-top:1px solid var(--grille);
+   padding:18px 0 0 26px}
+.mi-reco::before{content:"«";position:absolute;left:-6px;top:6px;
+   font:800 46px/1 Georgia,serif;color:var(--or);opacity:.22;pointer-events:none}
+.mi-reco p{margin:0;font-size:18px;color:var(--encre);line-height:1.55}
+.mi-reco .qui{margin-top:10px;font-size:12.5px;color:var(--muet)}
+
 /* TEMOIGNAGES EN SCENE — une rangee de boutons (les entreprises en vitrine), une
    citation a la fois. Le guillemet geant reste le decor de la scene. */
 .temo-nav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
