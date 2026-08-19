@@ -388,6 +388,13 @@ dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
 .d{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
 .d h3{margin:0 0 8px;font-size:20px}
 .d p{margin:0}
+.d.cliquable{cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,
+   background .16s ease}
+.d.cliquable:hover{background:#fbf8f1;transform:translateY(-2px);
+   box-shadow:0 10px 22px -12px rgba(141,104,24,.45)}
+.d.cliquable:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+.d .act{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
+   letter-spacing:1px;color:var(--or);margin-top:14px;font-style:normal}
 
 /* PREUVES — secteur et chiffres, jamais de nom de client. */
 .preuves{border-top:1px solid var(--grille);margin:30px 0}
@@ -435,7 +442,7 @@ footer a{color:var(--muet)}
   <div class="liens"><a class="p-in" href="https://www.linkedin.com/in/claire-vandesype" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a class="p-malt" href="https://www.malt.fr/profile/clairevandesype" rel="noopener" aria-label="Malt" title="Malt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M5.1 8l13.8 8M18.9 8 5.1 16"/></svg></a><a class="p-tel" href="tel:+33643653506" aria-label="Appeler Claire Van De Sype" title="Appeler Claire Van De Sype"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></a><a class="p-mail" onclick="return ctcOuvre('')" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Prise%20de%20contact&body=Bonjour%20Claire%2C%0A%0AObjet%20du%20contact%20%3A%20%0ANom%20%3A%20%0APr%C3%A9nom%20%3A%20%0ASoci%C3%A9t%C3%A9%20%3A%20%0AEmail%20%3A%20%0AT%C3%A9l%C3%A9phone%20%3A%20%0A%0AMon%20besoin%20en%20quelques%20lignes%20%3A%20%0A" aria-label="Écrire à claire.vandesype@pmo-laboratory.com" title="Écrire à claire.vandesype@pmo-laboratory.com"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 6.4a1.9 1.9 0 0 1 3-1.5L12 10l7-5.1a1.9 1.9 0 0 1 3 1.5V18a1.6 1.6 0 0 1-1.6 1.6H17V9.9l-5 3.6-5-3.6v9.7H3.6A1.6 1.6 0 0 1 2 18Z"/></svg></a></div>
 </header>
 
-<nav class="snav"><a href="#quand">Quand m’appeler</a><a href="#livre">Livré</a><a href="#releve">Le relevé</a><a href="#kit">À emporter</a><a href="#contact">Contact</a></nav>
+<nav class="snav"><a href="#quand">Quand m’appeler</a><a href="#livre">Livré</a><a href="#releve">Le relevé</a><a href="#kit">À emporter</a></nav>
 <div class="intro">
   <div>
     <h1>Je pilote des projets, et je <em>mesure</em> le marché qui les porte.</h1>
@@ -452,7 +459,15 @@ footer a{color:var(--muet)}
 </div>
 
 <h2 id="quand">Quand m’appeler</h2>
-<div class="decl"><div class="d"><h3>Votre programme dérape à mi-parcours</h3><p>La date de bascule approche et le plan n’est plus tenable. J’arrive en cours de route : je reconstruis un plan unique qui fait autorité, je remets un comité qui décide, et je tiens la date ou j’annonce la nouvelle assez tôt pour qu’elle soit tenable.</p></div><div class="d"><h3>Votre portefeuille est illisible</h3><p>Personne ne sait dire ce qui est en cours, ce qui est en retard, ni ce que ça coûtera. Je qualifie, je hiérarchise, je fais arbitrer — puis j’industrialise le pilotage pour que ça tienne sans moi.</p></div><div class="d"><h3>Votre budget IT n’est pas tenable</h3><p>Budget construit dans l’urgence, CAPEX et OPEX mélangés, trajectoire invérifiable. Je cadre de zéro s’il le faut, j’installe une grille d’arbitrage unique, et je sanctuarise ce qui doit aboutir.</p></div></div>
+<p>Cliquez votre situation : le message part déjà qualifié — et je vous tends l’outil qui correspond en attendant ma réponse.</p>
+<div class="decl"><div class="d cliquable" onclick="ctcOuvreSit('Programme en dérive')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Programme en dérive')"><h3>Votre programme dérape à mi-parcours</h3><p>La date de bascule approche et le plan n’est plus tenable. J’arrive en cours de route : je reconstruis un plan unique qui fait autorité, je remets un comité qui décide, et je tiens la date ou j’annonce la nouvelle assez tôt pour qu’elle soit tenable.</p><i class="act">M’écrire à ce sujet &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Portefeuille illisible')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Portefeuille illisible')"><h3>Votre portefeuille est illisible</h3><p>Personne ne sait dire ce qui est en cours, ce qui est en retard, ni ce que ça coûtera. Je qualifie, je hiérarchise, je fais arbitrer — puis j’industrialise le pilotage pour que ça tienne sans moi.</p><i class="act">M’écrire à ce sujet &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Budget à cadrer')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Budget à cadrer')"><h3>Votre budget IT n’est pas tenable</h3><p>Budget construit dans l’urgence, CAPEX et OPEX mélangés, trajectoire invérifiable. Je cadre de zéro s’il le faut, j’installe une grille d’arbitrage unique, et je sanctuarise ce qui doit aboutir.</p><i class="act">M’écrire à ce sujet &#8594;</i></div></div>
+<p>Disponible pour des missions en Île-de-France, dans les Hauts-de-France ou à distance. Décrivez le contexte en trois lignes : je vous dis franchement si je suis la bonne personne.</p>
+
+<div class="gestes">
+  <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
+  <a class="cta2" href="dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier technique — FR (PDF)</a>
+  <a class="cta2" href="dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier technique — EN (PDF)</a>
+</div>
 
 <h2>Ce que je fais</h2>
 <p>J’interviens sur des projets qui ont besoin d’un pilote, pas d’un observateur.</p>
@@ -510,15 +525,6 @@ function calcMaj(i,b){
 
 <h2>Comment on démarre</h2>
 <div class="etapes"><div class="et"><div class="n">1</div><h3>Un appel de 30 minutes</h3><p>Vous décrivez le contexte. Je vous dis franchement si je suis la bonne personne — et si je ne le suis pas, je vous le dis aussi.</p></div><div class="et"><div class="n">2</div><h3>Une proposition écrite</h3><p>Périmètre, gouvernance, livrables — et un TJM aligné sur le marché que je mesure chaque jour, pas sur une grille opaque.</p></div><div class="et"><div class="n">3</div><h3>Le pilotage démarre</h3><p>Sur site ou à distance. Premier livrable : un état des lieux qui fait autorité — ce qui est en cours, en risque, à décider.</p></div></div>
-
-<h2 id="contact">Travailler ensemble</h2>
-<p>Disponible pour des missions en Île-de-France, dans les Hauts-de-France ou à distance. Décrivez le contexte en trois lignes : je vous dis franchement si je suis la bonne personne.</p>
-
-<div class="gestes">
-  <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
-  <a class="cta2" href="dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier technique — FR (PDF)</a>
-  <a class="cta2" href="dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier technique — EN (PDF)</a>
-</div>
 
 </div>
 <footer class="pied">
@@ -613,6 +619,14 @@ function ctcType(){
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
  var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
  ctcSugg();}
+function ctcOuvreSit(sit){
+ var d=document.getElementById('ctc');if(!d||!d.showModal)return;
+ CTC.offre="";
+ document.querySelector('input[name=ctct][value=mission]').checked=true;
+ ctcType();
+ var os=document.querySelectorAll('#qb-mission input');
+ for(var i=0;i<os.length;i++)os[i].checked=(os[i].value===sit);
+ ctcSugg();d.showModal();}
 function ctcOuvre(offre){
  var d=document.getElementById('ctc');if(!d||!d.showModal)return true;
  CTC.offre=offre||"";

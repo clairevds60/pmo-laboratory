@@ -388,6 +388,13 @@ dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
 .d{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
 .d h3{margin:0 0 8px;font-size:20px}
 .d p{margin:0}
+.d.cliquable{cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,
+   background .16s ease}
+.d.cliquable:hover{background:#fbf8f1;transform:translateY(-2px);
+   box-shadow:0 10px 22px -12px rgba(141,104,24,.45)}
+.d.cliquable:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+.d .act{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
+   letter-spacing:1px;color:var(--or);margin-top:14px;font-style:normal}
 
 /* PREUVES — secteur et chiffres, jamais de nom de client. */
 .preuves{border-top:1px solid var(--grille);margin:30px 0}
@@ -539,6 +546,14 @@ function ctcType(){
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
  var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
  ctcSugg();}
+function ctcOuvreSit(sit){
+ var d=document.getElementById('ctc');if(!d||!d.showModal)return;
+ CTC.offre="";
+ document.querySelector('input[name=ctct][value=mission]').checked=true;
+ ctcType();
+ var os=document.querySelectorAll('#qb-mission input');
+ for(var i=0;i<os.length;i++)os[i].checked=(os[i].value===sit);
+ ctcSugg();d.showModal();}
 function ctcOuvre(offre){
  var d=document.getElementById('ctc');if(!d||!d.showModal)return true;
  CTC.offre=offre||"";
