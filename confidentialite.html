@@ -513,6 +513,10 @@ body.p1 .snav{display:none}
 body.p2 .snav a:not([href="#kit"]),
 body.p3 .snav a:not([href="#releve"]){display:none}
 /* les titres d'entree du flux : un seul visible */
+.fin{display:none;margin-top:44px}
+body:not(.p0):not(.p1):not(.p2):not(.p3) .fin-def,
+body.p0 .fin-p0,body.p1 .fin-p1,body.p2 .fin-p2,
+body.p3 .fin-p3{display:block}
 .ft{display:none;margin:0 0 14px}
 body:not(.p0):not(.p1):not(.p2):not(.p3) .ft-def,
 body.p0 .ft-p0,body.p1 .ft-p1,body.p2 .ft-p2,body.p3 .ft-p3{display:block}
@@ -728,6 +732,9 @@ function ctcType(){
  var bs=document.querySelectorAll('#ctc .qbloc');
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
  var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
+ var cl=document.body.classList;
+ ['p2','p3'].forEach(function(p){if(cl.contains(p)){
+   var q=document.getElementById('qb-'+p);if(q)q.classList.add('on');}});
  var es=document.querySelectorAll('#ctc .etbloc');
  for(var j=0;j<es.length;j++)es[j].classList.remove('on');
  var e=document.getElementById('et-'+t);if(e)e.classList.add('on');
@@ -780,6 +787,9 @@ document.addEventListener('DOMContentLoaded',function(){
  var grp=null,ks=page.children,i,el,h;
  for(i=0;i<ks.length;i++){el=ks[i];
   if(el.id==='fluxwrap'){el.setAttribute('data-grp','flux');continue;}
+  /* la cloture n'appartient a AUCUNE section : elle est choisie par le parcours,
+     sinon elle heriterait du groupe de la derniere section et disparaitrait */
+  if(el.classList.contains('fin')){continue;}
   h=(el.tagName==='H2')?el:(el.querySelector?el.querySelector('h2[id]'):null);
   if(h&&h.id)grp=h.id;
   if(grp)el.setAttribute('data-grp',grp);}
