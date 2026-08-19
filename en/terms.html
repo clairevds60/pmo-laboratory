@@ -537,13 +537,12 @@ function ctcReveal(){
  setTimeout(function(){w.scrollIntoView({behavior:'smooth',block:'start'});},80);
  return true;}
 function ctcOuvreSit(sit){
+ // demande de Claire : la SITUATION n'est jamais pre-cochee — c'est au visiteur de
+ // la choisir. La carte ne fait qu'ouvrir le flux en mode mission.
  if(!ctcReveal())return;
  CTC.offre="";
  document.querySelector('input[name=ctct][value=mission]').checked=true;
- ctcType();
- var os=document.querySelectorAll('#qb-mission input');
- for(var i=0;i<os.length;i++)os[i].checked=(os[i].value===sit);
- ctcSugg();}
+ ctcType();}
 function ctcOuvre(offre){
  if(!ctcReveal())return true;
  CTC.offre=offre||"";
