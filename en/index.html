@@ -377,6 +377,30 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
    width:38px;height:38px;cursor:pointer;font-size:18px;line-height:1}
 .car-fl button:hover{border-color:var(--or)}
 
+/* LES PORTES D'ORIENTATION — le jeu de piste du héros. Une couche d'orientation,
+   pas une barrière : la page reste entièrement lisible dessous. */
+.portes-q{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
+   text-transform:uppercase;color:var(--muet);margin:26px 0 10px}
+.portes{display:flex;flex-wrap:wrap;gap:8px}
+.portes button{border:1px solid var(--grille);background:var(--fond);
+   color:var(--encre2);padding:13px 18px;cursor:pointer;font-size:14px;
+   font-weight:700;font-family:inherit;
+   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.portes button:hover{border-color:var(--or);transform:translateY(-2px);
+   box-shadow:0 8px 18px -10px rgba(141,104,24,.5)}
+.portes button[aria-pressed="true"]{border-color:var(--or);color:var(--encre);
+   box-shadow:inset 0 -3px 0 var(--or)}
+.pp{overflow:hidden;max-height:0;opacity:0;transform:translateY(10px);
+   transition:max-height .5s ease,opacity .4s ease .06s,transform .4s ease .06s}
+.pp.on{max-height:400px;opacity:1;transform:none}
+.pp p{margin:16px 0 4px;color:var(--encre)}
+.pp .gestes{margin-top:10px}
+.cta-mini{display:inline-flex;align-items:center;background:var(--or);color:#fff;
+   font-weight:700;font-size:14px;padding:12px 18px;border-bottom:0;
+   transition:transform .15s ease,box-shadow .15s ease}
+.cta-mini:hover{filter:brightness(.92);transform:translateY(-2px);border-bottom:0;
+   box-shadow:0 8px 18px -10px rgba(141,104,24,.55)}
+
 /* SELECTEUR DE LANGUE en haut à droite */
 .langues{display:flex;gap:8px;flex:none;padding-top:2px}
 .langues a,.langues span{display:inline-flex;align-items:center;gap:7px;
@@ -487,10 +511,7 @@ footer a{color:var(--muet)}
 <p class="chapeau">Independent consultant in project direction, PMO and project finance, 12 years of experience. Every morning I record the project-management assignments published in France — here is what the market says today.</p>
 
 <div class="bande-preuve"><span>12 years of experience</span><i>&middot;</i><span>€150M+ of IT budgets managed</span><i>&middot;</i><span>500+ projects steered</span><i>&middot;</i><span>10+ industries</span></div><div class="dispo">Available for a new assignment</div>
-<div class="gestes">
-  <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a>
-  <a class="cta2" href="#livre">See what I have delivered</a>
-</div>
+<div class="portes-q">What brings you here?</div><div class="portes"><button type="button" aria-pressed="false" onclick="porteMaj(0,this)">A steering problem to solve</button><button type="button" aria-pressed="false" onclick="porteMaj(1,this)">Train myself, or my team</button><button type="button" aria-pressed="false" onclick="porteMaj(2,this)">Tool up my portfolio</button><button type="button" aria-pressed="false" onclick="porteMaj(3,this)">Consultant: receive assignments</button></div><div class="pp" id="pp-0"><p>That is what I have done for twelve years — and I am available.</p><div class="gestes"><a class="cta-mini" href="#quand">Pick my situation</a><a class="doc" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a><a class="doc" href="#livre">See what I delivered</a></div></div><div class="pp" id="pp-1"><p>Four video modules with exercise workbooks, built on my field method. First modules being recorded.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvreForm()">Offers and pre-registration</a><a class="doc" href="../kit/cahier-extrait-en.pdf" download>Taste it: the workbook excerpt</a><a class="doc" href="../kit/formation-pilotage-en.pdf" download>The programme</a></div></div><div class="pp" id="pp-2"><p>The templates are already here, free. The online PPM tool is in the making — your data will stay with you.</p><div class="gestes"><a class="cta-mini" href="#kit">The toolbox</a><a class="doc" href="#quand" onclick="return ctcOuvre('')">Be told at launch</a></div></div><div class="pp" id="pp-3"><p>SKARAB, in the making: every day I come across assignments I do not take. I will bring them to trusted consultants, within a written and transparent framework.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvre('')">Join the opening list</a><a class="doc" href="#releve">The market record</a></div></div>
 
 <h2 id="quand">When to call me</h2>
 <p>Click your situation: the message leaves already qualified — and you get the matching tool while waiting for my reply.</p>
@@ -661,6 +682,15 @@ function ctcType(){
  for(var j=0;j<es.length;j++)es[j].classList.remove('on');
  var e=document.getElementById('et-'+t);if(e)e.classList.add('on');
  ctcSugg();}
+function porteMaj(i,b){
+ var ps=document.querySelectorAll('.pp');
+ var deja=b.getAttribute('aria-pressed')==='true';
+ var bs=b.parentNode.querySelectorAll('button');
+ for(var j=0;j<bs.length;j++)bs[j].setAttribute('aria-pressed','false');
+ for(var k=0;k<ps.length;k++)ps[k].classList.remove('on');
+ if(deja)return;
+ b.setAttribute('aria-pressed','true');
+ var p=document.getElementById('pp-'+i);if(p)p.classList.add('on');}
 function ctcReveal(){
  var w=document.getElementById('fluxwrap');if(!w)return false;
  w.classList.add('on');
