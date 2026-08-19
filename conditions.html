@@ -389,7 +389,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 /* LES PORTES D'ORIENTATION — le jeu de piste du héros. Une couche d'orientation,
    pas une barrière : la page reste entièrement lisible dessous. */
 .portes-q{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:var(--muet);margin:34px 0 12px}
+   text-transform:uppercase;color:var(--muet);margin:22px 0 10px}
+/* L'ARRIVEE EST DENSE : l'identite complete DOIT tenir au-dessus des portes.
+   body.garde n'existe que sur l'accueil (pose par le JS la ou il y a des portes). */
+body.garde h1{font-size:clamp(30px,4vw,44px);margin:20px 0 0}
+body.garde .intro{margin-top:16px;gap:26px;grid-template-columns:1fr 186px}
+@media (max-width:700px){body.garde .intro{grid-template-columns:1fr}}
+body.garde .chapeau{font-size:18px;margin-top:16px}
+body.garde .bande-preuve{margin-top:14px}
+body.garde .dispo{margin-top:12px}
+/* LA PREUVE AVANT LE CHOIX : les logos de ses clients (sans les noms) et une
+   phrase de recommandation. C'est ce qui doit etre lu avant de cliquer. */
+.hero-preuves{margin-top:16px;padding-top:14px;border-top:1px solid var(--grille)}
+.hp-t{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
+   text-transform:uppercase;color:var(--muet);margin-bottom:10px}
+.hp-rail{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.hp-rail img{height:22px;width:auto;object-fit:contain;
+   filter:grayscale(1);opacity:.62;transition:opacity .2s ease,filter .2s ease}
+.hp-rail img:hover{filter:none;opacity:1}
+.hero-reco{margin:14px 0 0;padding-left:16px;border-left:3px solid var(--or);
+   font-size:16px;line-height:1.45;color:var(--encre)}
+.hero-reco span{display:block;margin-top:7px;font-size:12.5px;color:var(--muet);
+   font-family:'Consolas',ui-monospace,monospace;letter-spacing:.5px}
+@media (max-width:700px){.hp-rail img{height:22px}.hero-reco{font-size:15.5px}}
 .portes-i{font-weight:500;letter-spacing:0;text-transform:none;
    font-family:inherit;font-size:13px;color:var(--muet)}
 .portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
@@ -428,6 +450,10 @@ body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) .page{
    padding-bottom:48px}
 body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) footer.pied{
    display:none}
+/* le menu des sections n'a de sens qu'une fois un parcours ouvert : avant le
+   choix, l'arrivee ne montre que l'identite et les portes */
+body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) .snav{
+   display:none}
 .ptout{margin:12px 0 0;text-align:right}
 .ptout a{font-size:12.5px;color:var(--muet);border-bottom:1px solid var(--grille)}
 .ptout a:hover{color:var(--encre);border-color:var(--or)}
@@ -444,10 +470,18 @@ body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) footer.pied{
 /* ecrans peu hauts (portables 768) : l'ecran d'arrivee se compacte pour tenir
    sans ascenseur — uniquement du rythme vertical, rien ne disparait */
 @media (min-width:900px) and (max-height:820px){
-   h1{font-size:clamp(30px,4.6vw,46px);margin-top:20px}
-   .portes-q{margin:20px 0 10px}
-   .portes button{min-height:92px;padding:13px 44px 11px 16px}
+   h1{font-size:clamp(30px,4.6vw,40px);margin-top:8px}
+   .portes-q{margin:10px 0 8px}
+   .portes button{min-height:88px;padding:12px 44px 10px 16px}
    .pilules{margin-top:10px}
+   body.garde .intro{margin-top:12px;grid-template-columns:1fr 168px}
+   body.garde .chapeau{font-size:17px;margin-top:12px}
+   body.garde .bande-preuve{margin-top:10px}
+   body.garde .dispo{margin-top:8px}
+   .hero-preuves{margin-top:12px;padding-top:12px}
+   .hp-t{margin-bottom:8px}
+   .hp-rail img{height:20px}
+   .hero-reco{margin-top:10px;font-size:15px}
 }
 /* cibles tactiles : tout lien du pied de page et le selecteur de langue font
    au moins 34 px de haut au doigt, sans bouger la maquette */
