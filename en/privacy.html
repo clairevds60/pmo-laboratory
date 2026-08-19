@@ -403,15 +403,18 @@ body.garde .dispo{margin-top:12px}
 .hero-preuves{margin-top:16px;padding-top:14px;border-top:1px solid var(--grille)}
 .hp-t{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
    text-transform:uppercase;color:var(--muet);margin-bottom:10px}
-.hp-rail{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
-.hp-rail img{height:22px;width:auto;object-fit:contain;
+.hp-rail{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;--k:1}
+/* MEME BOITE pour tous : un logo large est borne par la largeur, un logo carre
+   par la hauteur — c'est ce qui egalise la presence de chaque marque */
+.hp-rail img{width:calc(var(--lw)*var(--k));height:calc(var(--lh)*var(--k));
+   object-fit:contain;object-position:left center;
    filter:grayscale(1);opacity:.62;transition:opacity .2s ease,filter .2s ease}
 .hp-rail img:hover{filter:none;opacity:1}
 .hero-reco{margin:14px 0 0;padding-left:16px;border-left:3px solid var(--or);
    font-size:16px;line-height:1.45;color:var(--encre)}
 .hero-reco span{display:block;margin-top:7px;font-size:12.5px;color:var(--muet);
    font-family:'Consolas',ui-monospace,monospace;letter-spacing:.5px}
-@media (max-width:700px){.hp-rail img{height:22px}.hero-reco{font-size:15.5px}}
+@media (max-width:700px){.hp-rail{--k:.82}.hero-reco{font-size:15.5px}}
 .portes-i{font-weight:500;letter-spacing:0;text-transform:none;
    font-family:inherit;font-size:13px;color:var(--muet)}
 .portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
@@ -480,7 +483,7 @@ body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) .snav{
    body.garde .dispo{margin-top:8px}
    .hero-preuves{margin-top:12px;padding-top:12px}
    .hp-t{margin-bottom:8px}
-   .hp-rail img{height:20px}
+   .hp-rail{--k:.9}
    .hero-reco{margin-top:10px;font-size:15px}
 }
 /* cibles tactiles : tout lien du pied de page et le selecteur de langue font
