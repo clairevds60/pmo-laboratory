@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Politique de confidentialité — pmo-laboratory.com</title>
-<meta name="description" content="Politique de confidentialité pmo-laboratory.com.">
+<meta name="description" content="Politique de confidentialité de pmo-laboratory.com : données collectées, mesure d'audience, hébergement et vos droits.">
 <link rel="canonical" href="https://pmo-laboratory.com/confidentialite.html">
 <link rel="alternate" hreflang="fr" href="https://pmo-laboratory.com/confidentialite.html">
 <link rel="alternate" hreflang="en" href="https://pmo-laboratory.com/en/privacy.html">
@@ -14,14 +14,14 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Claire Van De Sype">
 <meta property="og:title" content="Politique de confidentialité — pmo-laboratory.com">
-<meta property="og:description" content="Politique de confidentialité pmo-laboratory.com.">
+<meta property="og:description" content="Politique de confidentialité de pmo-laboratory.com : données collectées, mesure d'audience, hébergement et vos droits.">
 <meta property="og:url" content="https://pmo-laboratory.com/confidentialite.html">
 <meta property="og:image" content="https://pmo-laboratory.com/partage.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Politique de confidentialité — pmo-laboratory.com">
-<meta name="twitter:description" content="Politique de confidentialité pmo-laboratory.com.">
+<meta name="twitter:description" content="Politique de confidentialité de pmo-laboratory.com : données collectées, mesure d'audience, hébergement et vos droits.">
 <meta name="twitter:image" content="https://pmo-laboratory.com/partage.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Consultante PMO & direction de projet — Claire Van De Sype","url":"https://pmo-laboratory.com/","email":"claire.vandesype@pmo-laboratory.com","telephone":"+33 6 43 65 35 06","sameAs":["https://www.linkedin.com/in/claire-vandesype","https://www.malt.fr/profile/clairevandesype"],"inLanguage":"fr","areaServed":["Île-de-France","Hauts-de-France","France"],"knowsAbout":["direction de projet","PMO","gouvernance de portefeuille","pilotage financier de projet","conduite du changement"],"founder":{"@type":"Person","name":"Claire Van De Sype","jobTitle":"PMO · direction de projet","sameAs":["https://www.linkedin.com/in/claire-vandesype"]}}</script>
 <style>
@@ -158,11 +158,12 @@ footer.pied .filet{background:#d8b25e;width:80px;height:4px;margin:14px 0 0}
 footer.pied h4{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
    text-transform:uppercase;color:#8f887b;margin:0 0 12px}
 footer.pied a{display:block;color:#e8e2d5;border-bottom:0;font-size:14px;
-   padding:4px 0}
+   padding:8px 0}
 footer.pied a:hover{color:#d8b25e}
 footer.pied .bas{margin-top:40px;padding-top:18px;border-top:1px solid #3a362f;
    font-size:12.5px;color:#8f887b;display:flex;flex-wrap:wrap;gap:8px 26px}
-footer.pied .bas a{display:inline;color:#8f887b;font-size:12.5px;padding:0}
+footer.pied .bas a{display:inline-block;color:#8f887b;font-size:12.5px;
+   padding:7px 0}
 footer.pied .bas a:hover{color:#d8b25e}
 
 /* FINITIONS */
@@ -422,6 +423,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
    separe les cartes du pied de page sombre */
 body.garde:not(.p0):not(.p1):not(.p2):not(.p3) .page{
    padding-bottom:min(24vh,230px)}
+/* cibles tactiles : tout lien du pied de page et le selecteur de langue font
+   au moins 34 px de haut au doigt, sans bouger la maquette */
 /* LE PORTAIL : sous le heros, rien ne s'affiche avant le choix d'une porte ;
    la selection revele les groupes de SON parcours, en fondu. Les compteurs CSS
    ne comptent pas les sections masquees : la numerotation suit le parcours. */
@@ -431,8 +434,9 @@ body.p0 [data-grp="releve"],body.p0 [data-grp="kit"],
 body.p1 [data-grp="flux"],body.p1 [data-grp="livre"],body.p1 [data-grp="kit"],
 body.p2 [data-grp="flux"],body.p2 [data-grp="kit"],
 body.p3 [data-grp="flux"],body.p3 [data-grp="releve"]{display:revert}
+body.garde [data-grp].gvu{display:revert}
 body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
-body.p3 [data-grp]{animation:pdevoile .55s ease both}
+body.p3 [data-grp],body.garde [data-grp].gvu{animation:pdevoile .55s ease both}
 @keyframes pdevoile{from{opacity:0;transform:translateY(16px)}
    to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
@@ -452,7 +456,7 @@ body.p3 [data-grp]{animation:pdevoile .55s ease both}
 /* SELECTEUR DE LANGUE en haut à droite */
 .langues{display:flex;gap:8px;flex:none;padding-top:2px}
 .langues a,.langues span{display:inline-flex;align-items:center;gap:7px;
-        border:1px solid var(--grille);padding:6px 10px;color:var(--muet);
+        border:1px solid var(--grille);padding:11px 10px;color:var(--muet);
         font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1px}
 .langues a:hover{border-color:var(--or);color:var(--encre)}
 .langues .on{border-color:var(--or);color:var(--encre)}
@@ -628,6 +632,8 @@ function porteMaj(i,b){
  for(var j=0;j<bs.length;j++)bs[j].setAttribute('aria-pressed','false');
  for(var k=0;k<ps.length;k++)ps[k].classList.remove('on');
  document.body.classList.remove('p0','p1','p2','p3');
+ var vs=document.querySelectorAll('.gvu');
+ for(var m=0;m<vs.length;m++)vs[m].classList.remove('gvu');
  if(deja)return;
  b.setAttribute('aria-pressed','true');
  document.body.classList.add('p'+i);
@@ -645,7 +651,19 @@ document.addEventListener('DOMContentLoaded',function(){
   h=(el.tagName==='H2')?el:(el.querySelector?el.querySelector('h2[id]'):null);
   if(h&&h.id)grp=h.id;
   if(grp)el.setAttribute('data-grp',grp);}
- document.body.classList.add('garde');});
+ document.body.classList.add('garde');
+ /* un lien interne vers une section gardee la revele (pied de page, CTA) ;
+    defaultPrevented = lien deja gere en JS, on ne revele rien par accident */
+ document.addEventListener('click',function(ev){
+  if(ev.defaultPrevented)return;
+  var a=ev.target.closest?ev.target.closest('a[href^="#"]'):null;
+  if(!a)return;
+  var id=a.getAttribute('href').slice(1);if(!id)return;
+  var c=document.getElementById(id);if(!c)return;
+  var g=c.closest('[data-grp]');if(!g)return;
+  var grp=g.getAttribute('data-grp');
+  var els=document.querySelectorAll('[data-grp="'+grp+'"]');
+  for(var i=0;i<els.length;i++)els[i].classList.add('gvu');});});
 function ctcReveal(){
  var w=document.getElementById('fluxwrap');if(!w)return false;
  w.classList.add('on');
