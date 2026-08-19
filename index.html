@@ -439,6 +439,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
       padding:15px 26px;background:var(--fond);cursor:pointer;font-size:18px;
       font-family:inherit}
 .cta2:hover{background:#fbf8f1;border-bottom-color:var(--or)}
+/* JETONS DOCUMENTS — legers a cote du geste principal : la hierarchie se lit,
+   le telechargement reste a un clic. */
+.gestes .doc{display:inline-flex;align-items:center;gap:9px;
+   border:1px solid var(--grille);border-bottom:1px solid var(--grille);
+   color:var(--encre2);font:600 12.5px/1 'Consolas',ui-monospace,monospace;
+   letter-spacing:.6px;padding:13px 16px;
+   transition:transform .15s ease,border-color .15s ease,color .15s ease}
+.gestes .doc::after{content:"↓";color:var(--or);font-size:14px}
+.gestes .doc:hover{border-color:var(--or);color:var(--encre);transform:translateY(-2px)}
 footer{margin:86px 0 60px;padding-top:26px;border-top:1px solid var(--grille);
        font-size:14px;color:var(--muet)}
 footer a{color:var(--muet)}
@@ -521,8 +530,8 @@ footer a{color:var(--muet)}
 
 <div class="gestes">
   <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
-  <a class="cta2" href="dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier technique — FR (PDF)</a>
-  <a class="cta2" href="dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier technique — EN (PDF)</a>
+  <a class="doc" href="dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier technique FR</a>
+  <a class="doc" href="dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier technique EN</a>
 </div>
 
 <h2>Ce que je fais</h2>
@@ -605,8 +614,8 @@ Le premier pas tient en trente minutes — et si je ne suis pas la bonne personn
     </div>
     <div>
       <h4>Documents</h4>
-      <a href="dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier technique — FR (PDF)</a>
-      <a href="dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier technique — EN (PDF)</a>
+      <a href="dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier technique FR</a>
+      <a href="dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier technique EN</a>
       <a href="releve/le-releve.pdf" download>Le relevé du marché</a>
     </div>
   </div>

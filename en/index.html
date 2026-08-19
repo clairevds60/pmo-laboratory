@@ -439,6 +439,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
       padding:15px 26px;background:var(--fond);cursor:pointer;font-size:18px;
       font-family:inherit}
 .cta2:hover{background:#fbf8f1;border-bottom-color:var(--or)}
+/* JETONS DOCUMENTS — legers a cote du geste principal : la hierarchie se lit,
+   le telechargement reste a un clic. */
+.gestes .doc{display:inline-flex;align-items:center;gap:9px;
+   border:1px solid var(--grille);border-bottom:1px solid var(--grille);
+   color:var(--encre2);font:600 12.5px/1 'Consolas',ui-monospace,monospace;
+   letter-spacing:.6px;padding:13px 16px;
+   transition:transform .15s ease,border-color .15s ease,color .15s ease}
+.gestes .doc::after{content:"↓";color:var(--or);font-size:14px}
+.gestes .doc:hover{border-color:var(--or);color:var(--encre);transform:translateY(-2px)}
 footer{margin:86px 0 60px;padding-top:26px;border-top:1px solid var(--grille);
        font-size:14px;color:var(--muet)}
 footer a{color:var(--muet)}
@@ -521,8 +530,8 @@ footer a{color:var(--muet)}
 <div class="note">A word on language: my written English is fully professional (documentation, reporting, specifications, written committees). My spoken English is professional but not bilingual — worth knowing before a call.</div>
 <div class="gestes">
   <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a>
-  <a class="cta2" href="../dt/DT_Claire_VanDeSype_FR.pdf" download>Capability dossier — French (PDF)</a>
-  <a class="cta2" href="../dt/DT_Claire_VanDeSype_EN.pdf" download>Capability dossier — English (PDF)</a>
+  <a class="doc" href="../dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier FR</a>
+  <a class="doc" href="../dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier EN</a>
 </div>
 
 <h2>What I do</h2>
@@ -605,8 +614,8 @@ The first step takes thirty minutes — and if I am not the right person, I will
     </div>
     <div>
       <h4>Documents</h4>
-      <a href="../dt/DT_Claire_VanDeSype_FR.pdf" download>Capability dossier — French (PDF)</a>
-      <a href="../dt/DT_Claire_VanDeSype_EN.pdf" download>Capability dossier — English (PDF)</a>
+      <a href="../dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier FR</a>
+      <a href="../dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier EN</a>
       <a href="../releve/le-releve.pdf" download>The market record</a>
     </div>
   </div>
