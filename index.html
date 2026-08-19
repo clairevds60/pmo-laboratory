@@ -415,7 +415,8 @@ dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
      padding:16px 30px;border:0;border-bottom:0}
 .cta:hover{filter:brightness(.92);border-bottom:0}
 .cta2{display:inline-block;border:1px solid var(--or);color:var(--or);font-weight:700;
-      padding:15px 26px}
+      padding:15px 26px;background:var(--fond);cursor:pointer;font-size:18px;
+      font-family:inherit}
 .cta2:hover{background:#fbf8f1;border-bottom-color:var(--or)}
 footer{margin:86px 0 60px;padding-top:26px;border-top:1px solid var(--grille);
        font-size:14px;color:var(--muet)}
@@ -491,7 +492,7 @@ for(var j=0;j<bs.length;j++)bs[j].setAttribute("aria-pressed","false");
 b.setAttribute("aria-pressed","true");
 }
 </script>
-<p class="legende">Le dossier technique complet — douze missions, secteurs, méthodes et outils — est téléchargeable en bas de page, en français ou en anglais.</p>
+<p class="legende">Le dossier technique complet — parcours détaillé, méthodes et outils — est téléchargeable en tête et en pied de page, en français ou en anglais.</p>
 
 <h2 id="releve">Le relevé</h2>
 <p>Le relevé est ma veille, rendue publique. Je collecte chaque jour les annonces de missions de pilotage, je suis chacune jusqu’à sa disparition, et j’en publie les chiffres — tarifs, durée de vie, télétravail, territoires.</p>
@@ -525,6 +526,13 @@ function calcMaj(i,b){
 
 <h2>Comment on démarre</h2>
 <div class="etapes"><div class="et"><div class="n">1</div><h3>Un appel de 30 minutes</h3><p>Vous décrivez le contexte. Je vous dis franchement si je suis la bonne personne — et si je ne le suis pas, je vous le dis aussi.</p></div><div class="et"><div class="n">2</div><h3>Une proposition écrite</h3><p>Périmètre, gouvernance, livrables — et un TJM aligné sur le marché que je mesure chaque jour, pas sur une grille opaque.</p></div><div class="et"><div class="n">3</div><h3>Le pilotage démarre</h3><p>Sur site ou à distance. Premier livrable : un état des lieux qui fait autorité — ce qui est en cours, en risque, à décider.</p></div></div>
+
+<p class="chapeau" style="margin-top:44px"><strong>Prêt·e à démarrer ?</strong>
+Le premier pas tient en trente minutes — et si je ne suis pas la bonne personne, je vous le dis pendant l’appel.</p>
+<div class="gestes">
+  <a class="cta" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a>
+  <button type="button" class="cta2" onclick="ctcOuvre('')">M’écrire</button>
+</div>
 
 </div>
 <footer class="pied">
