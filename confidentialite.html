@@ -776,6 +776,12 @@ function porteMaj(i,b){
  if(pu){pu.hidden=false;
   var pt=b.querySelector('.ptit');
   document.getElementById('ppuce-t').textContent=pt?pt.textContent:'';}
+ /* une porte « directe » n'a pas de piste : on amene a sa section, en haut */
+ var vers=b.getAttribute('data-vers');
+ if(vers){var c=document.getElementById(vers);
+  if(c)setTimeout(function(){
+    c.scrollIntoView({behavior:'smooth',block:'start'});},220);
+  return;}
  var p=document.getElementById('pp-'+i);if(p){p.classList.add('on');
   setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'nearest'});},180);}}
 /* LE PORTAIL : pose par le JS seulement -> sans JS (moteurs, lecteurs), tout reste
