@@ -518,6 +518,8 @@ body:not(.p0):not(.p1):not(.p2):not(.p3) .fin-def,
 body.p0 .fin-p0,body.p1 .fin-p1,body.p2 .fin-p2,
 body.p3 .fin-p3{display:block}
 .ft{display:none;margin:0 0 14px}
+.fi{display:none;margin:0 0 20px;color:var(--encre2);max-width:66ch}
+body.p3 .fi-p3{display:block}
 body:not(.p0):not(.p1):not(.p2):not(.p3) .ft-def,
 body.p0 .ft-p0,body.p1 .ft-p1,body.p2 .ft-p2,body.p3 .ft-p3{display:block}
 .ctc .ft{font-size:clamp(21px,2.6vw,27px);border-top:0;padding-top:0}
@@ -779,9 +781,11 @@ function porteMaj(i,b){
   document.getElementById('ppuce-t').textContent=pt?pt.textContent:'';}
  /* une porte « directe » n'a pas de piste : on amene a sa section, en haut */
  var vers=b.getAttribute('data-vers');
- if(vers){var c=document.getElementById(vers);
+ if(vers){
+  if(vers==='fluxwrap'||vers==='offres'){ctcReveal();}
+  var c=document.getElementById(vers);
   if(c)setTimeout(function(){
-    c.scrollIntoView({behavior:'smooth',block:'start'});},220);
+    c.scrollIntoView({behavior:'smooth',block:'start'});},240);
   return;}
  var p=document.getElementById('pp-'+i);if(p){p.classList.add('on');
   setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'nearest'});},180);}}
