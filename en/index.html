@@ -286,10 +286,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 
 /* FENETRE DE CONTACT — le formulaire QUALIFIANT. Rien ne part vers le site :
    il fabrique l'email chez le visiteur. */
-dialog.ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
-   padding:30px 30px 24px;max-width:520px;width:92vw;background:var(--fond);
-   color:var(--encre)}
-dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
+.fluxwrap{overflow:hidden;max-height:0;opacity:0;transform:translateY(16px);
+   transition:max-height .6s ease,opacity .5s ease .08s,transform .5s ease .08s}
+.fluxwrap.on{max-height:2800px;opacity:1;transform:none}
+.ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
+   padding:30px 30px 24px;background:#fdfcf9;color:var(--encre);margin:26px 0 6px}
+.ctc .etapes{margin:12px 0 26px;border-color:var(--grille)}
+.ctc .et{padding:14px 16px;background:var(--fond)}
+.ctc .et .n{font-size:20px}
+.ctc .et h3{margin:8px 0 4px;font-size:14px}
+.ctc .et p{font-size:12.5px}
 .ctc h3{margin:0 0 16px;font-size:20px}
 .ctc .types{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
 .ctc .types label{border:1px solid var(--grille);padding:9px 14px;cursor:pointer;
@@ -325,8 +331,6 @@ dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
 .ctc .app svg{width:20px;height:20px;flex:none}
 .ctc .defaut{font-size:12.5px;color:var(--muet);margin:12px 0 0;text-align:center}
 .ctc .defaut a{color:var(--muet)}
-.ctc .fermer{position:absolute;top:10px;right:14px;border:0;background:none;
-   font-size:20px;cursor:pointer;color:var(--muet)}
 .ctc .note-priv{font-size:12.5px;color:var(--muet);margin:14px 0 0}
 
 /* NAVIGATION COLLANTE — composant transpose de chanel.com : chaque section est a un
@@ -462,6 +466,39 @@ footer a{color:var(--muet)}
 <h2 id="quand">When to call me</h2>
 <p>Click your situation: the message leaves already qualified — and you get the matching tool while waiting for my reply.</p>
 <div class="decl"><div class="d cliquable" onclick="ctcOuvreSit('Slipping programme')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Slipping programme')"><h3>Your programme is slipping mid-course</h3><p>The go-live date is approaching and the plan no longer holds. I come in mid-flight: I rebuild a single authoritative plan, restore a steering committee that actually decides, and either hold the date or call the new one early enough to be credible.</p><i class="act">Write to me about this &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Unreadable portfolio')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Unreadable portfolio')"><h3>Your portfolio is unreadable</h3><p>Nobody can say what is running, what is late, or what it will cost. I qualify, prioritise and get decisions made — then industrialise the governance so it holds without me.</p><i class="act">Write to me about this &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Budget to frame')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Budget to frame')"><h3>Your IT budget does not hold</h3><p>A budget built under pressure, CAPEX and OPEX mixed, a roadmap nobody can verify. I frame it from scratch if needed, install a single arbitration grid, and ring-fence what has to land.</p><i class="act">Write to me about this &#8594;</i></div></div>
+<div class="fluxwrap" id="fluxwrap"><div class="ctc" id="ctc" onchange="ctcSugg()">
+  <div class="etq">What happens next, in three steps:</div>
+  <div class="etapes"><div class="et"><div class="n">1</div><h3>A 30-minute call</h3><p>You describe the context. I tell you plainly whether I am the right person — and if I am not, I say that too.</p></div><div class="et"><div class="n">2</div><h3>A written proposal</h3><p>Scope, governance, deliverables — and a day rate aligned with the market I measure daily, not an opaque price grid.</p></div><div class="et"><div class="n">3</div><h3>Steering begins</h3><p>On site or remote. First deliverable: a state of play that holds authority — what is running, at risk, and to be decided.</p></div></div>
+  <h3>Tell me more — the message will leave already qualified</h3>
+  <div class="etq">Your request is about:</div>
+  <div class="types" id="ctcTypes">
+    <label><input type="radio" name="ctct" value="mission" checked
+           onchange="ctcType()">A steering assignment</label>
+    <label><input type="radio" name="ctct" value="formation"
+           onchange="ctcType()">Training</label>
+    <label><input type="radio" name="ctct" value="autre"
+           onchange="ctcType()">Something else</label>
+  </div>
+  <div class="qbloc" id="qb-mission"><div class="etq">The situation:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Slipping programme">Slipping programme</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Unreadable portfolio">Unreadable portfolio</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Budget to frame">Budget to frame</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Master plan / transformation">Master plan / transformation</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Other">Other</label></div><div class="etq">Timeline:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Urgent (under a month)">Urgent (under a month)</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="1 to 3 months">1 to 3 months</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Exploring">Exploring</label></div><div class="etq">Format:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Remote">Remote</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="On site">On site</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Mixed">Mixed</label></div></div><div class="qbloc" id="qb-formation"><div class="etq">For:</div><div class="types pt"><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="Myself">Myself</label><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="My team">My team</label></div><div class="etq">Offer in mind:</div><div class="types pt"><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Essentials">Essentials</label><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Complete">Complete</label><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Guided">Guided</label><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="To be defined">To be defined</label></div><div class="etq">OPCO funding:</div><div class="types pt"><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="Yes">Yes</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="No">No</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="To be seen">To be seen</label></div></div>
+  <div class="champs">
+    <div><span class="etq">Last name</span><input type="text" id="ctcNom"></div>
+    <div><span class="etq">First name</span><input type="text" id="ctcPrenom"></div>
+    <div><span class="etq">Company</span><input type="text" id="ctcSoc"></div>
+    <div><span class="etq">Your email</span><input type="email" id="ctcEmail"></div>
+    <div><span class="etq">Phone</span><input type="tel" id="ctcTel"></div>
+    <div class="large"><span class="etq">Your need</span>
+      <textarea id="ctcBesoin"></textarea></div>
+  </div>
+  <div class="sugg" id="ctcSugg"></div>
+  <div class="apps">
+    <button type="button" class="app" onclick="ctcGo('gmail')"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M2 18V7.9l-.9-1.2A1.9 1.9 0 0 1 3.9 4.9L6.5 7v12.6H3.6A1.6 1.6 0 0 1 2 18Z"/><path fill="#34A853" d="M22 18V7.9l.9-1.2a1.9 1.9 0 0 0-2.8-1.8L17.5 7v12.6h2.9A1.6 1.6 0 0 0 22 18Z"/><path fill="#FBBC04" d="M6.5 9.9V7L3.9 4.9a1.9 1.9 0 0 0-1.8 1.8Z"/><path fill="#C5221F" d="M17.5 9.9V7l2.6-2.1a1.9 1.9 0 0 1 1.8 1.8Z"/><path fill="#EA4335" d="M6.5 7 12 11l5.5-4v2.9L12 13.5 6.5 9.9Z"/></svg>
+      Gmail</button>
+    <button type="button" class="app" onclick="ctcGo('outlook')"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#28A8EA" d="M14 6h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-7Z"/><path fill="#0F6CBD" d="M14 6h8l-8 5.4Z" opacity=".55"/><rect x="2" y="4" width="13" height="16" rx="1.6" fill="#0F6CBD"/><ellipse cx="8.5" cy="12" rx="3.1" ry="3.6" fill="none" stroke="#fff" stroke-width="1.9"/></svg>
+      Outlook</button>
+  </div>
+  <p class="defaut"><a href="#" onclick="ctcGo('mail');return false">or open in your default email app</a></p>
+  <p class="note-priv">Nothing is sent to this site: your email client opens, you review and send it yourself.</p>
+</div></div>
 <p>Available for assignments in the Paris region, in northern France, or fully remote. Describe the context in three lines and I will tell you plainly whether I am the right person.</p>
 <div class="note">A word on language: my written English is fully professional (documentation, reporting, specifications, written committees). My spoken English is professional but not bilingual — worth knowing before a call.</div>
 <div class="gestes">
@@ -524,9 +561,6 @@ function calcMaj(i,b){
 <p>Free documents, no email required. Help yourself — they are made to circulate.</p>
 <div class="kit-cat">The market</div><div class="kit"><a href="../releve/le-releve.pdf" download><b>The market record</b><span>Today’s 4 boards: lifespan, day rates, remote, regions. Built for an executive committee.</span><i>PDF · FR &#8595;</i></a></div><div class="kit-cat">Portfolio management</div><div class="kit"><a href="../kit/grille-arbitrage-en.pdf" download><b>The arbitration grid</b><span>The template I install on assignment — columns, rules, decisions.</span><i>PDF &#8595;</i></a><a href="../kit/tableau-de-bord-en.pdf" download><b>The portfolio dashboard</b><span>Planned, actual, to complete — and the expected decision.</span><i>PDF &#8595;</i></a><span class="bientot"><b>The online PPM tool</b><span>Portfolio steering, tooled and interactive. In the making.</span><i>In the making</i></span></div><div class="kit-cat">Programme direction</div><div class="kit"><a href="../kit/registre-risques-en.pdf" download><b>The risk register</b><span>Named owners, dated mitigations, fifteen lines maximum.</span><i>PDF &#8595;</i></a><a href="../kit/reprise-programme-en.pdf" download><b>Taking over a slipping programme</b><span>My first 10 moves, in order. The method, given away.</span><i>PDF &#8595;</i></a></div><div class="kit-cat">Master plan & HRIS</div><div class="kit"><a href="../kit/grille-scenarios-en.pdf" download><b>The scenario evaluation grid</b><span>Six weighted criteria to compare IT or HRIS master-plan scenarios — and get two arbitrated.</span><i>PDF &#8595;</i></a></div><div class="kit-cat">Online training</div><div class="kit"><a href="../kit/formation-pilotage-en.pdf" download><b>Steering by value — the programme</b><span>4 video modules, exercise workbooks, the toolbox templates. At your own pace.</span><i>PDF &#8595;</i></a><a href="../kit/cahier-extrait-en.pdf" download><b>Exercise workbook — the excerpt</b><span>Three module-1 exercises to run on your own portfolio. Free.</span><i>PDF &#8595;</i></a><span class="bientot"><b>Mastering the PPM tool</b><span>The training for the online PPM tool — steer your portfolio inside it, not next to it.</span><i>In the making</i></span></div><p class="legende">Who it is for: project managers, PMOs and freelancers who need to structure their steering; executives and CIOs for the Guided offer. Each offer is adapted to your profile — say where you start from, the path adjusts.</p><div class="tarifs"><div class="to"><h3>Essentials</h3><div class="prix">990 <small>€ excl. VAT</small></div><ul><li>The 4 video modules</li><li>The toolbox templates</li></ul><a class="cta2" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Training%20pre-registration%20%E2%80%94%20Essentials&body=Hello%20Claire%2C%0A%0APurpose%20of%20contact%3A%20%0ALast%20name%3A%20%0AFirst%20name%3A%20%0ACompany%3A%20%0AEmail%3A%20%0APhone%3A%20%0A%0AMy%20need%20in%20a%20few%20lines%3A%20%0A" onclick="return ctcOuvre('Essentials')">Pre-register</a></div><div class="to phare"><h3>Complete</h3><div class="prix">1 290 <small>€ excl. VAT</small></div><ul><li>The 4 video modules</li><li>The toolbox templates</li><li>The exercise workbooks</li><li>Video corrections</li></ul><a class="cta2" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Training%20pre-registration%20%E2%80%94%20Complete&body=Hello%20Claire%2C%0A%0APurpose%20of%20contact%3A%20%0ALast%20name%3A%20%0AFirst%20name%3A%20%0ACompany%3A%20%0AEmail%3A%20%0APhone%3A%20%0A%0AMy%20need%20in%20a%20few%20lines%3A%20%0A" onclick="return ctcOuvre('Complete')">Pre-register</a></div><div class="to"><h3>Guided</h3><div class="prix">1 690 <small>€ excl. VAT</small></div><ul><li>Everything in Complete</li><li>90 minutes live with me</li><li>A review of YOUR portfolio</li></ul><a class="cta2" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Training%20pre-registration%20%E2%80%94%20Guided&body=Hello%20Claire%2C%0A%0APurpose%20of%20contact%3A%20%0ALast%20name%3A%20%0AFirst%20name%3A%20%0ACompany%3A%20%0AEmail%3A%20%0APhone%3A%20%0A%0AMy%20need%20in%20a%20few%20lines%3A%20%0A" onclick="return ctcOuvre('Guided')">Pre-register</a></div></div><div class="tarifs-note">The first modules are being recorded. Pre-register: you will be served first, with no commitment.</div>
 
-<h2>How we start</h2>
-<div class="etapes"><div class="et"><div class="n">1</div><h3>A 30-minute call</h3><p>You describe the context. I tell you plainly whether I am the right person — and if I am not, I say that too.</p></div><div class="et"><div class="n">2</div><h3>A written proposal</h3><p>Scope, governance, deliverables — and a day rate aligned with the market I measure daily, not an opaque price grid.</p></div><div class="et"><div class="n">3</div><h3>Steering begins</h3><p>On site or remote. First deliverable: a state of play that holds authority — what is running, at risk, and to be decided.</p></div></div>
-
 <p class="chapeau" style="margin-top:44px"><strong>Ready to start?</strong>
 The first step takes thirty minutes — and if I am not the right person, I will tell you during the call.</p>
 <div class="gestes">
@@ -565,39 +599,6 @@ The first step takes thirty minutes — and if I am not the right person, I will
   </div>
 </div>
 </footer>
-<dialog class="ctc" id="ctc" onchange="ctcSugg()">
-  <button class="fermer" type="button" onclick="document.getElementById('ctc').close()"
-          aria-label="Close">&#215;</button>
-  <h3>Write to Claire</h3>
-  <div class="etq">Your request is about:</div>
-  <div class="types" id="ctcTypes">
-    <label><input type="radio" name="ctct" value="mission" checked
-           onchange="ctcType()">A steering assignment</label>
-    <label><input type="radio" name="ctct" value="formation"
-           onchange="ctcType()">Training</label>
-    <label><input type="radio" name="ctct" value="autre"
-           onchange="ctcType()">Something else</label>
-  </div>
-  <div class="qbloc" id="qb-mission"><div class="etq">The situation:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Slipping programme">Slipping programme</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Unreadable portfolio">Unreadable portfolio</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Budget to frame">Budget to frame</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Master plan / transformation">Master plan / transformation</label><label><input type="radio" name="ctcq_mission_0" data-q="The situation:" value="Other">Other</label></div><div class="etq">Timeline:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Urgent (under a month)">Urgent (under a month)</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="1 to 3 months">1 to 3 months</label><label><input type="radio" name="ctcq_mission_1" data-q="Timeline:" value="Exploring">Exploring</label></div><div class="etq">Format:</div><div class="types pt"><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Remote">Remote</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="On site">On site</label><label><input type="radio" name="ctcq_mission_2" data-q="Format:" value="Mixed">Mixed</label></div></div><div class="qbloc" id="qb-formation"><div class="etq">For:</div><div class="types pt"><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="Myself">Myself</label><label><input type="radio" name="ctcq_formation_0" data-q="For:" value="My team">My team</label></div><div class="etq">Offer in mind:</div><div class="types pt"><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Essentials">Essentials</label><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Complete">Complete</label><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="Guided">Guided</label><label><input type="radio" name="ctcq_formation_1" data-q="Offer in mind:" value="To be defined">To be defined</label></div><div class="etq">OPCO funding:</div><div class="types pt"><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="Yes">Yes</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="No">No</label><label><input type="radio" name="ctcq_formation_2" data-q="OPCO funding:" value="To be seen">To be seen</label></div></div>
-  <div class="champs">
-    <div><span class="etq">Last name</span><input type="text" id="ctcNom"></div>
-    <div><span class="etq">First name</span><input type="text" id="ctcPrenom"></div>
-    <div><span class="etq">Company</span><input type="text" id="ctcSoc"></div>
-    <div><span class="etq">Your email</span><input type="email" id="ctcEmail"></div>
-    <div><span class="etq">Phone</span><input type="tel" id="ctcTel"></div>
-    <div class="large"><span class="etq">Your need</span>
-      <textarea id="ctcBesoin"></textarea></div>
-  </div>
-  <div class="sugg" id="ctcSugg"></div>
-  <div class="apps">
-    <button type="button" class="app" onclick="ctcGo('gmail')"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M2 18V7.9l-.9-1.2A1.9 1.9 0 0 1 3.9 4.9L6.5 7v12.6H3.6A1.6 1.6 0 0 1 2 18Z"/><path fill="#34A853" d="M22 18V7.9l.9-1.2a1.9 1.9 0 0 0-2.8-1.8L17.5 7v12.6h2.9A1.6 1.6 0 0 0 22 18Z"/><path fill="#FBBC04" d="M6.5 9.9V7L3.9 4.9a1.9 1.9 0 0 0-1.8 1.8Z"/><path fill="#C5221F" d="M17.5 9.9V7l2.6-2.1a1.9 1.9 0 0 1 1.8 1.8Z"/><path fill="#EA4335" d="M6.5 7 12 11l5.5-4v2.9L12 13.5 6.5 9.9Z"/></svg>
-      Gmail</button>
-    <button type="button" class="app" onclick="ctcGo('outlook')"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#28A8EA" d="M14 6h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-7Z"/><path fill="#0F6CBD" d="M14 6h8l-8 5.4Z" opacity=".55"/><rect x="2" y="4" width="13" height="16" rx="1.6" fill="#0F6CBD"/><ellipse cx="8.5" cy="12" rx="3.1" ry="3.6" fill="none" stroke="#fff" stroke-width="1.9"/></svg>
-      Outlook</button>
-  </div>
-  <p class="defaut"><a href="#" onclick="ctcGo('mail');return false">or open in your default email app</a></p>
-  <p class="note-priv">Nothing is sent to this site: your email client opens, you review and send it yourself.</p>
-</dialog>
 <script>
 var CTC={to:"claire.vandesype@pmo-laboratory.com",offre:"",
  su:{mission:"Steering assignment",formation:"Training",
@@ -627,23 +628,28 @@ function ctcType(){
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
  var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
  ctcSugg();}
+function ctcReveal(){
+ var w=document.getElementById('fluxwrap');if(!w)return false;
+ w.classList.add('on');
+ setTimeout(function(){w.scrollIntoView({behavior:'smooth',block:'start'});},80);
+ return true;}
 function ctcOuvreSit(sit){
- var d=document.getElementById('ctc');if(!d||!d.showModal)return;
+ if(!ctcReveal())return;
  CTC.offre="";
  document.querySelector('input[name=ctct][value=mission]').checked=true;
  ctcType();
  var os=document.querySelectorAll('#qb-mission input');
  for(var i=0;i<os.length;i++)os[i].checked=(os[i].value===sit);
- ctcSugg();d.showModal();}
+ ctcSugg();}
 function ctcOuvre(offre){
- var d=document.getElementById('ctc');if(!d||!d.showModal)return true;
+ if(!ctcReveal())return true;
  CTC.offre=offre||"";
  if(offre){var r=document.querySelector('input[name=ctct][value=formation]');
    r.checked=true;}
  ctcType();
  if(offre){var os=document.querySelectorAll('#qb-formation input');
    for(var i=0;i<os.length;i++)if(os[i].value===offre)os[i].checked=true;}
- d.showModal();return false;}
+ return false;}
 function ctcGo(mode){
  var t=document.querySelector('input[name=ctct]:checked').value;
  var v=function(id){return document.getElementById(id).value;};
@@ -671,7 +677,7 @@ function ctcGo(mode){
    location.href='mailto:'+CTC.to+'?subject='+encodeURIComponent(su)
      +'&body='+encodeURIComponent(bd);
  }
- document.getElementById('ctc').close();}
+ }
 </script>
 <script>
 (function(){
