@@ -321,6 +321,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .ctc .sugg a:hover{background:#eef6f1}
 .ctc .sugg a.urgent{border-left-color:var(--or);background:#fbf7ee}
 .ctc .sugg a.urgent:hover{background:#f6efdd}
+.ctc .preuve-mini{margin-top:16px;padding-left:14px;border-left:3px solid var(--or);
+   font-size:13px;color:var(--encre2);font-style:italic}
+.ctc .preuve-mini span{display:block;font-style:normal;font-size:12.5px;
+   color:var(--muet);margin-top:3px}
+.ctc .types label:has(input:focus-visible){outline:2px solid var(--or);
+   outline-offset:2px}
+@media(max-width:640px){.ctc .champs{grid-template-columns:1fr}
+   .ctc{padding:22px 18px 20px}}
 .ctc .apps{display:flex;gap:10px;margin-top:18px}
 .ctc .app{flex:1;display:inline-flex;align-items:center;justify-content:center;
    gap:9px;border:1px solid var(--grille);background:var(--fond);color:var(--encre);
@@ -490,6 +498,7 @@ footer a{color:var(--muet)}
       <textarea id="ctcBesoin"></textarea></div>
   </div>
   <div class="sugg" id="ctcSugg"></div>
+  <div class="preuve-mini">« Elle construit des outils de pilotage qui permettent réellement d’arbitrer, de prioriser et de sécuriser l’exécution. »<span>Cyril Zenouda · Program Manager · mission SGD Pharma</span></div>
   <div class="apps">
     <button type="button" class="app" onclick="ctcGo('gmail')"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M2 18V7.9l-.9-1.2A1.9 1.9 0 0 1 3.9 4.9L6.5 7v12.6H3.6A1.6 1.6 0 0 1 2 18Z"/><path fill="#34A853" d="M22 18V7.9l.9-1.2a1.9 1.9 0 0 0-2.8-1.8L17.5 7v12.6h2.9A1.6 1.6 0 0 0 22 18Z"/><path fill="#FBBC04" d="M6.5 9.9V7L3.9 4.9a1.9 1.9 0 0 0-1.8 1.8Z"/><path fill="#C5221F" d="M17.5 9.9V7l2.6-2.1a1.9 1.9 0 0 1 1.8 1.8Z"/><path fill="#EA4335" d="M6.5 7 12 11l5.5-4v2.9L12 13.5 6.5 9.9Z"/></svg>
       Gmail</button>

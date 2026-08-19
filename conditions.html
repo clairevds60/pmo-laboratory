@@ -321,6 +321,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .ctc .sugg a:hover{background:#eef6f1}
 .ctc .sugg a.urgent{border-left-color:var(--or);background:#fbf7ee}
 .ctc .sugg a.urgent:hover{background:#f6efdd}
+.ctc .preuve-mini{margin-top:16px;padding-left:14px;border-left:3px solid var(--or);
+   font-size:13px;color:var(--encre2);font-style:italic}
+.ctc .preuve-mini span{display:block;font-style:normal;font-size:12.5px;
+   color:var(--muet);margin-top:3px}
+.ctc .types label:has(input:focus-visible){outline:2px solid var(--or);
+   outline-offset:2px}
+@media(max-width:640px){.ctc .champs{grid-template-columns:1fr}
+   .ctc{padding:22px 18px 20px}}
 .ctc .apps{display:flex;gap:10px;margin-top:18px}
 .ctc .app{flex:1;display:inline-flex;align-items:center;justify-content:center;
    gap:9px;border:1px solid var(--grille);background:var(--fond);color:var(--encre);
