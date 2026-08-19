@@ -275,6 +275,10 @@ dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
 .ctc .types input{position:absolute;opacity:0;pointer-events:none}
 .ctc .types label:has(input:checked){border-color:var(--or);color:var(--encre);
    box-shadow:inset 0 -3px 0 var(--or)}
+.ctc .qbloc{display:none}
+.ctc .qbloc.on{display:block}
+.ctc .types.pt{margin:4px 0 12px}
+.ctc .types.pt label{padding:7px 11px;font-size:12.5px}
 .ctc .champs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ctc .champs .large{grid-column:1/-1}
 .ctc input[type=text],.ctc input[type=email],.ctc input[type=tel],.ctc textarea{
@@ -456,6 +460,7 @@ footer a{color:var(--muet)}
     <label><input type="radio" name="ctct" value="autre"
            onchange="ctcType()">Autre chose</label>
   </div>
+  <div class="qbloc" id="qb-mission"><div class="etq">La situation :</div><div class="types pt"><label><input type="radio" name="ctcq_mission_0" data-q="La situation :" value="Programme en dérive">Programme en dérive</label><label><input type="radio" name="ctcq_mission_0" data-q="La situation :" value="Portefeuille illisible">Portefeuille illisible</label><label><input type="radio" name="ctcq_mission_0" data-q="La situation :" value="Budget à cadrer">Budget à cadrer</label><label><input type="radio" name="ctcq_mission_0" data-q="La situation :" value="Schéma directeur / transformation">Schéma directeur / transformation</label><label><input type="radio" name="ctcq_mission_0" data-q="La situation :" value="Autre">Autre</label></div><div class="etq">Échéance :</div><div class="types pt"><label><input type="radio" name="ctcq_mission_1" data-q="Échéance :" value="Urgent (moins d’un mois)">Urgent (moins d’un mois)</label><label><input type="radio" name="ctcq_mission_1" data-q="Échéance :" value="1 à 3 mois">1 à 3 mois</label><label><input type="radio" name="ctcq_mission_1" data-q="Échéance :" value="J’explore">J’explore</label></div><div class="etq">Format :</div><div class="types pt"><label><input type="radio" name="ctcq_mission_2" data-q="Format :" value="À distance">À distance</label><label><input type="radio" name="ctcq_mission_2" data-q="Format :" value="Sur site">Sur site</label><label><input type="radio" name="ctcq_mission_2" data-q="Format :" value="Mixte">Mixte</label></div></div><div class="qbloc" id="qb-formation"><div class="etq">Pour :</div><div class="types pt"><label><input type="radio" name="ctcq_formation_0" data-q="Pour :" value="Moi">Moi</label><label><input type="radio" name="ctcq_formation_0" data-q="Pour :" value="Mon équipe">Mon équipe</label></div><div class="etq">Offre envisagée :</div><div class="types pt"><label><input type="radio" name="ctcq_formation_1" data-q="Offre envisagée :" value="Essentiel">Essentiel</label><label><input type="radio" name="ctcq_formation_1" data-q="Offre envisagée :" value="Complet">Complet</label><label><input type="radio" name="ctcq_formation_1" data-q="Offre envisagée :" value="Accompagné">Accompagné</label><label><input type="radio" name="ctcq_formation_1" data-q="Offre envisagée :" value="À définir ensemble">À définir ensemble</label></div><div class="etq">Financement OPCO :</div><div class="types pt"><label><input type="radio" name="ctcq_formation_2" data-q="Financement OPCO :" value="Oui">Oui</label><label><input type="radio" name="ctcq_formation_2" data-q="Financement OPCO :" value="Non">Non</label><label><input type="radio" name="ctcq_formation_2" data-q="Financement OPCO :" value="À voir">À voir</label></div></div>
   <div class="champs">
     <div><span class="etq">Nom</span><input type="text" id="ctcNom"></div>
     <div><span class="etq">Prénom</span><input type="text" id="ctcPrenom"></div>
@@ -478,26 +483,36 @@ footer a{color:var(--muet)}
 var CTC={to:"claire.vandesype@pmo-laboratory.com",offre:"",
  su:{mission:"Mission de pilotage",formation:"Formation",
      autre:"Contact"},
- ph:{mission:"Le contexte en trois lignes : quel programme ou portefeuille, quel est le problème aujourd'hui, quelle échéance, sur site ou à distance ?",formation:"Pour qui : vous ou une équipe ? Combien de personnes, quel niveau de départ, quelle échéance ?",
+ ph:{mission:"Précisez en quelques lignes : le programme ou le portefeuille concerné, et ce qui a déclenché votre recherche.",formation:"Pour qui : vous ou une équipe ? Combien de personnes, quel niveau de départ, quelle échéance ?",
      autre:"Dites-moi tout en quelques lignes."},
  et:{type:"Votre demande concerne :",nom:"Nom",prenom:"Prénom",
      soc:"Société",email:"Votre email",tel:"Téléphone",
      besoin:"Votre besoin"}};
 function ctcType(){
  var t=document.querySelector('input[name=ctct]:checked').value;
- document.getElementById('ctcBesoin').placeholder=CTC.ph[t];}
+ document.getElementById('ctcBesoin').placeholder=CTC.ph[t];
+ var bs=document.querySelectorAll('#ctc .qbloc');
+ for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
+ var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');}
 function ctcOuvre(offre){
  var d=document.getElementById('ctc');if(!d||!d.showModal)return true;
  CTC.offre=offre||"";
  if(offre){var r=document.querySelector('input[name=ctct][value=formation]');
    r.checked=true;}
- ctcType();d.showModal();return false;}
+ ctcType();
+ if(offre){var os=document.querySelectorAll('#qb-formation input');
+   for(var i=0;i<os.length;i++)if(os[i].value===offre)os[i].checked=true;}
+ d.showModal();return false;}
 function ctcGo(mode){
  var t=document.querySelector('input[name=ctct]:checked').value;
  var v=function(id){return document.getElementById(id).value;};
  var su=CTC.su[t]+(CTC.offre?" — "+CTC.offre:"");
  var lignes=[CTC.et.type+" "+document.querySelector(
    'input[name=ctct]:checked').parentNode.textContent.trim()];
+ var qs=document.querySelectorAll('#ctc .qbloc.on input:checked');
+ for(var k=0;k<qs.length;k++){
+   lignes.push(qs[k].getAttribute('data-q')+" "+qs[k].value);
+   if(k===0)su+=" — "+qs[k].value;}
  if(CTC.offre)lignes.push("Offre : "+CTC.offre);
  lignes.push(CTC.et.nom+" : "+v('ctcNom'),CTC.et.prenom+" : "+v('ctcPrenom'),
    CTC.et.soc+" : "+v('ctcSoc'),CTC.et.email+" : "+v('ctcEmail'),
