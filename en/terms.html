@@ -262,6 +262,32 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
    bottom:-16px;background:#f2ecdd;z-index:-1}
 .cadre .portrait{position:relative}
 
+/* FENETRE DE CONTACT — le formulaire QUALIFIANT. Rien ne part vers le site :
+   il fabrique l'email chez le visiteur. */
+dialog.ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
+   padding:30px 30px 24px;max-width:520px;width:92vw;background:var(--fond);
+   color:var(--encre)}
+dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
+.ctc h3{margin:0 0 16px;font-size:20px}
+.ctc .types{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.ctc .types label{border:1px solid var(--grille);padding:9px 14px;cursor:pointer;
+   font-size:14px;font-weight:600;color:var(--encre2)}
+.ctc .types input{position:absolute;opacity:0;pointer-events:none}
+.ctc .types label:has(input:checked){border-color:var(--or);color:var(--encre);
+   box-shadow:inset 0 -3px 0 var(--or)}
+.ctc .champs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ctc .champs .large{grid-column:1/-1}
+.ctc input[type=text],.ctc input[type=email],.ctc input[type=tel],.ctc textarea{
+   width:100%;border:1px solid var(--grille);background:#fdfcf9;color:var(--encre);
+   padding:10px 12px;font:400 14px/1.5 Inter,'Segoe UI',system-ui,sans-serif}
+.ctc textarea{min-height:88px;resize:vertical}
+.ctc .etq{display:block;font-size:12.5px;color:var(--muet);margin:0 0 4px}
+.ctc .gestes{margin-top:18px;gap:10px}
+.ctc .gestes .cta,.ctc .gestes .cta2{padding:12px 18px;font-size:14px}
+.ctc .fermer{position:absolute;top:10px;right:14px;border:0;background:none;
+   font-size:20px;cursor:pointer;color:var(--muet)}
+.ctc .note-priv{font-size:12.5px;color:var(--muet);margin:14px 0 0}
+
 /* NAVIGATION COLLANTE — composant transpose de chanel.com : chaque section est a un
    clic, le defilement n'est plus le seul chemin. Pleine largeur de la colonne. */
 .snav{position:sticky;top:0;z-index:6;background:var(--fond);
@@ -365,7 +391,7 @@ footer a{color:var(--muet)}
     </div>
     <nav class="langues" aria-label="Français / English"><span class="on" aria-current="true"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"/><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="3"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/><rect width="60" height="30" fill="none" stroke="#d8d2c6"/></svg><b>EN</b></span><a href="../conditions.html" hreflang="fr" title="Lire cette page en français" lang="fr"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="20" height="30" fill="#0055A4"/><rect x="20" width="20" height="30" fill="#fff"/><rect x="40" width="20" height="30" fill="#EF4135"/><rect width="60" height="30" fill="none" stroke="#d8d2c6"/></svg><b>FR</b></a></nav>
   </div>
-  <div class="liens"><a class="p-in" href="https://www.linkedin.com/in/claire-vandesype" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a class="p-malt" href="https://www.malt.fr/profile/clairevandesype" rel="noopener" aria-label="Malt" title="Malt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M5.1 8l13.8 8M18.9 8 5.1 16"/></svg></a><a class="p-tel" href="tel:+33643653506" aria-label="Call Claire Van De Sype" title="Call Claire Van De Sype"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></a><a class="p-mail" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Getting%20in%20touch&body=Hello%20Claire%2C%0A%0APurpose%20of%20contact%3A%20%0ALast%20name%3A%20%0AFirst%20name%3A%20%0ACompany%3A%20%0AEmail%3A%20%0APhone%3A%20%0A%0AMy%20need%20in%20a%20few%20lines%3A%20%0A" aria-label="Email claire.vandesype@pmo-laboratory.com" title="Email claire.vandesype@pmo-laboratory.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a></div>
+  <div class="liens"><a class="p-in" href="https://www.linkedin.com/in/claire-vandesype" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a class="p-malt" href="https://www.malt.fr/profile/clairevandesype" rel="noopener" aria-label="Malt" title="Malt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M5.1 8l13.8 8M18.9 8 5.1 16"/></svg></a><a class="p-tel" href="tel:+33643653506" aria-label="Call Claire Van De Sype" title="Call Claire Van De Sype"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></a><a class="p-mail" onclick="return ctcOuvre('')" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Getting%20in%20touch&body=Hello%20Claire%2C%0A%0APurpose%20of%20contact%3A%20%0ALast%20name%3A%20%0AFirst%20name%3A%20%0ACompany%3A%20%0AEmail%3A%20%0APhone%3A%20%0A%0AMy%20need%20in%20a%20few%20lines%3A%20%0A" aria-label="Email claire.vandesype@pmo-laboratory.com" title="Email claire.vandesype@pmo-laboratory.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M3 20V8.9l-1.5-2A2.4 2.4 0 0 1 3.9 5H4l8 6 8-6h.1a2.4 2.4 0 0 1 2.4 1.9L21 8.9V20h-3.5v-8.2L12 15.6 6.5 11.8V20Z" opacity="0"/><path fill="#EA4335" d="m12 11.3 8.6-6.5a2.6 2.6 0 0 0-1.4-.5L12 9.6 4.8 4.3a2.6 2.6 0 0 0-1.4.5Z"/><path fill="#4285F4" d="M2.5 6.2A2.6 2.6 0 0 1 3.4 4.8L6.5 7v12.6H4.1A1.6 1.6 0 0 1 2.5 18Z"/><path fill="#34A853" d="M21.5 6.2a2.6 2.6 0 0 0-.9-1.4L17.5 7v12.6h2.4a1.6 1.6 0 0 0 1.6-1.6Z"/><path fill="#FBBC04" d="M6.5 7 3.4 4.8 6.5 9.4Z"/><path fill="#C5221F" d="M17.5 7l3.1-2.2-3.1 4.6Z"/><path fill="#EA4335" d="M6.5 9.4V7l5.5 4.1L17.5 7v2.4L12 13.5Z"/></svg></a></div>
 </header>
 
 <h1>Terms of use</h1>
@@ -410,6 +436,73 @@ footer a{color:var(--muet)}
   </div>
 </div>
 </footer>
+<dialog class="ctc" id="ctc">
+  <button class="fermer" type="button" onclick="document.getElementById('ctc').close()"
+          aria-label="Close">&#215;</button>
+  <h3>Write to Claire</h3>
+  <div class="etq">Your request is about:</div>
+  <div class="types" id="ctcTypes">
+    <label><input type="radio" name="ctct" value="mission" checked
+           onchange="ctcType()">A steering assignment</label>
+    <label><input type="radio" name="ctct" value="formation"
+           onchange="ctcType()">Training</label>
+    <label><input type="radio" name="ctct" value="autre"
+           onchange="ctcType()">Something else</label>
+  </div>
+  <div class="champs">
+    <div><span class="etq">Last name</span><input type="text" id="ctcNom"></div>
+    <div><span class="etq">First name</span><input type="text" id="ctcPrenom"></div>
+    <div><span class="etq">Company</span><input type="text" id="ctcSoc"></div>
+    <div><span class="etq">Your email</span><input type="email" id="ctcEmail"></div>
+    <div><span class="etq">Phone</span><input type="tel" id="ctcTel"></div>
+    <div class="large"><span class="etq">Your need</span>
+      <textarea id="ctcBesoin"></textarea></div>
+  </div>
+  <div class="gestes">
+    <button type="button" class="cta" onclick="ctcGo('gmail')">Open in Gmail</button>
+    <button type="button" class="cta2" onclick="ctcGo('mail')">My email app</button>
+  </div>
+  <p class="note-priv">Nothing is sent to this site: your email client opens, you review and send it yourself.</p>
+</dialog>
+<script>
+var CTC={to:"claire.vandesype@pmo-laboratory.com",offre:"",
+ su:{mission:"Steering assignment",formation:"Training",
+     autre:"Contact"},
+ ph:{mission:"The context in three lines: which programme or portfolio, what is the problem today, what deadline, on site or remote?",formation:"For whom: you or a team? How many people, what starting level, what timeline?",
+     autre:"Tell me everything in a few lines."},
+ et:{type:"Your request is about:",nom:"Last name",prenom:"First name",
+     soc:"Company",email:"Your email",tel:"Phone",
+     besoin:"Your need"}};
+function ctcType(){
+ var t=document.querySelector('input[name=ctct]:checked').value;
+ document.getElementById('ctcBesoin').placeholder=CTC.ph[t];}
+function ctcOuvre(offre){
+ var d=document.getElementById('ctc');if(!d||!d.showModal)return true;
+ CTC.offre=offre||"";
+ if(offre){var r=document.querySelector('input[name=ctct][value=formation]');
+   r.checked=true;}
+ ctcType();d.showModal();return false;}
+function ctcGo(mode){
+ var t=document.querySelector('input[name=ctct]:checked').value;
+ var v=function(id){return document.getElementById(id).value;};
+ var su=CTC.su[t]+(CTC.offre?" — "+CTC.offre:"");
+ var lignes=[CTC.et.type+" "+document.querySelector(
+   'input[name=ctct]:checked').parentNode.textContent.trim()];
+ if(CTC.offre)lignes.push("Offre : "+CTC.offre);
+ lignes.push(CTC.et.nom+" : "+v('ctcNom'),CTC.et.prenom+" : "+v('ctcPrenom'),
+   CTC.et.soc+" : "+v('ctcSoc'),CTC.et.email+" : "+v('ctcEmail'),
+   CTC.et.tel+" : "+v('ctcTel'),"",CTC.et.besoin+" :",v('ctcBesoin'));
+ var bd=lignes.join("\n");
+ if(mode==='gmail'){
+   window.open('https://mail.google.com/mail/?view=cm&fs=1&to='
+     +encodeURIComponent(CTC.to)+'&su='+encodeURIComponent(su)
+     +'&body='+encodeURIComponent(bd),'_blank','noopener');
+ }else{
+   location.href='mailto:'+CTC.to+'?subject='+encodeURIComponent(su)
+     +'&body='+encodeURIComponent(bd);
+ }
+ document.getElementById('ctc').close();}
+</script>
 <script>
 (function(){
  if(matchMedia('(prefers-reduced-motion: reduce)').matches
