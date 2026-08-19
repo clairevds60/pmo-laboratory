@@ -386,7 +386,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 /* LES PORTES D'ORIENTATION — le jeu de piste du héros. Une couche d'orientation,
    pas une barrière : la page reste entièrement lisible dessous. */
 .portes-q{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:var(--muet);margin:26px 0 10px}
+   text-transform:uppercase;color:var(--muet);margin:34px 0 12px}
 .portes-i{font-weight:500;letter-spacing:0;text-transform:none;
    font-family:inherit;font-size:13px;color:var(--muet)}
 .portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
@@ -421,14 +421,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .portes button[aria-pressed="true"] .pfl{transform:rotate(90deg)}
 /* l'air du portail : tant qu'aucune porte n'est choisie, un vide volontaire
    separe les cartes du pied de page sombre */
-body.garde:not(.p0):not(.p1):not(.p2):not(.p3) .page{
-   padding-bottom:min(24vh,230px)}
+body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu) .page{
+   padding-bottom:48px}
+body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu) footer.pied{
+   display:none}
+/* ecrans peu hauts (portables 768) : l'ecran d'arrivee se compacte pour tenir
+   sans ascenseur — uniquement du rythme vertical, rien ne disparait */
+@media (min-width:900px) and (max-height:820px){
+   h1{font-size:clamp(30px,4.6vw,46px);margin-top:20px}
+   .portes-q{margin:20px 0 10px}
+   .portes button{min-height:92px;padding:13px 44px 11px 16px}
+   .pilules{margin-top:10px}
+}
 /* cibles tactiles : tout lien du pied de page et le selecteur de langue font
    au moins 34 px de haut au doigt, sans bouger la maquette */
 /* LE PORTAIL : sous le heros, rien ne s'affiche avant le choix d'une porte ;
    la selection revele les groupes de SON parcours, en fondu. Les compteurs CSS
    ne comptent pas les sections masquees : la numerotation suit le parcours. */
 body.garde [data-grp]{display:none}
+body.p0 [data-grp="commun"],body.p1 [data-grp="commun"],
+body.p2 [data-grp="commun"],body.p3 [data-grp="commun"],
 body.p0 [data-grp="quand"],body.p0 [data-grp="flux"],body.p0 [data-grp="livre"],
 body.p0 [data-grp="releve"],body.p0 [data-grp="kit"],
 body.p1 [data-grp="flux"],body.p1 [data-grp="livre"],body.p1 [data-grp="kit"],
@@ -635,6 +647,7 @@ function porteMaj(i,b){
  document.body.classList.remove('p0','p1','p2','p3');
  var vs=document.querySelectorAll('.gvu');
  for(var m=0;m<vs.length;m++)vs[m].classList.remove('gvu');
+ document.body.classList.remove('pvu');
  if(deja)return;
  b.setAttribute('aria-pressed','true');
  document.body.classList.add('p'+i);
@@ -664,7 +677,8 @@ document.addEventListener('DOMContentLoaded',function(){
   var g=c.closest('[data-grp]');if(!g)return;
   var grp=g.getAttribute('data-grp');
   var els=document.querySelectorAll('[data-grp="'+grp+'"]');
-  for(var i=0;i<els.length;i++)els[i].classList.add('gvu');});});
+  for(var i=0;i<els.length;i++)els[i].classList.add('gvu');
+  document.body.classList.add('pvu');});});
 function ctcReveal(){
  var w=document.getElementById('fluxwrap');if(!w)return false;
  w.classList.add('on');

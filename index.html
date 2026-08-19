@@ -386,7 +386,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 /* LES PORTES D'ORIENTATION — le jeu de piste du héros. Une couche d'orientation,
    pas une barrière : la page reste entièrement lisible dessous. */
 .portes-q{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:var(--muet);margin:26px 0 10px}
+   text-transform:uppercase;color:var(--muet);margin:34px 0 12px}
 .portes-i{font-weight:500;letter-spacing:0;text-transform:none;
    font-family:inherit;font-size:13px;color:var(--muet)}
 .portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
@@ -421,14 +421,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .portes button[aria-pressed="true"] .pfl{transform:rotate(90deg)}
 /* l'air du portail : tant qu'aucune porte n'est choisie, un vide volontaire
    separe les cartes du pied de page sombre */
-body.garde:not(.p0):not(.p1):not(.p2):not(.p3) .page{
-   padding-bottom:min(24vh,230px)}
+body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu) .page{
+   padding-bottom:48px}
+body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu) footer.pied{
+   display:none}
+/* ecrans peu hauts (portables 768) : l'ecran d'arrivee se compacte pour tenir
+   sans ascenseur — uniquement du rythme vertical, rien ne disparait */
+@media (min-width:900px) and (max-height:820px){
+   h1{font-size:clamp(30px,4.6vw,46px);margin-top:20px}
+   .portes-q{margin:20px 0 10px}
+   .portes button{min-height:92px;padding:13px 44px 11px 16px}
+   .pilules{margin-top:10px}
+}
 /* cibles tactiles : tout lien du pied de page et le selecteur de langue font
    au moins 34 px de haut au doigt, sans bouger la maquette */
 /* LE PORTAIL : sous le heros, rien ne s'affiche avant le choix d'une porte ;
    la selection revele les groupes de SON parcours, en fondu. Les compteurs CSS
    ne comptent pas les sections masquees : la numerotation suit le parcours. */
 body.garde [data-grp]{display:none}
+body.p0 [data-grp="commun"],body.p1 [data-grp="commun"],
+body.p2 [data-grp="commun"],body.p3 [data-grp="commun"],
 body.p0 [data-grp="quand"],body.p0 [data-grp="flux"],body.p0 [data-grp="livre"],
 body.p0 [data-grp="releve"],body.p0 [data-grp="kit"],
 body.p1 [data-grp="flux"],body.p1 [data-grp="livre"],body.p1 [data-grp="kit"],
@@ -553,17 +565,17 @@ footer a{color:var(--muet)}
 </header>
 
 <nav class="snav"><a href="#quand">Quand m’appeler</a><a href="#livre">Livré</a><a href="#releve">Le relevé</a><a href="#kit">À emporter</a></nav>
-<div class="intro">
+<h1>Je pilote des projets, et je <em>mesure</em> le marché qui les porte.</h1>
+<div class="portes-q">Qu’est-ce qui vous amène ? <span class="portes-i">Choisissez — la page s’adapte à votre réponse.</span></div><div class="portes"><button type="button" aria-pressed="false" onclick="porteMaj(0,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5z"/></svg><span class="ptit">Un problème de pilotage à résoudre</span><span class="psub">Programme en dérive, budget, portefeuille illisible</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(1,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 5l10 4-10 4L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg><span class="ptit">Apprendre le métier de PMO</span><span class="psub">Jeunes et juniors : douze ans de terrain transmis</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(2,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="ptit">Outiller mon portefeuille</span><span class="psub">Modèles gratuits, outil PPM en préparation</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(3,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4"/><path d="M20 17H9M13 13l-4 4 4 4"/></svg><span class="ptit">Consultant·e : recevoir des missions</span><span class="psub">SKARAB : les missions que je ne prends pas</span><span class="pfl">&#8594;</span></button></div><div class="pp" id="pp-0"><p>C’est mon métier depuis douze ans — et je suis disponible.</p><div class="gestes"><a class="cta-mini" href="#quand">Choisir ma situation</a><a class="doc" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a><a class="doc" href="#livre">Voir ce que j’ai livré</a></div></div><div class="pp" id="pp-1"><p>Pour les jeunes et les juniors : je transmets douze ans de terrain — modules vidéo, cahiers d’exercices, ma méthode réelle, pas la théorie. Premiers modules en cours d’enregistrement.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvreForm()">Les offres et la pré-inscription</a><a class="doc" href="kit/cahier-extrait-fr.pdf" download>Goûter : l’extrait du cahier</a><a class="doc" href="kit/formation-pilotage-fr.pdf" download>Le programme</a></div></div><div class="pp" id="pp-2"><p>Les modèles sont déjà là, gratuits. L’outil PPM en ligne est en préparation — vos données resteront chez vous.</p><div class="gestes"><a class="cta-mini" href="#kit">La boîte à outils</a><a class="doc" href="#quand" onclick="return ctcOuvre('')">Être prévenu·e du lancement</a></div></div><div class="pp" id="pp-3"><p>SKARAB, en préparation : je croise chaque jour des missions que je ne prends pas. Je les apporterai à des consultants de confiance, dans un cadre écrit et transparent.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvre('')">Rejoindre la liste d’ouverture</a><a class="doc" href="#releve">Le relevé du marché</a></div></div>
+
+<div class="intro" data-grp="commun">
   <div>
-    <h1>Je pilote des projets, et je <em>mesure</em> le marché qui les porte.</h1>
+    <p class="chapeau">Consultante indépendante en direction de projet, PMO et pilotage financier, 12 ans d’expérience. Chaque matin, je relève les missions de pilotage publiées en France — voici ce que dit le marché aujourd’hui.</p>
   </div>
   <span class="cadre"><img class="portrait" src="portrait.jpg" width="480"
        height="591" alt="Portrait de Claire Van De Sype" loading="eager" decoding="async"></span>
 </div>
-<p class="chapeau">Consultante indépendante en direction de projet, PMO et pilotage financier, 12 ans d’expérience. Chaque matin, je relève les missions de pilotage publiées en France — voici ce que dit le marché aujourd’hui.</p>
-
-<div class="bande-preuve"><span>12 ans d’expérience</span><i>&middot;</i><span>+150 M€ de budgets IT gérés</span><i>&middot;</i><span>500+ projets pilotés</span><i>&middot;</i><span>10+ secteurs</span></div><div class="dispo">Disponible pour une nouvelle mission</div>
-<div class="portes-q">Qu’est-ce qui vous amène ? <span class="portes-i">Choisissez — la page s’adapte à votre réponse.</span></div><div class="portes"><button type="button" aria-pressed="false" onclick="porteMaj(0,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5z"/></svg><span class="ptit">Un problème de pilotage à résoudre</span><span class="psub">Programme en dérive, budget, portefeuille illisible</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(1,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 5l10 4-10 4L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg><span class="ptit">Apprendre le métier de PMO</span><span class="psub">Jeunes et juniors : douze ans de terrain transmis</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(2,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="ptit">Outiller mon portefeuille</span><span class="psub">Modèles gratuits, outil PPM en préparation</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(3,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4"/><path d="M20 17H9M13 13l-4 4 4 4"/></svg><span class="ptit">Consultant·e : recevoir des missions</span><span class="psub">SKARAB : les missions que je ne prends pas</span><span class="pfl">&#8594;</span></button></div><div class="pp" id="pp-0"><p>C’est mon métier depuis douze ans — et je suis disponible.</p><div class="gestes"><a class="cta-mini" href="#quand">Choisir ma situation</a><a class="doc" href="https://calendly.com/claire-vandesype" rel="noopener">Réserver 30 minutes</a><a class="doc" href="#livre">Voir ce que j’ai livré</a></div></div><div class="pp" id="pp-1"><p>Pour les jeunes et les juniors : je transmets douze ans de terrain — modules vidéo, cahiers d’exercices, ma méthode réelle, pas la théorie. Premiers modules en cours d’enregistrement.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvreForm()">Les offres et la pré-inscription</a><a class="doc" href="kit/cahier-extrait-fr.pdf" download>Goûter : l’extrait du cahier</a><a class="doc" href="kit/formation-pilotage-fr.pdf" download>Le programme</a></div></div><div class="pp" id="pp-2"><p>Les modèles sont déjà là, gratuits. L’outil PPM en ligne est en préparation — vos données resteront chez vous.</p><div class="gestes"><a class="cta-mini" href="#kit">La boîte à outils</a><a class="doc" href="#quand" onclick="return ctcOuvre('')">Être prévenu·e du lancement</a></div></div><div class="pp" id="pp-3"><p>SKARAB, en préparation : je croise chaque jour des missions que je ne prends pas. Je les apporterai à des consultants de confiance, dans un cadre écrit et transparent.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvre('')">Rejoindre la liste d’ouverture</a><a class="doc" href="#releve">Le relevé du marché</a></div></div>
+<div data-grp="commun"><div class="bande-preuve"><span>12 ans d’expérience</span><i>&middot;</i><span>+150 M€ de budgets IT gérés</span><i>&middot;</i><span>500+ projets pilotés</span><i>&middot;</i><span>10+ secteurs</span></div><div class="dispo">Disponible pour une nouvelle mission</div></div>
 
 <h2 id="quand">Quand m’appeler</h2>
 <p>Cliquez votre situation : le message part déjà qualifié — et je vous tends l’outil qui correspond en attendant ma réponse.</p>
@@ -743,6 +755,7 @@ function porteMaj(i,b){
  document.body.classList.remove('p0','p1','p2','p3');
  var vs=document.querySelectorAll('.gvu');
  for(var m=0;m<vs.length;m++)vs[m].classList.remove('gvu');
+ document.body.classList.remove('pvu');
  if(deja)return;
  b.setAttribute('aria-pressed','true');
  document.body.classList.add('p'+i);
@@ -772,7 +785,8 @@ document.addEventListener('DOMContentLoaded',function(){
   var g=c.closest('[data-grp]');if(!g)return;
   var grp=g.getAttribute('data-grp');
   var els=document.querySelectorAll('[data-grp="'+grp+'"]');
-  for(var i=0;i<els.length;i++)els[i].classList.add('gvu');});});
+  for(var i=0;i<els.length;i++)els[i].classList.add('gvu');
+  document.body.classList.add('pvu');});});
 function ctcReveal(){
  var w=document.getElementById('fluxwrap');if(!w)return false;
  w.classList.add('on');
