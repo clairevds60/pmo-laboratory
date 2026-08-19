@@ -277,12 +277,21 @@ body{overflow-x:clip}
    letter-spacing:1px;color:var(--muet);margin-top:14px;font-style:normal;
    border:1px solid var(--grille);padding:4px 8px}
 
-/* NUMEROTATION EDITORIALE des sections de l'accueil — 01, 02… en chasse fixe or. */
+/* ENTREE DE SECTION, style editorial : un filet ouvre la section, le numero est un
+   petit marqueur or a gauche du titre (meme ligne de base), l'intro se resserre. */
 body.accueil{counter-reset:sec}
+body.accueil h2{display:grid;grid-template-columns:auto 1fr;gap:0 16px;
+   align-items:baseline;border-top:1px solid var(--grille);padding-top:18px;
+   margin:56px 0 12px}
 body.accueil h2::before{counter-increment:sec;
-   content:counter(sec,decimal-leading-zero);display:block;
-   font:800 28px/1 Inter,'Segoe UI',system-ui,sans-serif;letter-spacing:1px;
-   color:var(--or);margin-bottom:10px;font-variant-numeric:tabular-nums}
+   content:counter(sec,decimal-leading-zero);
+   font:800 13px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
+   color:var(--or);font-variant-numeric:tabular-nums;
+   border-bottom:3px solid var(--or);padding-bottom:6px;align-self:center}
+body.accueil h2 + p{margin-top:0;color:var(--encre2);max-width:74ch}
+body.accueil .sombre h2{border-top-color:rgba(255,255,255,.18)}
+/* les etiquettes de groupe de la boite a outils s'alignent sur ce rythme */
+.kit-cat{margin-top:26px}
 
 /* APPARITION AU DEFILEMENT — la classe .rv est posee PAR le script : sans JavaScript
    la page est entierement visible, et prefers-reduced-motion coupe tout. */
