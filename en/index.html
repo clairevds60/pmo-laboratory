@@ -393,8 +393,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .portes button{position:relative;border:1px solid var(--grille);
    background:var(--fond);color:var(--encre2);padding:16px 44px 14px 18px;
    cursor:pointer;font-family:inherit;text-align:left;display:flex;
-   flex-direction:column;gap:5px;min-height:96px;
-   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+   flex-direction:column;gap:6px;min-height:118px;
+   animation:pcarte .5s ease both;
+   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease,
+      background-color .16s ease}
+.portes button:nth-child(2){animation-delay:.06s}
+.portes button:nth-child(3){animation-delay:.12s}
+.portes button:nth-child(4){animation-delay:.18s}
+@keyframes pcarte{from{opacity:0;transform:translateY(14px)}
+   to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.portes button{animation:none}}
+.pico{width:22px;height:22px;color:var(--or);flex:none}
 .portes .ptit{font-size:15.5px;font-weight:700;color:var(--encre)}
 .portes .psub{font-size:12.5px;font-weight:500;color:var(--muet);line-height:1.45}
 .portes .pfl{position:absolute;right:14px;bottom:10px;font-size:19px;
@@ -402,9 +411,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .portes button:hover{border-color:var(--or);transform:translateY(-3px);
    box-shadow:0 10px 22px -12px rgba(141,104,24,.55)}
 .portes button:hover .pfl{transform:translateX(4px)}
-.portes button[aria-pressed="true"]{border-color:var(--or);
-   box-shadow:inset 4px 0 0 var(--or),0 10px 22px -14px rgba(141,104,24,.5)}
+.portes button[aria-pressed="true"]{border-color:var(--encre);
+   background:var(--encre);box-shadow:0 12px 26px -14px rgba(28,26,23,.6)}
+.portes button[aria-pressed="true"] .ptit{color:#fff}
+.portes button[aria-pressed="true"] .psub{color:rgba(255,255,255,.62)}
+.portes button[aria-pressed="true"] .pico,
+.portes button[aria-pressed="true"] .pfl{color:#d8b25e}
 .portes button[aria-pressed="true"] .pfl{transform:rotate(90deg)}
+/* l'air du portail : tant qu'aucune porte n'est choisie, un vide volontaire
+   separe les cartes du pied de page sombre */
+body.garde:not(.p0):not(.p1):not(.p2):not(.p3) .page{
+   padding-bottom:min(24vh,230px)}
 /* LE PORTAIL : sous le heros, rien ne s'affiche avant le choix d'une porte ;
    la selection revele les groupes de SON parcours, en fondu. Les compteurs CSS
    ne comptent pas les sections masquees : la numerotation suit le parcours. */
@@ -542,7 +559,7 @@ footer a{color:var(--muet)}
 <p class="chapeau">Independent consultant in project direction, PMO and project finance, 12 years of experience. Every morning I record the project-management assignments published in France — here is what the market says today.</p>
 
 <div class="bande-preuve"><span>12 years of experience</span><i>&middot;</i><span>€150M+ of IT budgets managed</span><i>&middot;</i><span>500+ projects steered</span><i>&middot;</i><span>10+ industries</span></div><div class="dispo">Available for a new assignment</div>
-<div class="portes-q">What brings you here? <span class="portes-i">Choose — the page adapts to your answer.</span></div><div class="portes"><button type="button" aria-pressed="false" onclick="porteMaj(0,this)"><span class="ptit">A steering problem to solve</span><span class="psub">Slipping programme, budget, unreadable portfolio</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(1,this)"><span class="ptit">Learn the PMO craft</span><span class="psub">Young and junior profiles: twelve years passed on</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(2,this)"><span class="ptit">Tool up my portfolio</span><span class="psub">Free templates, PPM tool in the making</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(3,this)"><span class="ptit">Consultant: receive assignments</span><span class="psub">SKARAB: the assignments I do not take</span><span class="pfl">&#8594;</span></button></div><div class="pp" id="pp-0"><p>That is what I have done for twelve years — and I am available.</p><div class="gestes"><a class="cta-mini" href="#quand">Pick my situation</a><a class="doc" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a><a class="doc" href="#livre">See what I delivered</a></div></div><div class="pp" id="pp-1"><p>For young and junior profiles: I pass on twelve years in the field — video modules, exercise workbooks, my real method, not theory. First modules being recorded.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvreForm()">Offers and pre-registration</a><a class="doc" href="../kit/cahier-extrait-en.pdf" download>Taste it: the workbook excerpt</a><a class="doc" href="../kit/formation-pilotage-en.pdf" download>The programme</a></div></div><div class="pp" id="pp-2"><p>The templates are already here, free. The online PPM tool is in the making — your data will stay with you.</p><div class="gestes"><a class="cta-mini" href="#kit">The toolbox</a><a class="doc" href="#quand" onclick="return ctcOuvre('')">Be told at launch</a></div></div><div class="pp" id="pp-3"><p>SKARAB, in the making: every day I come across assignments I do not take. I will bring them to trusted consultants, within a written and transparent framework.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvre('')">Join the opening list</a><a class="doc" href="#releve">The market record</a></div></div>
+<div class="portes-q">What brings you here? <span class="portes-i">Choose — the page adapts to your answer.</span></div><div class="portes"><button type="button" aria-pressed="false" onclick="porteMaj(0,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2.2 5-5 2.2 2.2-5z"/></svg><span class="ptit">A steering problem to solve</span><span class="psub">Slipping programme, budget, unreadable portfolio</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(1,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 5l10 4-10 4L2 9z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg><span class="ptit">Learn the PMO craft</span><span class="psub">Young and junior profiles: twelve years passed on</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(2,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="ptit">Tool up my portfolio</span><span class="psub">Free templates, PPM tool in the making</span><span class="pfl">&#8594;</span></button><button type="button" aria-pressed="false" onclick="porteMaj(3,this)"><svg class="pico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4"/><path d="M20 17H9M13 13l-4 4 4 4"/></svg><span class="ptit">Consultant: receive assignments</span><span class="psub">SKARAB: the assignments I do not take</span><span class="pfl">&#8594;</span></button></div><div class="pp" id="pp-0"><p>That is what I have done for twelve years — and I am available.</p><div class="gestes"><a class="cta-mini" href="#quand">Pick my situation</a><a class="doc" href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a><a class="doc" href="#livre">See what I delivered</a></div></div><div class="pp" id="pp-1"><p>For young and junior profiles: I pass on twelve years in the field — video modules, exercise workbooks, my real method, not theory. First modules being recorded.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvreForm()">Offers and pre-registration</a><a class="doc" href="../kit/cahier-extrait-en.pdf" download>Taste it: the workbook excerpt</a><a class="doc" href="../kit/formation-pilotage-en.pdf" download>The programme</a></div></div><div class="pp" id="pp-2"><p>The templates are already here, free. The online PPM tool is in the making — your data will stay with you.</p><div class="gestes"><a class="cta-mini" href="#kit">The toolbox</a><a class="doc" href="#quand" onclick="return ctcOuvre('')">Be told at launch</a></div></div><div class="pp" id="pp-3"><p>SKARAB, in the making: every day I come across assignments I do not take. I will bring them to trusted consultants, within a written and transparent framework.</p><div class="gestes"><a class="cta-mini" href="#quand" onclick="return ctcOuvre('')">Join the opening list</a><a class="doc" href="#releve">The market record</a></div></div>
 
 <h2 id="quand">When to call me</h2>
 <p>Click your situation: the message leaves already qualified — and you get the matching tool while waiting for my reply.</p>
@@ -723,7 +740,8 @@ function porteMaj(i,b){
  if(deja)return;
  b.setAttribute('aria-pressed','true');
  document.body.classList.add('p'+i);
- var p=document.getElementById('pp-'+i);if(p)p.classList.add('on');}
+ var p=document.getElementById('pp-'+i);if(p){p.classList.add('on');
+  setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'nearest'});},180);}}
 /* LE PORTAIL : pose par le JS seulement -> sans JS (moteurs, lecteurs), tout reste
    visible. Chaque enfant de .page recoit le groupe de son h2 ; le formulaire est
    le groupe 'flux'. Rien dessous tant qu'aucune porte n'est choisie. */
