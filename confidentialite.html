@@ -286,6 +286,13 @@ dialog.ctc::backdrop{background:rgba(28,26,23,.55)}
    padding:10px 12px;font:400 14px/1.5 Inter,'Segoe UI',system-ui,sans-serif}
 .ctc textarea{min-height:88px;resize:vertical}
 .ctc .etq{display:block;font-size:12.5px;color:var(--muet);margin:0 0 4px}
+.ctc .sugg{margin-top:14px}
+.ctc .sugg a{display:block;border-left:4px solid var(--vert);background:#f7faf8;
+   padding:10px 14px;margin:6px 0;font-size:13px;font-weight:600;color:var(--encre);
+   border-bottom:0}
+.ctc .sugg a:hover{background:#eef6f1}
+.ctc .sugg a.urgent{border-left-color:var(--or);background:#fbf7ee}
+.ctc .sugg a.urgent:hover{background:#f6efdd}
 .ctc .apps{display:flex;gap:10px;margin-top:18px}
 .ctc .app{flex:1;display:inline-flex;align-items:center;justify-content:center;
    gap:9px;border:1px solid var(--grille);background:var(--fond);color:var(--encre);
@@ -447,7 +454,7 @@ footer a{color:var(--muet)}
   </div>
 </div>
 </footer>
-<dialog class="ctc" id="ctc">
+<dialog class="ctc" id="ctc" onchange="ctcSugg()">
   <button class="fermer" type="button" onclick="document.getElementById('ctc').close()"
           aria-label="Fermer">&#215;</button>
   <h3>Écrire à Claire</h3>
@@ -470,6 +477,7 @@ footer a{color:var(--muet)}
     <div class="large"><span class="etq">Votre besoin</span>
       <textarea id="ctcBesoin"></textarea></div>
   </div>
+  <div class="sugg" id="ctcSugg"></div>
   <div class="apps">
     <button type="button" class="app" onclick="ctcGo('gmail')"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M2 18V7.9l-.9-1.2A1.9 1.9 0 0 1 3.9 4.9L6.5 7v12.6H3.6A1.6 1.6 0 0 1 2 18Z"/><path fill="#34A853" d="M22 18V7.9l.9-1.2a1.9 1.9 0 0 0-2.8-1.8L17.5 7v12.6h2.9A1.6 1.6 0 0 0 22 18Z"/><path fill="#FBBC04" d="M6.5 9.9V7L3.9 4.9a1.9 1.9 0 0 0-1.8 1.8Z"/><path fill="#C5221F" d="M17.5 9.9V7l2.6-2.1a1.9 1.9 0 0 1 1.8 1.8Z"/><path fill="#EA4335" d="M6.5 7 12 11l5.5-4v2.9L12 13.5 6.5 9.9Z"/></svg>
       Gmail</button>
@@ -488,12 +496,26 @@ var CTC={to:"claire.vandesype@pmo-laboratory.com",offre:"",
  et:{type:"Votre demande concerne :",nom:"Nom",prenom:"Prénom",
      soc:"Société",email:"Votre email",tel:"Téléphone",
      besoin:"Votre besoin"}};
+var CTCS={"docs": {"Programme en dérive": {"t": "En attendant ma réponse : mes 10 premiers gestes", "h": "kit/reprise-programme-fr.pdf"}, "Portefeuille illisible": {"t": "En attendant : le tableau de bord portefeuille", "h": "kit/tableau-de-bord-fr.pdf"}, "Budget à cadrer": {"t": "En attendant : la grille d’arbitrage", "h": "kit/grille-arbitrage-fr.pdf"}, "Schéma directeur / transformation": {"t": "En attendant : la grille de scénarios", "h": "kit/grille-scenarios-fr.pdf"}, "Essentiel": {"t": "Goûtez d’abord : l’extrait du cahier d’exercices", "h": "kit/cahier-extrait-fr.pdf"}, "Complet": {"t": "Goûtez d’abord : l’extrait du cahier d’exercices", "h": "kit/cahier-extrait-fr.pdf"}, "Accompagné": {"t": "Goûtez d’abord : l’extrait du cahier d’exercices", "h": "kit/cahier-extrait-fr.pdf"}}, "urgents": ["Urgent (moins d’un mois)"], "cal": "https://calendly.com/claire-vandesype", "cal_t": "C’est urgent ? Réservez 30 minutes maintenant"};
+function ctcSugg(){
+ var z=document.getElementById('ctcSugg');if(!z)return;
+ var out=[];
+ var qs=document.querySelectorAll('#ctc .qbloc.on input:checked');
+ for(var i=0;i<qs.length;i++){
+   var d=CTCS.docs[qs[i].value];
+   if(d)out.push('<a href="'+d.h+'" download>'+d.t+' &#8595;</a>');
+   if(CTCS.urgents.indexOf(qs[i].value)>=0)
+     out.push('<a href="'+CTCS.cal+'" rel="noopener" class="urgent">'
+              +CTCS.cal_t+' &#8594;</a>');
+ }
+ z.innerHTML=out.join("");}
 function ctcType(){
  var t=document.querySelector('input[name=ctct]:checked').value;
  document.getElementById('ctcBesoin').placeholder=CTC.ph[t];
  var bs=document.querySelectorAll('#ctc .qbloc');
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
- var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');}
+ var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
+ ctcSugg();}
 function ctcOuvre(offre){
  var d=document.getElementById('ctc');if(!d||!d.showModal)return true;
  CTC.offre=offre||"";
