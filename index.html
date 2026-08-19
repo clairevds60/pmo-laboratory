@@ -291,6 +291,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .fluxwrap.on{max-height:2800px;opacity:1;transform:none}
 .ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
    padding:30px 30px 24px;background:#fdfcf9;color:var(--encre);margin:26px 0 6px}
+.ctc .etbloc{display:none}
+.ctc .etbloc.on{display:block}
 .ctc .etapes{margin:12px 0 26px;border-color:var(--grille)}
 .ctc .et{padding:14px 16px;background:var(--fond)}
 .ctc .et .n{font-size:20px}
@@ -476,7 +478,7 @@ footer a{color:var(--muet)}
 <div class="decl"><div class="d cliquable" onclick="ctcOuvreSit('Programme en dérive')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Programme en dérive')"><h3>Votre programme dérape à mi-parcours</h3><p>La date de bascule approche et le plan n’est plus tenable. J’arrive en cours de route : je reconstruis un plan unique qui fait autorité, je remets un comité qui décide, et je tiens la date ou j’annonce la nouvelle assez tôt pour qu’elle soit tenable.</p><i class="act">M’écrire à ce sujet &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Portefeuille illisible')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Portefeuille illisible')"><h3>Votre portefeuille est illisible</h3><p>Personne ne sait dire ce qui est en cours, ce qui est en retard, ni ce que ça coûtera. Je qualifie, je hiérarchise, je fais arbitrer — puis j’industrialise le pilotage pour que ça tienne sans moi.</p><i class="act">M’écrire à ce sujet &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Budget à cadrer')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Budget à cadrer')"><h3>Votre budget IT n’est pas tenable</h3><p>Budget construit dans l’urgence, CAPEX et OPEX mélangés, trajectoire invérifiable. Je cadre de zéro s’il le faut, j’installe une grille d’arbitrage unique, et je sanctuarise ce qui doit aboutir.</p><i class="act">M’écrire à ce sujet &#8594;</i></div></div>
 <div class="fluxwrap" id="fluxwrap"><div class="ctc" id="ctc" onchange="ctcSugg()">
   <div class="etq">La suite, en trois pas :</div>
-  <div class="etapes"><div class="et"><div class="n">1</div><h3>Un appel de 30 minutes</h3><p>Vous décrivez le contexte. Je vous dis franchement si je suis la bonne personne — et si je ne le suis pas, je vous le dis aussi.</p></div><div class="et"><div class="n">2</div><h3>Une proposition écrite</h3><p>Périmètre, gouvernance, livrables — et un TJM aligné sur le marché que je mesure chaque jour, pas sur une grille opaque.</p></div><div class="et"><div class="n">3</div><h3>Le pilotage démarre</h3><p>Sur site ou à distance. Premier livrable : un état des lieux qui fait autorité — ce qui est en cours, en risque, à décider.</p></div></div>
+  <div class="etbloc on" id="et-mission"><div class="etapes"><div class="et"><div class="n">1</div><h3>Un appel de 30 minutes</h3><p>Vous décrivez le contexte. Je vous dis franchement si je suis la bonne personne — et si je ne le suis pas, je vous le dis aussi.</p></div><div class="et"><div class="n">2</div><h3>Une proposition écrite</h3><p>Périmètre, gouvernance, livrables — et un TJM aligné sur le marché que je mesure chaque jour, pas sur une grille opaque.</p></div><div class="et"><div class="n">3</div><h3>Le pilotage démarre</h3><p>Sur site ou à distance. Premier livrable : un état des lieux qui fait autorité — ce qui est en cours, en risque, à décider.</p></div></div></div><div class="etbloc" id="et-formation"><div class="etapes"><div class="et"><div class="n">1</div><h3>Pré-inscrivez-vous</h3><p>Un email suffit — sans engagement. Vous serez servi·e en premier à la sortie des modules.</p></div><div class="et"><div class="n">2</div><h3>Recevez le parcours</h3><p>Les modules vidéo, les cahiers d’exercices et les modèles de la boîte à outils — à votre rythme.</p></div><div class="et"><div class="n">3</div><h3>Allez plus loin si besoin</h3><p>L’offre Accompagnée ajoute 90 minutes en visio avec moi et la revue de votre propre portefeuille.</p></div></div></div><div class="etbloc" id="et-autre"><div class="etapes"><div class="et"><div class="n">1</div><h3>Écrivez-moi</h3><p>Trois lignes suffisent pour démarrer l’échange.</p></div><div class="et"><div class="n">2</div><h3>Réponse franche</h3><p>Si je ne suis pas la bonne personne, je vous le dis — et je vous oriente si je peux.</p></div><div class="et"><div class="n">3</div><h3>Trente minutes si utile</h3><p>Un créneau se réserve en un clic si l’échange le mérite.</p></div></div></div>
   <h3>Dites-m’en plus — le message partira déjà qualifié</h3>
   <div class="etq">Votre demande concerne :</div>
   <div class="types" id="ctcTypes">
@@ -636,6 +638,9 @@ function ctcType(){
  var bs=document.querySelectorAll('#ctc .qbloc');
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
  var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
+ var es=document.querySelectorAll('#ctc .etbloc');
+ for(var j=0;j<es.length;j++)es[j].classList.remove('on');
+ var e=document.getElementById('et-'+t);if(e)e.classList.add('on');
  ctcSugg();}
 function ctcReveal(){
  var w=document.getElementById('fluxwrap');if(!w)return false;

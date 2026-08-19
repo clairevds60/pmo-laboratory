@@ -291,6 +291,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .fluxwrap.on{max-height:2800px;opacity:1;transform:none}
 .ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
    padding:30px 30px 24px;background:#fdfcf9;color:var(--encre);margin:26px 0 6px}
+.ctc .etbloc{display:none}
+.ctc .etbloc.on{display:block}
 .ctc .etapes{margin:12px 0 26px;border-color:var(--grille)}
 .ctc .et{padding:14px 16px;background:var(--fond)}
 .ctc .et .n{font-size:20px}
@@ -476,7 +478,7 @@ footer a{color:var(--muet)}
 <div class="decl"><div class="d cliquable" onclick="ctcOuvreSit('Slipping programme')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Slipping programme')"><h3>Your programme is slipping mid-course</h3><p>The go-live date is approaching and the plan no longer holds. I come in mid-flight: I rebuild a single authoritative plan, restore a steering committee that actually decides, and either hold the date or call the new one early enough to be credible.</p><i class="act">Write to me about this &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Unreadable portfolio')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Unreadable portfolio')"><h3>Your portfolio is unreadable</h3><p>Nobody can say what is running, what is late, or what it will cost. I qualify, prioritise and get decisions made — then industrialise the governance so it holds without me.</p><i class="act">Write to me about this &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Budget to frame')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Budget to frame')"><h3>Your IT budget does not hold</h3><p>A budget built under pressure, CAPEX and OPEX mixed, a roadmap nobody can verify. I frame it from scratch if needed, install a single arbitration grid, and ring-fence what has to land.</p><i class="act">Write to me about this &#8594;</i></div></div>
 <div class="fluxwrap" id="fluxwrap"><div class="ctc" id="ctc" onchange="ctcSugg()">
   <div class="etq">What happens next, in three steps:</div>
-  <div class="etapes"><div class="et"><div class="n">1</div><h3>A 30-minute call</h3><p>You describe the context. I tell you plainly whether I am the right person — and if I am not, I say that too.</p></div><div class="et"><div class="n">2</div><h3>A written proposal</h3><p>Scope, governance, deliverables — and a day rate aligned with the market I measure daily, not an opaque price grid.</p></div><div class="et"><div class="n">3</div><h3>Steering begins</h3><p>On site or remote. First deliverable: a state of play that holds authority — what is running, at risk, and to be decided.</p></div></div>
+  <div class="etbloc on" id="et-mission"><div class="etapes"><div class="et"><div class="n">1</div><h3>A 30-minute call</h3><p>You describe the context. I tell you plainly whether I am the right person — and if I am not, I say that too.</p></div><div class="et"><div class="n">2</div><h3>A written proposal</h3><p>Scope, governance, deliverables — and a day rate aligned with the market I measure daily, not an opaque price grid.</p></div><div class="et"><div class="n">3</div><h3>Steering begins</h3><p>On site or remote. First deliverable: a state of play that holds authority — what is running, at risk, and to be decided.</p></div></div></div><div class="etbloc" id="et-formation"><div class="etapes"><div class="et"><div class="n">1</div><h3>Pre-register</h3><p>One email is enough — no commitment. You will be served first when the modules are released.</p></div><div class="et"><div class="n">2</div><h3>Receive the course</h3><p>The video modules, the exercise workbooks and the toolbox templates — at your own pace.</p></div><div class="et"><div class="n">3</div><h3>Go further if needed</h3><p>The Guided offer adds 90 minutes live with me and a review of your own portfolio.</p></div></div></div><div class="etbloc" id="et-autre"><div class="etapes"><div class="et"><div class="n">1</div><h3>Write to me</h3><p>Three lines are enough to start the conversation.</p></div><div class="et"><div class="n">2</div><h3>A straight answer</h3><p>If I am not the right person, I say so — and point you in the right direction if I can.</p></div><div class="et"><div class="n">3</div><h3>Thirty minutes if useful</h3><p>A slot books in one click if the exchange deserves it.</p></div></div></div>
   <h3>Tell me more — the message will leave already qualified</h3>
   <div class="etq">Your request is about:</div>
   <div class="types" id="ctcTypes">
@@ -636,6 +638,9 @@ function ctcType(){
  var bs=document.querySelectorAll('#ctc .qbloc');
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
  var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
+ var es=document.querySelectorAll('#ctc .etbloc');
+ for(var j=0;j<es.length;j++)es[j].classList.remove('on');
+ var e=document.getElementById('et-'+t);if(e)e.classList.add('on');
  ctcSugg();}
 function ctcReveal(){
  var w=document.getElementById('fluxwrap');if(!w)return false;

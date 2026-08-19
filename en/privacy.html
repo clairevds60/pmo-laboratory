@@ -291,6 +291,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .fluxwrap.on{max-height:2800px;opacity:1;transform:none}
 .ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
    padding:30px 30px 24px;background:#fdfcf9;color:var(--encre);margin:26px 0 6px}
+.ctc .etbloc{display:none}
+.ctc .etbloc.on{display:block}
 .ctc .etapes{margin:12px 0 26px;border-color:var(--grille)}
 .ctc .et{padding:14px 16px;background:var(--fond)}
 .ctc .et .n{font-size:20px}
@@ -524,6 +526,9 @@ function ctcType(){
  var bs=document.querySelectorAll('#ctc .qbloc');
  for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
  var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
+ var es=document.querySelectorAll('#ctc .etbloc');
+ for(var j=0;j<es.length;j++)es[j].classList.remove('on');
+ var e=document.getElementById('et-'+t);if(e)e.classList.add('on');
  ctcSugg();}
 function ctcReveal(){
  var w=document.getElementById('fluxwrap');if(!w)return false;
