@@ -277,17 +277,13 @@ body{overflow-x:clip}
    letter-spacing:1px;color:var(--muet);margin-top:14px;font-style:normal;
    border:1px solid var(--grille);padding:4px 8px}
 
-/* ENTREE DE SECTION, style editorial : un filet ouvre la section, le numero est un
-   petit marqueur or a gauche du titre (meme ligne de base), l'intro se resserre. */
-body.accueil{counter-reset:sec}
-body.accueil h2{display:grid;grid-template-columns:auto 1fr;gap:0 16px;
-   align-items:baseline;border-top:1px solid var(--grille);padding-top:18px;
-   margin:56px 0 12px}
-body.accueil h2::before{counter-increment:sec;
-   content:counter(sec,decimal-leading-zero);
-   font:800 13px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   color:var(--or);font-variant-numeric:tabular-nums;
-   border-bottom:3px solid var(--or);padding-bottom:6px;align-self:center}
+/* ENTREE DE SECTION : un filet ouvre la section, un trait or la signe, le titre
+   porte seul. Plus de numerotation : avec le portail elle sautait d'un parcours a
+   l'autre (le kit devenait « 01 » en outillage) — demande de Claire. */
+body.accueil h2{border-top:1px solid var(--grille);padding-top:20px;
+   margin:56px 0 12px;position:relative}
+body.accueil h2::before{content:"";position:absolute;top:-1px;left:0;
+   width:56px;height:3px;background:var(--or)}
 body.accueil h2 + p{margin-top:0;color:var(--encre2);max-width:74ch}
 body.accueil .sombre h2{border-top-color:rgba(255,255,255,.18)}
 /* les etiquettes de groupe de la boite a outils s'alignent sur ce rythme */
@@ -512,6 +508,16 @@ body.p3 [data-grp="kit"]{display:none}
 body.p0 #ctcTypezone,body.p1 #ctcTypezone,body.p2 #ctcTypezone,
 body.p3 #ctcTypezone{display:none}
 body.p0 .kg-form,body.p2 .kg-form,body.p3 .kg-form{display:none}
+/* le menu des sections ne propose QUE les sections du parcours ouvert */
+body.p1 .snav{display:none}
+body.p2 .snav a:not([href="#kit"]),
+body.p3 .snav a:not([href="#releve"]){display:none}
+/* les titres d'entree du flux : un seul visible */
+.ft{display:none;margin:0 0 14px}
+body:not(.p0):not(.p1):not(.p2):not(.p3) .ft-def,
+body.p0 .ft-p0,body.p1 .ft-p1,body.p2 .ft-p2,body.p3 .ft-p3{display:block}
+.ctc .ft{font-size:clamp(21px,2.6vw,27px);border-top:0;padding-top:0}
+.ctc-h{margin-top:30px}
 #ctc.tf:not(.infos) .qf-info,#ctc.tf:not(.infos) #ctcSuite{display:none}
 body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
 body.p3 [data-grp],body.tout [data-grp],
@@ -521,9 +527,10 @@ body.garde [data-grp].gvu{animation:pdevoile .55s ease both}
 @media (prefers-reduced-motion:reduce){
    body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
    body.p3 [data-grp]{animation:none}}
-.pp{overflow:hidden;max-height:0;opacity:0;transform:translateY(10px);
+.pp{overflow:hidden;max-height:0;opacity:0;visibility:hidden;
+   transform:translateY(10px);
    transition:max-height .5s ease,opacity .4s ease .06s,transform .4s ease .06s}
-.pp.on{max-height:400px;opacity:1;transform:none}
+.pp.on{max-height:400px;opacity:1;visibility:visible;transform:none}
 .pp p{margin:16px 0 4px;color:var(--encre)}
 .pp .gestes{margin-top:10px}
 .cta-mini{display:inline-flex;align-items:center;background:var(--or);color:#fff;
@@ -648,9 +655,10 @@ footer a{color:var(--muet)}
 <p>Cliquez votre situation : le message part déjà qualifié — et je vous tends l’outil qui correspond en attendant ma réponse.</p>
 <div class="decl"><div class="d cliquable" onclick="ctcOuvreSit('Programme en dérive')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Programme en dérive')"><h3>Votre programme dérape à mi-parcours</h3><p>La date de bascule approche et le plan n’est plus tenable. J’arrive en cours de route : je reconstruis un plan unique qui fait autorité, je remets un comité qui décide, et je tiens la date ou j’annonce la nouvelle assez tôt pour qu’elle soit tenable.</p><i class="act">M’écrire à ce sujet &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Portefeuille illisible')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Portefeuille illisible')"><h3>Votre portefeuille est illisible</h3><p>Personne ne sait dire ce qui est en cours, ce qui est en retard, ni ce que ça coûtera. Je qualifie, je hiérarchise, je fais arbitrer — puis j’industrialise le pilotage pour que ça tienne sans moi.</p><i class="act">M’écrire à ce sujet &#8594;</i></div><div class="d cliquable" onclick="ctcOuvreSit('Budget à cadrer')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')ctcOuvreSit('Budget à cadrer')"><h3>Votre budget IT n’est pas tenable</h3><p>Budget construit dans l’urgence, CAPEX et OPEX mélangés, trajectoire invérifiable. Je cadre de zéro s’il le faut, j’installe une grille d’arbitrage unique, et je sanctuarise ce qui doit aboutir.</p><i class="act">M’écrire à ce sujet &#8594;</i></div></div>
 <div class="fluxwrap" id="fluxwrap"><div class="ctc" id="ctc" onchange="ctcSugg()">
+  <h2 class="ft ft-def">Parlons de votre besoin</h2><h2 class="ft ft-p0">Votre situation, et ce que je peux faire</h2><h2 class="ft ft-p1">Choisir votre offre de formation</h2><h2 class="ft ft-p2">Être prévenu·e du lancement de l’outil</h2><h2 class="ft ft-p3">Rejoindre la liste d’ouverture SKARAB</h2>
   <div class="etq">La suite, en trois pas :</div>
   <div class="etbloc on" id="et-mission"><div class="etapes"><div class="et"><div class="n">1</div><h3>Un appel de 30 minutes</h3><p>Vous décrivez le contexte. Je vous dis franchement si je suis la bonne personne — et si je ne le suis pas, je vous le dis aussi.</p></div><div class="et"><div class="n">2</div><h3>Une proposition écrite</h3><p>Périmètre, gouvernance, livrables — et un TJM aligné sur le marché que je mesure chaque jour, pas sur une grille opaque.</p></div><div class="et"><div class="n">3</div><h3>Le pilotage démarre</h3><p>Sur site ou à distance. Premier livrable : un état des lieux qui fait autorité — ce qui est en cours, en risque, à décider.</p></div></div></div><div class="etbloc" id="et-formation"><div class="etapes"><div class="et"><div class="n">1</div><h3>Pré-inscrivez-vous</h3><p>Un email suffit — sans engagement. Vous serez servi·e en premier à la sortie des modules.</p></div><div class="et"><div class="n">2</div><h3>Recevez le parcours</h3><p>Les modules vidéo, les cahiers d’exercices et les modèles de la boîte à outils — à votre rythme.</p></div><div class="et"><div class="n">3</div><h3>Allez plus loin si besoin</h3><p>L’offre Accompagnée ajoute deux sessions individuelles avec moi : CV, profil LinkedIn et simulation d’entretien pour décrocher le premier poste ou la première mission.</p></div></div></div><div class="etbloc" id="et-autre"><div class="etapes"><div class="et"><div class="n">1</div><h3>Écrivez-moi</h3><p>Trois lignes suffisent pour démarrer l’échange.</p></div><div class="et"><div class="n">2</div><h3>Réponse franche</h3><p>Si je ne suis pas la bonne personne, je vous le dis — et je vous oriente si je peux.</p></div><div class="et"><div class="n">3</div><h3>Trente minutes si utile</h3><p>Un créneau se réserve en un clic si l’échange le mérite.</p></div></div></div>
-  <h3>Dites-m’en plus — le message partira déjà qualifié</h3>
+  <h3 class="ctc-h">Dites-m’en plus — le message partira déjà qualifié</h3>
   <div id="ctcTypezone">
   <div class="etq">Votre demande concerne :</div>
   <div class="types" id="ctcTypes">

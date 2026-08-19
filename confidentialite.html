@@ -277,17 +277,13 @@ body{overflow-x:clip}
    letter-spacing:1px;color:var(--muet);margin-top:14px;font-style:normal;
    border:1px solid var(--grille);padding:4px 8px}
 
-/* ENTREE DE SECTION, style editorial : un filet ouvre la section, le numero est un
-   petit marqueur or a gauche du titre (meme ligne de base), l'intro se resserre. */
-body.accueil{counter-reset:sec}
-body.accueil h2{display:grid;grid-template-columns:auto 1fr;gap:0 16px;
-   align-items:baseline;border-top:1px solid var(--grille);padding-top:18px;
-   margin:56px 0 12px}
-body.accueil h2::before{counter-increment:sec;
-   content:counter(sec,decimal-leading-zero);
-   font:800 13px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   color:var(--or);font-variant-numeric:tabular-nums;
-   border-bottom:3px solid var(--or);padding-bottom:6px;align-self:center}
+/* ENTREE DE SECTION : un filet ouvre la section, un trait or la signe, le titre
+   porte seul. Plus de numerotation : avec le portail elle sautait d'un parcours a
+   l'autre (le kit devenait « 01 » en outillage) — demande de Claire. */
+body.accueil h2{border-top:1px solid var(--grille);padding-top:20px;
+   margin:56px 0 12px;position:relative}
+body.accueil h2::before{content:"";position:absolute;top:-1px;left:0;
+   width:56px;height:3px;background:var(--or)}
 body.accueil h2 + p{margin-top:0;color:var(--encre2);max-width:74ch}
 body.accueil .sombre h2{border-top-color:rgba(255,255,255,.18)}
 /* les etiquettes de groupe de la boite a outils s'alignent sur ce rythme */
@@ -512,6 +508,16 @@ body.p3 [data-grp="kit"]{display:none}
 body.p0 #ctcTypezone,body.p1 #ctcTypezone,body.p2 #ctcTypezone,
 body.p3 #ctcTypezone{display:none}
 body.p0 .kg-form,body.p2 .kg-form,body.p3 .kg-form{display:none}
+/* le menu des sections ne propose QUE les sections du parcours ouvert */
+body.p1 .snav{display:none}
+body.p2 .snav a:not([href="#kit"]),
+body.p3 .snav a:not([href="#releve"]){display:none}
+/* les titres d'entree du flux : un seul visible */
+.ft{display:none;margin:0 0 14px}
+body:not(.p0):not(.p1):not(.p2):not(.p3) .ft-def,
+body.p0 .ft-p0,body.p1 .ft-p1,body.p2 .ft-p2,body.p3 .ft-p3{display:block}
+.ctc .ft{font-size:clamp(21px,2.6vw,27px);border-top:0;padding-top:0}
+.ctc-h{margin-top:30px}
 #ctc.tf:not(.infos) .qf-info,#ctc.tf:not(.infos) #ctcSuite{display:none}
 body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
 body.p3 [data-grp],body.tout [data-grp],
@@ -521,9 +527,10 @@ body.garde [data-grp].gvu{animation:pdevoile .55s ease both}
 @media (prefers-reduced-motion:reduce){
    body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
    body.p3 [data-grp]{animation:none}}
-.pp{overflow:hidden;max-height:0;opacity:0;transform:translateY(10px);
+.pp{overflow:hidden;max-height:0;opacity:0;visibility:hidden;
+   transform:translateY(10px);
    transition:max-height .5s ease,opacity .4s ease .06s,transform .4s ease .06s}
-.pp.on{max-height:400px;opacity:1;transform:none}
+.pp.on{max-height:400px;opacity:1;visibility:visible;transform:none}
 .pp p{margin:16px 0 4px;color:var(--encre)}
 .pp .gestes{margin-top:10px}
 .cta-mini{display:inline-flex;align-items:center;background:var(--or);color:#fff;
