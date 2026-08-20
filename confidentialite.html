@@ -151,7 +151,12 @@ h1 em{font-style:normal;
 
 /* PIED DE PAGE EDITORIAL — bande sombre structuree, il repond au bandeau du haut. */
 footer.pied{background:var(--encre);color:#cfc7b8;
-   margin:0 calc(50% - 50vw);padding:52px calc(50vw - 50%) 46px;border-top:0}
+   margin:0 calc(50% - 50vw);
+   /* 118px en bas, pas 46 : la pastille flottante « votre parcours » est fixee a
+      16px du bas sur 63px de haut, et elle RECOUVRAIT la derniere ligne du pied de
+      page — les trois liens legaux, en entier sur mobile. Des mentions legales
+      cachees par un element flottant ne sont pas des mentions legales. */
+   padding:52px calc(50vw - 50%) 118px;border-top:0}
 footer.pied .cols{display:flex;flex-wrap:wrap;gap:34px 70px;justify-content:space-between}
 footer.pied .marque{color:#d8b25e}
 footer.pied .filet{background:#d8b25e;width:80px;height:4px;margin:14px 0 0}
@@ -250,6 +255,23 @@ body{overflow-x:clip}
 /* les CGV : un sous-titre, et une annexe encadree. Les lignes de pointilles du
    formulaire de retractation debordaient de 3 px en mobile — elles n'offrent aucun
    point de coupure, il faut l'autoriser explicitement. */
+/* le deroule d'une inscription en formation : la contrainte legale, en argument */
+.insc{margin-top:28px;border:1px solid var(--grille);padding:22px 20px;
+      background:var(--carte)}
+.insc h3{margin:0 0 14px;font-size:17px;letter-spacing:-.2px}
+.insc-e{margin:0 0 18px;padding-left:22px;font-size:14.5px;line-height:1.6}
+.insc-e li{margin:0 0 9px;color:var(--encre2)}
+.insc-e b{color:var(--encre)}
+.insc-t{width:100%;border-collapse:collapse;margin:0 0 12px}
+.insc-t th{font:600 10px/1.3 'Consolas',ui-monospace,monospace;letter-spacing:.8px;
+           text-transform:uppercase;color:var(--muet);text-align:right;
+           padding:0 8px 7px;border-bottom:1px solid var(--grille)}
+.insc-t th:first-child{text-align:left}
+.insc-t td{padding:9px 8px;border-bottom:1px solid var(--grille);
+           font-size:14px;text-align:right;white-space:nowrap}
+.insc-t td:first-child{text-align:left;font-weight:700}
+.insc-t td b{color:var(--or-fort)}
+.insc-n{margin:0;font-size:13px;line-height:1.55;color:var(--muet)}
 .cgv-s{font-size:15px;color:var(--encre2);max-width:62ch;margin:0 0 26px}
 .annexe{margin-top:36px;border:1px solid var(--grille);padding:20px 18px}
 .annexe h2{margin-top:0}
