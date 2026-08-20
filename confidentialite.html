@@ -271,6 +271,14 @@ body{overflow-x:clip}
    font:600 10.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1.5px;
    text-transform:uppercase;padding:5px 8px}
 .gv-biblio{margin:14px 0 0;font-size:14px}
+/* l'ECHELLE de TJM : une grandeur continue se regle, elle ne se coche pas */
+.jauge{margin:4px 0 14px;max-width:460px}
+.jauge input[type=range]{width:100%;accent-color:var(--or);height:26px;
+   cursor:pointer}
+.jauge .jauge-v{display:inline-block;font:800 22px/1 Inter,'Segoe UI',system-ui,
+   sans-serif;color:var(--or);font-variant-numeric:tabular-nums;margin-left:2px}
+.jauge .jauge-b{display:flex;justify-content:space-between;font:600 12px/1
+   'Consolas',ui-monospace,monospace;color:var(--muet);margin-top:2px}
 .biblio{border:1px solid var(--grille);padding:26px 24px;margin-top:26px;
    max-width:560px}
 .biblio input{width:100%;padding:13px 14px;border:1px solid var(--grille);
@@ -731,6 +739,9 @@ var CTC={to:"claire.vandesype@pmo-laboratory.com",offre:"",
      soc:"Société",email:"Votre email",tel:"Téléphone",
      besoin:"Votre besoin"}};
 var CTCS={"docs": {"Programme en dérive": {"t": "En attendant ma réponse : mes 10 premiers gestes", "h": "kit/reprise-programme-fr.pdf"}, "Portefeuille illisible": {"t": "En attendant : le tableau de bord portefeuille", "h": "kit/tableau-de-bord-fr.pdf"}, "Budget à cadrer": {"t": "En attendant : la grille d’arbitrage", "h": "kit/grille-arbitrage-fr.pdf"}, "Schéma directeur / transformation": {"t": "En attendant : la grille de scénarios", "h": "kit/grille-scenarios-fr.pdf"}, "Découverte": {"t": "Goûtez d’abord : l’extrait du cahier d’exercices", "h": "kit/cahier-extrait-fr.pdf"}, "Complet": {"t": "Goûtez d’abord : l’extrait du cahier d’exercices", "h": "kit/cahier-extrait-fr.pdf"}, "Accompagné": {"t": "Goûtez d’abord : l’extrait du cahier d’exercices", "h": "kit/cahier-extrait-fr.pdf"}}, "urgents": ["Urgent (moins d’un mois)"], "cal": "https://calendly.com/claire-vandesype", "cal_t": "C’est urgent ? Réservez 30 minutes maintenant"};
+function ctcJauge(r){
+ var o=r.parentNode.querySelector('.jauge-v');
+ if(o)o.textContent=r.value+" €";}
 function ctcInfos(){
  var c=document.getElementById('ctc');if(c)c.classList.add('infos');
  return false;}
@@ -776,6 +787,11 @@ function ctcType(){
  var es=document.querySelectorAll('#ctc .etbloc');
  for(var j=0;j<es.length;j++)es[j].classList.remove('on');
  var e=document.getElementById('et-'+t);if(e)e.classList.add('on');
+ /* SKARAB a ses propres « trois pas » : ceux du type « autre » n'ont pas de sens
+    pour quelqu'un qui rejoint une liste d'apport d'affaires */
+ if(cl.contains('p3')){
+  var ea=document.getElementById('et-autre');if(ea)ea.classList.remove('on');
+  var e3=document.getElementById('et-p3');if(e3)e3.classList.add('on');}
  var c=document.getElementById('ctc');
  if(c){if(t==='formation')c.classList.add('tf');
   else{c.classList.remove('tf');}c.classList.remove('infos');}
@@ -889,6 +905,9 @@ function ctcGo(mode){
  for(var k=0;k<qs.length;k++){
    lignes.push(qs[k].getAttribute('data-q')+" "+qs[k].value);
    if(k===0)su+=" — "+qs[k].value;}
+ var js=document.querySelectorAll('#ctc .qbloc.on input[type=range]');
+ for(var m=0;m<js.length;m++)
+   lignes.push(js[m].getAttribute('data-q')+" "+js[m].value+" €");
  if(CTC.offre)lignes.push("Offre : "+CTC.offre);
  lignes.push(CTC.et.nom+" : "+v('ctcNom'),CTC.et.prenom+" : "+v('ctcPrenom'),
    CTC.et.soc+" : "+v('ctcSoc'),CTC.et.email+" : "+v('ctcEmail'),
