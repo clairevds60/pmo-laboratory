@@ -249,6 +249,37 @@ body{overflow-x:clip}
 .to .cta2{text-align:center}
 .tarifs-note{font-size:14px;color:var(--encre2);border-left:4px solid var(--vert);
    background:#f7faf8;padding:12px 16px;margin:14px 0 0}
+/* LES GUIDES : quatre fiches, prix a l'unite. Le fanion « en preparation » dit la
+   verite tant que le PDF n'est pas ecrit. */
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
+   gap:16px;margin:20px 0 8px}
+.gv{position:relative;border:1px solid var(--grille);padding:22px 20px;
+   display:flex;flex-direction:column;background:var(--fond);
+   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.gv:hover{border-color:var(--or);transform:translateY(-2px);
+   box-shadow:0 10px 24px -14px rgba(141,104,24,.5)}
+.gv h3{margin:0 0 6px;font-size:19px}
+.gv .gv-s{font-size:14px;color:var(--encre2);margin:0 0 14px}
+.gv .prix{font-weight:800;font-size:32px;line-height:1.1;color:var(--or);
+   letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.gv .prix small{font-size:13px;font-weight:600;color:var(--muet);letter-spacing:0}
+.gv .ht{font-size:12.5px;color:var(--muet);margin-top:2px}
+.gv ul{margin:12px 0 18px 18px;flex:1}
+.gv li{margin:6px 0;font-size:14px}
+.gv .cta,.gv .cta2{align-self:flex-start}
+.gv-prep{position:absolute;top:10px;right:10px;background:var(--encre2);color:#fff;
+   font:600 10.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1.5px;
+   text-transform:uppercase;padding:5px 8px}
+.gv-biblio{margin:14px 0 0;font-size:14px}
+.biblio{border:1px solid var(--grille);padding:26px 24px;margin-top:26px;
+   max-width:560px}
+.biblio input{width:100%;padding:13px 14px;border:1px solid var(--grille);
+   font:600 16px/1.2 'Consolas',ui-monospace,monospace;letter-spacing:1px;
+   margin:8px 0 16px;background:var(--fond);color:var(--encre)}
+.biblio input:focus-visible{outline:2px solid var(--or);outline-offset:1px}
+.bmsg{margin:14px 0 0;font-size:14px;min-height:20px}
+.bmsg.ko{color:#9b2c1f}
+.bmsg.ok{color:#1f6b3a}
 .flux-tarifs{margin:10px 0 4px}
 .ctc-actes{display:flex;gap:12px;flex-wrap:wrap;align-items:center;
    margin:14px 0 2px}
@@ -508,6 +539,8 @@ body.p3 [data-grp="kit"]{display:none}
 body.p0 #ctcTypezone,body.p1 #ctcTypezone,body.p2 #ctcTypezone,
 body.p3 #ctcTypezone{display:none}
 body.p0 .kg-form,body.p2 .kg-form,body.p3 .kg-form{display:none}
+body.p0 [data-grp="guides"],body.p2 [data-grp="guides"],
+body.p3 [data-grp="guides"]{display:none}
 /* le menu des sections ne propose QUE les sections du parcours ouvert */
 body.p1 .snav{display:none}
 body.p2 .snav a:not([href="#kit"]),
@@ -679,6 +712,7 @@ footer a{color:var(--muet)}
       <a href="../dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier FR</a>
       <a href="../dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier EN</a>
       <a href="../releve/le-releve.pdf" download>The market record</a>
+      <a href="../library.html">Your library</a>
     </div>
   </div>
   <div class="bas">

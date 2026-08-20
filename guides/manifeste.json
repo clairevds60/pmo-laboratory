@@ -1,0 +1,20 @@
+{
+ "guides": {
+  "demo": {
+   "fichier": "guides/demo.bin",
+   "iv": "YkFt3bMAHwa61k8W",
+   "octets": 44754,
+   "nom": "cahier-extrait-fr.pdf",
+   "enveloppes": {
+    "817cbce800e0a2fd835cb9a38a0dfaa2": {
+     "iv": "B6Bavm9lBCXDBkBm",
+     "env": "FPnf6HU4MtUhwuGHCs6Y38hc1gv69MWO8PqyBDrbf1y8OHYYi2XDRCUJ+cle3zlT"
+    },
+    "f27abfee80e77a76c47b5fa4c9ae5dec": {
+     "iv": "dp60WtZa7Aln2uTk",
+     "env": "s3W3lpVVY43UsFPKdqTBOmfqee1PpJM7POZ3eqIDXbXGVh6aLJ1viIseSNYEYBi9"
+    }
+   }
+  }
+ }
+}
