@@ -272,6 +272,19 @@ body{overflow-x:clip}
 .insc-t td:first-child{text-align:left;font-weight:700}
 .insc-t td b{color:var(--or-fort)}
 .insc-n{margin:0;font-size:13px;line-height:1.55;color:var(--muet)}
+/* les missions fraiches : une liste dense, lisible, ou l'age se voit */
+.mis{list-style:none;margin:0 0 26px;padding:0}
+.mis li{padding:10px 0;border-bottom:1px solid var(--grille)}
+.mi-t{font-weight:700;font-size:15.5px;display:block;margin-bottom:3px;
+      padding:6px 0}   /* 34 px de cible tactile, plancher WCAG 2.5.8 */
+.mi-m{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--muet);
+      align-items:baseline}
+.mi-m b{color:var(--or-fort)}
+.mi-a{font:600 12px/1.6 'Consolas',ui-monospace,monospace;letter-spacing:.6px;
+      text-transform:uppercase;color:var(--vert)}
+.mi-s{font:600 12px/1.6 'Consolas',ui-monospace,monospace;color:var(--muet)}
+.mis-av{border-left:3px solid var(--or);background:var(--carte);padding:12px 16px;
+        font-size:14px;line-height:1.6;margin:0 0 28px}
 .mrc-s{font-size:17px;color:var(--encre2);max-width:56ch;margin:0 0 26px}
 .mrc{margin:0 0 22px;padding-left:22px;font-size:15.5px;line-height:1.65;
      max-width:60ch}
@@ -774,7 +787,7 @@ footer a{color:var(--muet)}
 <p class="legende">A problem with your key? Write to me, I will look. <a href="mailto:claire.vandesype@pmo-laboratory.com">claire.vandesype@pmo-laboratory.com</a></p>
 <script>
 (function(){
- var M={"guides": {"demo": {"fichier": "guides/demo.bin", "iv": "YkFt3bMAHwa61k8W", "octets": 44754, "nom": "cahier-extrait-fr.pdf", "enveloppes": {"817cbce800e0a2fd835cb9a38a0dfaa2": {"iv": "B6Bavm9lBCXDBkBm", "env": "FPnf6HU4MtUhwuGHCs6Y38hc1gv69MWO8PqyBDrbf1y8OHYYi2XDRCUJ+cle3zlT"}, "f27abfee80e77a76c47b5fa4c9ae5dec": {"iv": "dp60WtZa7Aln2uTk", "env": "s3W3lpVVY43UsFPKdqTBOmfqee1PpJM7POZ3eqIDXbXGVh6aLJ1viIseSNYEYBi9"}}}, "marche": {"fichier": "guides/marche.bin", "iv": "4Bn0uQEL0/IVko7H", "octets": 282293, "nom": "guide-marche.pdf", "enveloppes": {"7e87288abaebe6fddd6b8c19c0f1bb1f": {"iv": "1alnEnlDhRBvm7Bb", "env": "8FltP4SIyWHgwOb5ECeFzT5O+/QPTf2Gw/kUMUmZE5qyAb+/5HaFIxG9UfFQMDaH"}, "edbb7f0cf24bc3226b36246f57594ccb": {"iv": "+uZ06Lb3oS3+EDTJ", "env": "PZKFM+p4S+lORIiU5DwRgmMlySWqAid4IqMTeVPq/h2OOsJdWHdkp5VbFPvs4IzT"}, "df6d49e3d0a36d2c2def98a4550b78a5": {"iv": "hQH232iS3z00uW+9", "env": "gt4M/EtygGj/nOzNdTkiz31o6pwaC/04wbRHF3McRfkVSL9llQZycEetzYHuFvcU"}}}}}, T={"att": "Decrypting…", "ko": "This key does not open any guide. Check the copy, or write to me.", "ok": "Open. The download is starting."};
+ var M={"guides": {"demo": {"fichier": "guides/demo.bin", "iv": "YkFt3bMAHwa61k8W", "octets": 44754, "nom": "cahier-extrait-fr.pdf", "enveloppes": {"817cbce800e0a2fd835cb9a38a0dfaa2": {"iv": "B6Bavm9lBCXDBkBm", "env": "FPnf6HU4MtUhwuGHCs6Y38hc1gv69MWO8PqyBDrbf1y8OHYYi2XDRCUJ+cle3zlT"}, "f27abfee80e77a76c47b5fa4c9ae5dec": {"iv": "dp60WtZa7Aln2uTk", "env": "s3W3lpVVY43UsFPKdqTBOmfqee1PpJM7POZ3eqIDXbXGVh6aLJ1viIseSNYEYBi9"}}}, "marche": {"fichier": "guides/marche.bin", "iv": "4yLwGMeX6Xwb97xz", "octets": 289423, "nom": "Guide - Le marché du pilotage - 20 août 2026.pdf", "enveloppes": {"7e87288abaebe6fddd6b8c19c0f1bb1f": {"iv": "1alnEnlDhRBvm7Bb", "env": "8FltP4SIyWHgwOb5ECeFzT5O+/QPTf2Gw/kUMUmZE5qyAb+/5HaFIxG9UfFQMDaH"}, "edbb7f0cf24bc3226b36246f57594ccb": {"iv": "+uZ06Lb3oS3+EDTJ", "env": "PZKFM+p4S+lORIiU5DwRgmMlySWqAid4IqMTeVPq/h2OOsJdWHdkp5VbFPvs4IzT"}, "df6d49e3d0a36d2c2def98a4550b78a5": {"iv": "hQH232iS3z00uW+9", "env": "gt4M/EtygGj/nOzNdTkiz31o6pwaC/04wbRHF3McRfkVSL9llQZycEetzYHuFvcU"}}}}}, T={"att": "Decrypting…", "ko": "This key does not open any guide. Check the copy, or write to me.", "ok": "Open. The download is starting."};
  var b=document.getElementById('bgo'), z=document.getElementById('bmsg');
  function dit(m,ko){z.textContent=m;z.className='bmsg'+(ko?' ko':' ok');}
  function b64(s){var r=atob(s),a=new Uint8Array(r.length);
