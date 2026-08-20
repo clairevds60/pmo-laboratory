@@ -247,6 +247,26 @@ body{overflow-x:clip}
 .to ul{margin:14px 0 18px 18px;flex:1}
 .to li{margin:6px 0;font-size:14px}
 .to .cta2{text-align:center}
+/* les CGV : un sous-titre, et une annexe encadree. Les lignes de pointilles du
+   formulaire de retractation debordaient de 3 px en mobile — elles n'offrent aucun
+   point de coupure, il faut l'autoriser explicitement. */
+.cgv-s{font-size:15px;color:var(--encre2);max-width:62ch;margin:0 0 26px}
+.annexe{margin-top:36px;border:1px solid var(--grille);padding:20px 18px}
+.annexe h2{margin-top:0}
+.annexe .an-i{font-size:14px;color:var(--muet)}
+.annexe p{overflow-wrap:anywhere}
+/* le bloc de consentement : sobre, mais impossible a rater */
+.cons{margin-top:18px;border-top:1px solid var(--grille);padding-top:14px}
+.cx{display:flex;gap:9px;align-items:flex-start;margin:0 0 10px;
+    font-size:13px;line-height:1.5;color:var(--encre2);cursor:pointer}
+.cx input{flex:0 0 auto;width:17px;height:17px;margin:1px 0 0;
+          accent-color:var(--or);cursor:pointer}
+.cx a{color:var(--or-fort);text-decoration:underline}
+.cons .cta{width:100%;text-align:center;margin-top:4px}
+.cons .cta[aria-disabled="true"]{opacity:.45;filter:grayscale(1)}
+.cons-m{margin:8px 0 0;font-size:13px;font-weight:700;color:#a3341f}
+.cons-d{margin:10px 0 0;font-size:12.5px;line-height:1.5;color:var(--muet)}
+.cons-d a{color:var(--muet);text-decoration:underline}
 .tarifs-note{font-size:14px;color:var(--encre2);border-left:4px solid var(--vert);
    background:#f7faf8;padding:12px 16px;margin:14px 0 0}
 /* LES GUIDES : quatre fiches, prix a l'unite. Le fanion « en preparation » dit la
@@ -758,6 +778,7 @@ footer a{color:var(--muet)}
   <div class="bas">
     <span>Claire Van De Sype &middot; PMO · direction de projet</span>
     <a href="./terms.html">Terms of use</a>
+    <a href="./terms-of-sale.html">Terms and conditions of sale</a>
     <a href="./privacy.html">Privacy</a>
   </div>
 </div>
@@ -919,6 +940,34 @@ function ctcOuvreForm(){
  CTC.offre="";
  document.querySelector('input[name=ctct][value=formation]').checked=true;
  ctcType();return false;}
+/* Le consentement d'achat d'un guide : deux cases, un bouton inerte tant qu'il
+   manque l'une des deux. On horodate le consentement et on le passe au lien de
+   paiement pour que la preuve se retrouve a l'encaissement. */
+function guMaj(c){
+  var a=document.getElementById('cs-'+c+'-a'),b=document.getElementById('cs-'+c+'-b');
+  var go=document.getElementById('cs-'+c+'-go'),m=document.getElementById('cs-'+c+'-m');
+  if(!a||!b||!go)return;
+  var ok=a.checked&&b.checked;
+  go.setAttribute('aria-disabled',ok?'false':'true');
+  if(ok&&m)m.hidden=true;
+}
+function guClic(c){
+  var a=document.getElementById('cs-'+c+'-a'),b=document.getElementById('cs-'+c+'-b');
+  var go=document.getElementById('cs-'+c+'-go'),m=document.getElementById('cs-'+c+'-m');
+  if(!a||!b||!go)return true;
+  if(!(a.checked&&b.checked)){
+    if(m)m.hidden=false;
+    (a.checked?b:a).focus();
+    return false;                      /* rien ne part : le clic est annule */
+  }
+  try{
+    var ref='consent-'+c+'-'+new Date().toISOString().replace(/[:.]/g,'-');
+    var u=new URL(go.getAttribute('href'));
+    u.searchParams.set('client_reference_id',ref);
+    go.setAttribute('href',u.toString());
+  }catch(e){}
+  return true;
+}
 function ctcOuvre(offre){
  if(!ctcReveal())return true;
  CTC.offre=offre||"";
