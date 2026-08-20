@@ -274,6 +274,15 @@ body{overflow-x:clip}
 /* l'ECHELLE de TJM : une grandeur continue se regle, elle ne se coche pas */
 /* LE TABLEAU DES ROLES : des lignes cliquables (maillage interne) plutot qu'un
    tableau muet. Le role de la page en cours est en relief. */
+/* LE BLOC DE CITATION : la phrase toute prete, copiable. Sobre exprès — c'est un
+   outil, pas une reclame. */
+.citer{border:1px solid var(--grille);border-left:4px solid var(--or);
+   padding:22px 24px;margin:30px 0}
+.citer h2{border-top:0;padding-top:0;margin:0 0 8px;font-size:20px}
+.citer h2::before{display:none}
+.citer p{color:var(--encre2);font-size:15px;margin:0 0 14px}
+.citer blockquote{margin:0 0 16px;padding:14px 16px;background:#faf7f1;
+   font-size:15.5px;line-height:1.55;color:var(--encre)}
 .tjtab{border:1px solid var(--grille);margin:18px 0 8px}
 .tjr{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;
    padding:13px 16px;border-bottom:1px solid var(--grille);color:var(--encre);
@@ -721,6 +730,7 @@ footer a{color:var(--muet)}
   <a class="cta" href="./#guides">The market guide — €29 incl. VAT</a>
   <a class="doc" href="./#quand">Talk about your assignment</a>
 </div>
+<div class="citer"><h2>How to cite this figure</h2><p>These measurements are free to cite, including commercially, on one condition: name the source and link to the page. Copy the sentence below.</p><blockquote id="citTexte">According to Claire Van De Sype’s record of the French project-management market (pmo-laboratory.com), measured on 20 August 2026, the median day rate of a freelance product owner in France stands at €550 per day, across 217 listings.</blockquote><button type="button" class="cta2" onclick="citCopie(this)" data-ok="Copied.">Copy the citation</button></div><script>function citCopie(b){var t=document.getElementById("citTexte").textContent.trim();navigator.clipboard.writeText(t).then(function(){var v=b.textContent;b.textContent=b.getAttribute("data-ok");setTimeout(function(){b.textContent=v;},2500);});}</script>
 <p class="legende">Other roles: <a href="./day-rate-project-director.html">project director</a> · <a href="./day-rate-project-manager.html">project manager</a> · <a href="./day-rate-pmo.html">PMO</a> · <a href="./day-rate-business-analyst.html">business analyst</a></p>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "Freelance product owner day rate: €550 (measured)", "description": "The median day rate of a freelance product owner in France: €550 per day, measured across 217 published listings. Method and role comparison.", "url": "https://pmo-laboratory.com/day-rate-product-owner.html", "creator": {"@type": "Person", "name": "Claire Van De Sype"}, "temporalCoverage": "2026-08-20", "isAccessibleForFree": true, "spatialCoverage": "France", "inLanguage": "en"}</script>
 

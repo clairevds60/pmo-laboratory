@@ -274,6 +274,15 @@ body{overflow-x:clip}
 /* l'ECHELLE de TJM : une grandeur continue se regle, elle ne se coche pas */
 /* LE TABLEAU DES ROLES : des lignes cliquables (maillage interne) plutot qu'un
    tableau muet. Le role de la page en cours est en relief. */
+/* LE BLOC DE CITATION : la phrase toute prete, copiable. Sobre exprès — c'est un
+   outil, pas une reclame. */
+.citer{border:1px solid var(--grille);border-left:4px solid var(--or);
+   padding:22px 24px;margin:30px 0}
+.citer h2{border-top:0;padding-top:0;margin:0 0 8px;font-size:20px}
+.citer h2::before{display:none}
+.citer p{color:var(--encre2);font-size:15px;margin:0 0 14px}
+.citer blockquote{margin:0 0 16px;padding:14px 16px;background:#faf7f1;
+   font-size:15.5px;line-height:1.55;color:var(--encre)}
 .tjtab{border:1px solid var(--grille);margin:18px 0 8px}
 .tjr{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;
    padding:13px 16px;border-bottom:1px solid var(--grille);color:var(--encre);
@@ -721,6 +730,7 @@ footer a{color:var(--muet)}
   <a class="cta" href="./#guides">Le guide du marché — 29 € TTC</a>
   <a class="doc" href="./#quand">Parler de votre mission</a>
 </div>
+<div class="citer"><h2>Comment citer ce chiffre</h2><p>Ces mesures sont libres de citation, y compris commerciale, à une condition : citer la source et faire un lien vers la page. Copiez la phrase ci-dessous.</p><blockquote id="citTexte">Selon le relevé du marché du pilotage de Claire Van De Sype (pmo-laboratory.com), mesuré le 20 août 2026, le TJM médian d’un chef de projet freelance en France s’établit à 575 € par jour, sur 421 annonces relevées.</blockquote><button type="button" class="cta2" onclick="citCopie(this)" data-ok="Copié.">Copier la citation</button></div><script>function citCopie(b){var t=document.getElementById("citTexte").textContent.trim();navigator.clipboard.writeText(t).then(function(){var v=b.textContent;b.textContent=b.getAttribute("data-ok");setTimeout(function(){b.textContent=v;},2500);});}</script>
 <p class="legende">Les autres rôles : <a href="./tjm-directeur-de-projet.html">directeur de projet</a> · <a href="./tjm-pmo.html">PMO</a> · <a href="./tjm-business-analyst.html">business analyst</a> · <a href="./tjm-product-owner.html">product owner</a></p>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "TJM chef de projet freelance : 575 € (mesuré)", "description": "Le TJM médian d’un chef de projet freelance en France : 575 € par jour, mesuré sur 421 annonces publiées. Méthode et comparaison des rôles.", "url": "https://pmo-laboratory.com/tjm-chef-de-projet.html", "creator": {"@type": "Person", "name": "Claire Van De Sype"}, "temporalCoverage": "2026-08-20", "isAccessibleForFree": true, "spatialCoverage": "France", "inLanguage": "fr"}</script>
 
