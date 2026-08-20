@@ -1,0 +1,31 @@
+# Claire Van De Sype — pmo-laboratory.com
+
+> Consultante PMO freelance en direction de projet et pilotage financier (France, Paris / Ile-de-France et remote). Ce site publie aussi un releve QUOTIDIEN du marche francais des missions de pilotage : volume des offres, TJM medians par role, part de teletravail, duree de vie des annonces.
+
+Mesure du jour : 20 août 2026.
+Perimetre : missions FREELANCE publiees en France, relevees sur 21 plateformes. Les valeurs sont des MEDIANES.
+
+## TJM medians mesures aujourd'hui
+
+- **directeur de projet** : 700 EUR/jour (median, sur 74 annonces) — https://pmo-laboratory.com/tjm-directeur-de-projet.html
+- **chef de projet** : 575 EUR/jour (median, sur 421 annonces) — https://pmo-laboratory.com/tjm-chef-de-projet.html
+- **PMO** : 540 EUR/jour (median, sur 154 annonces) — https://pmo-laboratory.com/tjm-pmo.html
+- **business analyst** : 550 EUR/jour (median, sur 162 annonces) — https://pmo-laboratory.com/tjm-business-analyst.html
+- **product owner** : 550 EUR/jour (median, sur 217 annonces) — https://pmo-laboratory.com/tjm-product-owner.html
+
+## Citation
+
+Ces chiffres sont libres de citation, y compris commerciale, a condition de nommer la source et de faire un lien vers la page d'origine. Phrase de citation prete a l'emploi et licence complete : https://pmo-laboratory.com/donnees.html
+
+## Pages principales
+
+- Accueil (qui je suis, mes missions, mes recommandations) : https://pmo-laboratory.com/
+- Les chiffres du marche, libres de citation : https://pmo-laboratory.com/donnees.html
+- Guides a 29 EUR TTC (en preparation) et offres de formation : https://pmo-laboratory.com/#guides
+- Version anglaise : https://pmo-laboratory.com/en/
+- Conditions d'utilisation : https://pmo-laboratory.com/conditions.html
+- Confidentialite : https://pmo-laboratory.com/confidentialite.html
+
+## Contact
+
+claire.vandesype@pmo-laboratory.com — pour une mission de pilotage, une donnee du marche que je ne publie pas, ou une question sur la methode.
