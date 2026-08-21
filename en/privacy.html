@@ -25,11 +25,28 @@
 <meta name="twitter:image" content="https://pmo-laboratory.com/partage.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Freelance PMO & project director — Claire Van De Sype","url":"https://pmo-laboratory.com/en/","email":"claire.vandesype@pmo-laboratory.com","sameAs":["https://www.linkedin.com/in/claire-vandesype","https://www.malt.fr/profile/clairevandesype"],"inLanguage":"en","areaServed":["Île-de-France","Hauts-de-France","France"],"knowsAbout":["direction de projet","PMO","gouvernance de portefeuille","pilotage financier de projet","conduite du changement"],"founder":{"@type":"Person","name":"Claire Van De Sype","jobTitle":"PMO · direction de projet","sameAs":["https://www.linkedin.com/in/claire-vandesype"]}}</script>
 <style>
+/* LES POLICES SONT HEBERGEES ICI, PAS CHEZ GOOGLE. Le site ne charge aucune ressource
+   tierce et confidentialite.html le promet : servir les polices depuis
+   fonts.googleapis.com enverrait l'IP de chaque visiteur chez Google a chaque page.
+   Sous-ensemble LATIN seulement — verifie : les trois caracteres que le site emploie
+   hors du latin de base (— U+2014, ' U+2019, oe U+0153) y sont tous couverts, et le
+   latin etendu aurait coute 71 Ko pour zero glyphe. Licences SIL OFL.
+   ⚠ CHEMINS ABSOLUS : ce CSS est en ligne dans chaque page, et les pages anglaises
+   vivent dans /en/ — un chemin relatif y chercherait /en/polices/. */
+@font-face{font-family:'Prata';font-style:normal;font-weight:400;font-display:swap;
+   src:url(/polices/prata-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;
+   font-display:swap;src:url(/polices/plexmono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;
+   font-display:swap;src:url(/polices/plexmono-600.woff2) format('woff2')}
+@font-face{font-family:'EB Garamond';font-style:italic;font-weight:400;
+   font-display:swap;src:url(/polices/ebgaramond-italic-400.woff2) format('woff2')}
 :root{--fond:#fbfaf7;--encre:#1b1815;--encre2:#524c42;--muet:#6e675c;
        --or:#8d6818;--orclair:#8a6a1f;--vert:#1a4d3d;--grille:#e6e0d3;
        /* recoltees sur le design : l'or lumineux ne sert que sur fond sombre */
        --orlum:#d8b25e;--surlig:#eadfbe;--aplat:#e8e2d5;--fond2:#faf7f1;
-       --titre:'Prata','EB Garamond',Georgia,'Times New Roman',serif;--mono:'IBM Plex Mono',Consolas,ui-monospace,monospace;--texte:'Helvetica Neue',Helvetica,Arial,sans-serif}
+       --titre:'Prata',Georgia,'Times New Roman',serif;--mono:'IBM Plex Mono',Consolas,ui-monospace,monospace;--texte:'Helvetica Neue',Helvetica,Arial,sans-serif;
+       --citation:'EB Garamond',Georgia,'Times New Roman',serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--fond);color:var(--encre);
@@ -128,6 +145,10 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 /* TÉMOIGNAGES — rendus seulement s'il en existe de vrais. */
 .temoin{border-left:4px solid var(--or);padding:4px 0 4px 20px;margin:24px 0}
 .temoin p{margin:0;font-size:20px;color:var(--encre)}
+/* EB Garamond n'existe qu'en italique — c'est son emploi dans le design : la citation.
+   Elle serait un mauvais secours de titrage (des titres en italique) : elle n'est donc
+   PAS dans --titre. */
+blockquote{font:italic 400 21px/1.55 var(--citation);color:var(--encre)}
 .temoin .qui{margin-top:10px;font-size:14px;color:var(--muet)}
 
 /* APPEL FLOTTANT — le geste reste à un clic partout dans la page. Pastille discrète,
