@@ -2,16 +2,16 @@
 
 > Consultante PMO freelance en direction de projet et pilotage financier (France, Paris / Ile-de-France et remote). Ce site publie aussi un releve QUOTIDIEN du marche francais des missions de pilotage : volume des offres, TJM medians par role, part de teletravail, duree de vie des annonces.
 
-Mesure du jour : 20 août 2026.
+Mesure du jour : 21 août 2026.
 Perimetre : missions FREELANCE publiees en France, relevees sur 21 plateformes. Les valeurs sont des MEDIANES.
 
 ## TJM medians mesures aujourd'hui
 
 - **directeur de projet** : 700 EUR/jour (median, sur 74 annonces) — https://pmo-laboratory.com/tjm-directeur-de-projet.html
-- **chef de projet** : 570 EUR/jour (median, sur 428 annonces) — https://pmo-laboratory.com/tjm-chef-de-projet.html
-- **PMO** : 540 EUR/jour (median, sur 156 annonces) — https://pmo-laboratory.com/tjm-pmo.html
-- **business analyst** : 550 EUR/jour (median, sur 162 annonces) — https://pmo-laboratory.com/tjm-business-analyst.html
-- **product owner** : 550 EUR/jour (median, sur 220 annonces) — https://pmo-laboratory.com/tjm-product-owner.html
+- **chef de projet** : 570 EUR/jour (median, sur 414 annonces) — https://pmo-laboratory.com/tjm-chef-de-projet.html
+- **PMO** : 540 EUR/jour (median, sur 152 annonces) — https://pmo-laboratory.com/tjm-pmo.html
+- **business analyst** : 550 EUR/jour (median, sur 158 annonces) — https://pmo-laboratory.com/tjm-business-analyst.html
+- **product owner** : 550 EUR/jour (median, sur 209 annonces) — https://pmo-laboratory.com/tjm-product-owner.html
 
 ## Citation
 
