@@ -8,9 +8,9 @@ Perimetre : missions FREELANCE publiees en France, relevees sur 21 plateformes. 
 ## TJM medians mesures aujourd'hui
 
 - **directeur de projet** : 700 EUR/jour (median, sur 75 annonces) — https://pmo-laboratory.com/tjm-directeur-de-projet.html
-- **chef de projet** : 575 EUR/jour (median, sur 418 annonces) — https://pmo-laboratory.com/tjm-chef-de-projet.html
-- **PMO** : 540 EUR/jour (median, sur 152 annonces) — https://pmo-laboratory.com/tjm-pmo.html
-- **business analyst** : 550 EUR/jour (median, sur 158 annonces) — https://pmo-laboratory.com/tjm-business-analyst.html
+- **chef de projet** : 575 EUR/jour (median, sur 425 annonces) — https://pmo-laboratory.com/tjm-chef-de-projet.html
+- **PMO** : 540 EUR/jour (median, sur 153 annonces) — https://pmo-laboratory.com/tjm-pmo.html
+- **business analyst** : 550 EUR/jour (median, sur 159 annonces) — https://pmo-laboratory.com/tjm-business-analyst.html
 - **product owner** : 550 EUR/jour (median, sur 213 annonces) — https://pmo-laboratory.com/tjm-product-owner.html
 
 ## Citation
