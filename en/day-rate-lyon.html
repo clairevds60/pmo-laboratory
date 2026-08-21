@@ -45,6 +45,19 @@
        --or:#8d6818;--orclair:#8a6a1f;--vert:#1a4d3d;--grille:#e6e0d3;
        /* recoltees sur le design : l'or lumineux ne sert que sur fond sombre */
        --orlum:#d8b25e;--surlig:#eadfbe;--aplat:#e8e2d5;--fond2:#faf7f1;
+       /* le vert VIF de la pastille de disponibilite : ce n'est pas le vert anglais
+          des courbes (--vert), c'est un signal. Deux verts, deux emplois. */
+       --vertvif:#1e9e5a;
+       /* les deux tons qui vivent SUR le fond sombre : un filet et un texte. Sur
+          #1b1815, --grille et --encre2 seraient invisibles. */
+       --surfilet:#3a362f;--surtexte:#cfc7b8;
+       /* le gris moyen du design (73 emplois chez lui) : entre --muet et --grille */
+       --gris:#8f887b;
+       /* ⚠ --carte etait EMPLOYE sans etre declare (deux regles) : une
+          declaration inconnue est ignoree en silence, le fond tombait donc a
+          transparent. Sur un fond ivoire, une surface qui doit ressortir est
+          blanche — c'est le seul endroit du site ou le blanc pur sert. */
+       --carte:#ffffff;
        --titre:'Prata',Georgia,'Times New Roman',serif;--mono:'IBM Plex Mono',Consolas,ui-monospace,monospace;--texte:'Helvetica Neue',Helvetica,Arial,sans-serif;
        --citation:'EB Garamond',Georgia,'Times New Roman',serif}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -92,7 +105,7 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 /* ⚠ SUR FOND SOMBRE, L'OR DU CORPS DE TEXTE NE PASSE PLUS. Mesure : l'or #8a6a1f du
    design sur l'encre #1b1815 tombe a 3,50:1 — sous le seuil de 4,5 pour du 14 px, et
    l'audit l'a refuse. C'est a cela que sert l'or lumineux recolte sur le design :
-   #d8b25e sur la meme encre mesure 8,80:1. Un seul or ne peut pas servir les deux
+   var(--orlum) sur la meme encre mesure 8,80:1. Un seul or ne peut pas servir les deux
    fonds ; c'est pour cette raison que le design en porte deux. */
 .piste i{font-style:normal;padding:0 8px;color:var(--orlum)}
 .piste s{text-decoration:none;padding:0 22px;color:var(--orlum);opacity:.7}
@@ -114,7 +127,7 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 .liens a:hover{transform:translateY(-2px)}
 .liens a.p-in:hover{color:#0A66C2;border-color:#0A66C2}
 .liens a.p-malt:hover{color:#FC5757;border-color:#FC5757}
-.liens a.p-tel:hover{color:#1e9e5a;border-color:#1e9e5a}
+.liens a.p-tel:hover{color:var(--vertvif);border-color:var(--vertvif)}
 .liens a.p-mail:hover{color:#EA4335;border-color:#EA4335}
 
 .liens svg{width:19px;height:19px;flex:none}
@@ -127,7 +140,7 @@ ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 .bande-preuve i{font-style:normal;color:var(--or);padding:0 10px}
 .dispo{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;
    border:1px solid var(--grille);padding:7px 14px;font-size:14px;color:var(--encre)}
-.dispo::before{content:"";width:9px;height:9px;border-radius:50%;background:#1e9e5a;flex:none}
+.dispo::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--vertvif);flex:none}
 
 /* SECTEURS — légitimité par association, sans nom de client. */
 .secteurs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
@@ -180,24 +193,22 @@ blockquote{font:italic 400 21px/1.55 var(--citation);color:var(--encre)}
 /* LE RYTHME SOMBRE/CLAIR — full-bleed depuis une colonne centree. ⚠ 50vw compte la
    barre de defilement : overflow-x:clip sur body l'empeche de creer un defilement
    horizontal fantome. */
-.sombre{background:var(--encre);color:#e8e2d5;
+.sombre{background:var(--encre);color:var(--aplat);
    margin:66px calc(50% - 50vw) 0;padding:58px calc(50vw - 50%) 64px}
 .sombre h2{color:#fff;margin-top:0}
-body.accueil .sombre h2::before{color:#d8b25e}
-.sombre .decl{border-color:#3a362f}
-.sombre .d{border-color:#3a362f}
+body.accueil .sombre h2::before{color:var(--orlum)}
+.sombre .decl{border-color:var(--surfilet)}
+.sombre .d{border-color:var(--surfilet)}
 .sombre .d h3{color:#fff}
-.sombre .d p{color:#cfc7b8}
+.sombre .d p{color:var(--surtexte)}
 
-/* SURLIGNAGE du mot-cle du titre — UN geste, pas dix. */
-h1 em{font-style:normal;
-   background:linear-gradient(transparent 64%,#ead9ab 64%)}
+/* Le surlignage vit plus haut, avec les titres : une seule regle, animee. */
 
 /* BARRE DE PROGRESSION de lecture — 3 px d'or, en haut de tout. */
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--or);z-index:9}
 
 /* PIED DE PAGE EDITORIAL — bande sombre structuree, il repond au bandeau du haut. */
-footer.pied{background:var(--encre);color:#cfc7b8;
+footer.pied{background:var(--encre);color:var(--surtexte);
    margin:0 calc(50% - 50vw);
    /* 118px en bas, pas 46 : la pastille flottante « votre parcours » est fixee a
       16px du bas sur 63px de haut, et elle RECOUVRAIT la derniere ligne du pied de
@@ -205,24 +216,23 @@ footer.pied{background:var(--encre);color:#cfc7b8;
       cachees par un element flottant ne sont pas des mentions legales. */
    padding:52px calc(50vw - 50%) 118px;border-top:0}
 footer.pied .cols{display:flex;flex-wrap:wrap;gap:34px 70px;justify-content:space-between}
-footer.pied .marque{color:#d8b25e}
-footer.pied .filet{background:#d8b25e;width:80px;height:4px;margin:14px 0 0}
+footer.pied .marque{color:var(--orlum)}
+footer.pied .filet{background:var(--orlum);width:80px;height:4px;margin:14px 0 0}
 footer.pied h4{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:#8f887b;margin:0 0 12px}
-footer.pied a{display:block;color:#e8e2d5;border-bottom:0;font-size:14px;
+   text-transform:uppercase;color:var(--gris);margin:0 0 12px}
+footer.pied a{display:block;color:var(--aplat);border-bottom:0;font-size:14px;
    padding:8px 0}
-footer.pied a:hover{color:#d8b25e}
-footer.pied .bas{margin-top:40px;padding-top:18px;border-top:1px solid #3a362f;
-   font-size:12.5px;color:#8f887b;display:flex;flex-wrap:wrap;gap:8px 26px}
-footer.pied .bas a{display:inline-block;color:#8f887b;font-size:12.5px;
+footer.pied a:hover{color:var(--orlum)}
+footer.pied .bas{margin-top:40px;padding-top:18px;border-top:1px solid var(--surfilet);
+   font-size:12.5px;color:var(--gris);display:flex;flex-wrap:wrap;gap:8px 26px}
+footer.pied .bas a{display:inline-block;color:var(--gris);font-size:12.5px;
    padding:7px 0}
-footer.pied .bas a:hover{color:#d8b25e}
+footer.pied .bas a:hover{color:var(--orlum)}
 
 /* FINITIONS */
 body{overflow-x:clip}
 [id]{scroll-margin-top:70px}
 .bandeau:hover .piste{animation-play-state:paused}
-::selection{background:#ead9ab;color:var(--encre)}
 .m .v,.mi .ch b,.calc .res b{font-variant-numeric:tabular-nums}
 .temoin{position:relative}
 .temoin::before{content:"«";position:absolute;left:-10px;top:-30px;
@@ -230,7 +240,7 @@ body{overflow-x:clip}
 
 /* LE PARCOURS EN SCENE — meme mecanique que les temoignages. */
 .mi-scene{border:1px solid var(--grille);border-left:4px solid var(--vert);
-   background:#fdfcf9;padding:26px 30px;margin:14px 0 0;min-height:250px;
+   background:var(--fond2);padding:26px 30px;margin:14px 0 0;min-height:250px;
    transition:opacity .26s ease}
 .mi-scene.fondu{opacity:0}
 .mi-scene .r{font-weight:700;font-size:20px;color:var(--encre)}
@@ -267,7 +277,7 @@ body{overflow-x:clip}
 .temo-nav button[aria-pressed="true"]{border-color:var(--or);color:var(--encre);
    box-shadow:inset 0 -3px 0 var(--or)}
 .temoin-scene{position:relative;border:1px solid var(--grille);
-   border-left:4px solid var(--or);background:#fdfcf9;padding:30px 30px 24px 34px;
+   border-left:4px solid var(--or);background:var(--fond2);padding:30px 30px 24px 34px;
    margin:14px 0 0;min-height:210px;transition:opacity .28s ease}
 .temoin-scene.fondu{opacity:0}
 .temoin-scene::before{content:"«";position:absolute;left:10px;top:-26px;
@@ -281,7 +291,7 @@ body{overflow-x:clip}
 .kit a{display:block;padding:22px 20px;border-right:1px solid var(--grille);
    border-bottom:1px solid var(--grille);color:var(--encre);
    border-bottom-style:solid;text-decoration:none}
-.kit a:hover{background:#fbf8f1}
+.kit a:hover{background:var(--fond2)}
 .kit b{display:block;font-size:20px;font-weight:700;margin-bottom:8px}
 .kit span{display:block;font-size:14px;color:var(--encre2)}
 .kit i{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
@@ -391,7 +401,7 @@ body{overflow-x:clip}
 .citer h2{border-top:0;padding-top:0;margin:0 0 8px;font-size:20px}
 .citer h2::before{display:none}
 .citer p{color:var(--encre2);font-size:15px;margin:0 0 14px}
-.citer blockquote{margin:0 0 16px;padding:14px 16px;background:#faf7f1;
+.citer blockquote{margin:0 0 16px;padding:14px 16px;background:var(--fond2);
    font-size:15.5px;line-height:1.55;color:var(--encre)}
 .tjtab{border:1px solid var(--grille);margin:18px 0 8px}
 .tjr{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;
@@ -402,11 +412,11 @@ body{overflow-x:clip}
    min-width:92px;text-align:right}
 .tjr i{font-style:normal;color:var(--muet);font-size:14px;
    font-variant-numeric:tabular-nums;min-width:74px;text-align:right}
-.tjr-t{background:#faf7f1;font:600 12px/1 'Consolas',ui-monospace,monospace;
+.tjr-t{background:var(--fond2);font:600 12px/1 'Consolas',ui-monospace,monospace;
    letter-spacing:1.5px;text-transform:uppercase;color:var(--muet)}
 .tjr-t b,.tjr-t i{color:var(--muet);font-weight:600;font-size:12px}
-a.tjr:hover{background:#faf7f1;border-left-color:var(--or)}
-a.tjr.on{border-left-color:var(--or);background:#fdfbf7;font-weight:700}
+a.tjr:hover{background:var(--fond2);border-left-color:var(--or)}
+a.tjr.on{border-left-color:var(--or);background:var(--fond2);font-weight:700}
 .jauge{margin:4px 0 14px;max-width:460px}
 .jauge input[type=range]{width:100%;accent-color:var(--or);height:26px;
    cursor:pointer}
@@ -481,7 +491,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 /* LE PORTRAIT recoit un aplat decale — le geste editorial des pages mode. */
 .cadre{position:relative;display:inline-block}
 .cadre::before{content:"";position:absolute;top:16px;left:16px;right:-16px;
-   bottom:-16px;background:#f2ecdd;z-index:-1}
+   bottom:-16px;background:var(--aplat);z-index:-1}
 .cadre .portrait{position:relative}
 
 /* FENETRE DE CONTACT — le formulaire QUALIFIANT. Rien ne part vers le site :
@@ -490,7 +500,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
    transition:max-height .6s ease,opacity .5s ease .08s,transform .5s ease .08s}
 .fluxwrap.on{max-height:2800px;opacity:1;transform:none}
 .ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
-   padding:30px 30px 24px;background:#fdfcf9;color:var(--encre);margin:26px 0 6px}
+   padding:30px 30px 24px;background:var(--fond2);color:var(--encre);margin:26px 0 6px}
 .ctc .etbloc{display:none}
 .ctc .etbloc.on{display:block}
 .ctc .etapes{margin:12px 0 26px;border-color:var(--grille)}
@@ -512,7 +522,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .ctc .champs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ctc .champs .large{grid-column:1/-1}
 .ctc input[type=text],.ctc input[type=email],.ctc input[type=tel],.ctc textarea{
-   width:100%;border:1px solid var(--grille);background:#fdfcf9;color:var(--encre);
+   width:100%;border:1px solid var(--grille);background:var(--fond2);color:var(--encre);
    padding:10px 12px;font:400 14px/1.5 Inter,'Segoe UI',system-ui,sans-serif}
 .ctc textarea{min-height:88px;resize:vertical}
 .ctc .etq{display:block;font-size:12.5px;color:var(--muet);margin:0 0 4px}
@@ -521,8 +531,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
    padding:10px 14px;margin:6px 0;font-size:13px;font-weight:600;color:var(--encre);
    border-bottom:0}
 .ctc .sugg a:hover{background:#eef6f1}
-.ctc .sugg a.urgent{border-left-color:var(--or);background:#fbf7ee}
-.ctc .sugg a.urgent:hover{background:#f6efdd}
+.ctc .sugg a.urgent{border-left-color:var(--or);background:var(--fond2)}
+.ctc .sugg a.urgent:hover{background:var(--aplat)}
 .ctc .preuve-mini{margin-top:16px;padding-left:14px;border-left:3px solid var(--or);
    font-size:13px;color:var(--encre2);font-style:italic}
 .ctc .preuve-mini span{display:block;font-style:normal;font-size:12.5px;
@@ -627,7 +637,7 @@ body.garde .dispo{margin-top:12px}
 .portes button[aria-pressed="true"] .ptit{color:#fff}
 .portes button[aria-pressed="true"] .psub{color:rgba(255,255,255,.62)}
 .portes button[aria-pressed="true"] .pico,
-.portes button[aria-pressed="true"] .pfl{color:#d8b25e}
+.portes button[aria-pressed="true"] .pfl{color:var(--orlum)}
 .portes button[aria-pressed="true"] .pfl{transform:rotate(90deg)}
 /* l'air du portail : tant qu'aucune porte n'est choisie, un vide volontaire
    separe les cartes du pied de page sombre */
@@ -647,8 +657,8 @@ body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) .snav{
    font-size:13px;box-shadow:0 14px 30px -14px rgba(28,26,23,.65);
    animation:pdevoile .4s ease both}
 .ppuce[hidden]{display:none}
-.ppuce b{color:#d8b25e;font-weight:700}
-.ppuce button{background:none;border:0;color:#d8b25e;cursor:pointer;font:inherit;
+.ppuce b{color:var(--orlum);font-weight:700}
+.ppuce button{background:none;border:0;color:var(--orlum);cursor:pointer;font:inherit;
    font-size:13px;text-decoration:underline;padding:11px 6px}
 .ppuce button:hover{color:#fff}
 @media print{.ppuce{display:none}}
@@ -762,7 +772,7 @@ body.garde [data-grp].gvu{animation:pdevoile .55s ease both}
 .d p{margin:0}
 .d.cliquable{cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,
    background .16s ease}
-.d.cliquable:hover{background:#fbf8f1;transform:translateY(-2px);
+.d.cliquable:hover{background:var(--fond2);transform:translateY(-2px);
    box-shadow:0 10px 22px -12px rgba(141,104,24,.45)}
 .d.cliquable:focus-visible{outline:2px solid var(--or);outline-offset:2px}
 .d .act{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
@@ -789,7 +799,7 @@ body.garde [data-grp].gvu{animation:pdevoile .55s ease both}
 .cta2{display:inline-block;border:1px solid var(--or);color:var(--or);font-weight:700;
       padding:15px 26px;background:var(--fond);cursor:pointer;font-size:18px;
       font-family:inherit}
-.cta2:hover{background:#fbf8f1;border-bottom-color:var(--or)}
+.cta2:hover{background:var(--fond2);border-bottom-color:var(--or)}
 /* JETONS DOCUMENTS — legers a cote du geste principal : la hierarchie se lit,
    le telechargement reste a un clic. */
 .gestes .doc{display:inline-flex;align-items:center;gap:9px;
