@@ -1,1138 +1,180 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project-management day rate in Paris: 600 €/day</title>
 <meta name="description" content="Measured median day rate in Paris: 600 € per day, from 771 priced ads. Range, volume and actual remote share.">
 <link rel="canonical" href="https://pmo-laboratory.com/en/day-rate-paris.html">
-<link rel="alternate" hreflang="en" href="https://pmo-laboratory.com/en/day-rate-paris.html">
 <link rel="alternate" hreflang="fr" href="https://pmo-laboratory.com/tjm-paris.html">
+<link rel="alternate" hreflang="en" href="https://pmo-laboratory.com/en/day-rate-paris.html">
 <link rel="alternate" hreflang="x-default" href="https://pmo-laboratory.com/tjm-paris.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2710%27%20fill%3D%27%231c1a17%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2744%27%20text-anchor%3D%27middle%27%20font-family%3D%27Segoe%20UI%2Csans-serif%27%20font-size%3D%2724%27%20font-weight%3D%27800%27%20fill%3D%27%23d8b25e%27%3EPMO%3C/text%3E%3C/svg%3E">
 
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_GB">
-<meta property="og:site_name" content="Claire Van De Sype">
-<meta property="og:title" content="Project-management day rate in Paris: 600 €/day">
-<meta property="og:description" content="Measured median day rate in Paris: 600 € per day, from 771 priced ads. Range, volume and actual remote share.">
-<meta property="og:url" content="https://pmo-laboratory.com/en/day-rate-paris.html">
-<meta property="og:image" content="https://pmo-laboratory.com/partage.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Project-management day rate in Paris: 600 €/day">
-<meta name="twitter:description" content="Measured median day rate in Paris: 600 € per day, from 771 priced ads. Range, volume and actual remote share.">
-<meta name="twitter:image" content="https://pmo-laboratory.com/partage.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Freelance PMO & project director — Claire Van De Sype","url":"https://pmo-laboratory.com/en/","email":"claire.vandesype@pmo-laboratory.com","sameAs":["https://www.linkedin.com/in/claire-vandesype","https://www.malt.fr/profile/clairevandesype"],"inLanguage":"en","areaServed":["Île-de-France","Hauts-de-France","France"],"knowsAbout":["direction de projet","PMO","gouvernance de portefeuille","pilotage financier de projet","conduite du changement"],"founder":{"@type":"Person","name":"Claire Van De Sype","jobTitle":"PMO · direction de projet","sameAs":["https://www.linkedin.com/in/claire-vandesype"]}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prata&amp;family=EB+Garamond:ital@1&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
 <style>
-/* LES POLICES SONT HEBERGEES ICI, PAS CHEZ GOOGLE. Le site ne charge aucune ressource
-   tierce et confidentialite.html le promet : servir les polices depuis
-   fonts.googleapis.com enverrait l'IP de chaque visiteur chez Google a chaque page.
-   Sous-ensemble LATIN seulement — verifie : les trois caracteres que le site emploie
-   hors du latin de base (— U+2014, ' U+2019, oe U+0153) y sont tous couverts, et le
-   latin etendu aurait coute 71 Ko pour zero glyphe. Licences SIL OFL.
-   ⚠ CHEMINS ABSOLUS : ce CSS est en ligne dans chaque page, et les pages anglaises
-   vivent dans /en/ — un chemin relatif y chercherait /en/polices/. */
-@font-face{font-family:'Prata';font-style:normal;font-weight:400;font-display:swap;
-   src:url(/polices/prata-400.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;
-   font-display:swap;src:url(/polices/plexmono-400.woff2) format('woff2')}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;
-   font-display:swap;src:url(/polices/plexmono-600.woff2) format('woff2')}
-@font-face{font-family:'EB Garamond';font-style:italic;font-weight:400;
-   font-display:swap;src:url(/polices/ebgaramond-italic-400.woff2) format('woff2')}
-:root{--fond:#fbfaf7;--encre:#1b1815;--encre2:#524c42;--muet:#6e675c;
-       --or:#8d6818;--orclair:#8a6a1f;--vert:#1a4d3d;--grille:#e6e0d3;
-       /* recoltees sur le design : l'or lumineux ne sert que sur fond sombre */
-       --orlum:#d8b25e;--surlig:#eadfbe;--aplat:#e8e2d5;--fond2:#faf7f1;
-       /* le vert VIF de la pastille de disponibilite : ce n'est pas le vert anglais
-          des courbes (--vert), c'est un signal. Deux verts, deux emplois. */
-       --vertvif:#1e9e5a;
-       /* les deux tons qui vivent SUR le fond sombre : un filet et un texte. Sur
-          #1b1815, --grille et --encre2 seraient invisibles. */
-       --surfilet:#3a362f;--surtexte:#cfc7b8;
-       /* le gris moyen du design (73 emplois chez lui) : entre --muet et --grille */
-       --gris:#8f887b;
-       /* ⚠ --carte etait EMPLOYE sans etre declare (deux regles) : une
-          declaration inconnue est ignoree en silence, le fond tombait donc a
-          transparent. Sur un fond ivoire, une surface qui doit ressortir est
-          blanche — c'est le seul endroit du site ou le blanc pur sert. */
-       --carte:#ffffff;
-       --titre:'Prata',Georgia,'Times New Roman',serif;--mono:'IBM Plex Mono',Consolas,ui-monospace,monospace;--texte:'Helvetica Neue',Helvetica,Arial,sans-serif;
-       --citation:'EB Garamond',Georgia,'Times New Roman',serif}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--fond);color:var(--encre);
-     font:400 18px/1.65 var(--texte);-webkit-font-smoothing:antialiased}
-/* Les regles transversales du design : ce sont des gains secs, on les prend telles. */
-::selection{background:var(--surlig);color:var(--encre)}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
-     outline:2px solid var(--or);outline-offset:2px}
-@keyframes monte{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@keyframes trace{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes surligne{from{background-size:0% 26%}to{background-size:100% 26%}}
+body{margin:0;background:#fbfaf7;color:#1b1815;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:#8a6a1f;text-decoration:none}
+a:hover{color:#1b1815}
+::selection{background:#eadfbe;color:#1b1815}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes drawx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
-.page{max-width:820px;margin:0 auto;padding:0 26px}
-header{padding:34px 0 0}
-.tete{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
-.marque{font:600 14px/1 var(--mono);letter-spacing:3px;
-        text-transform:uppercase;color:var(--muet)}
-.filet{width:120px;height:5px;background:var(--or);margin:18px 0 0;
-       transform-origin:left;animation:trace .9s ease .2s both}
-/* Titrage en Prata : 400 suffit, une didone n'a pas besoin de graisse pour peser. */
-h1{font:400 clamp(36px,6vw,64px)/1.12 var(--titre);margin:38px 0 0;letter-spacing:-1px;
-   animation:monte .7s ease both}
-h2{font:400 clamp(25px,3.4vw,34px)/1.2 var(--titre);margin:62px 0 18px;letter-spacing:-.4px}
-h3{font-weight:700;font-size:20px;margin:32px 0 10px}
-/* le surlignage du design : un aplat qui se deplie sous un mot du titre */
-h1 em,h2 em{font-style:normal;background-image:linear-gradient(var(--surlig),var(--surlig));
-   background-repeat:no-repeat;background-position:0 82%;background-size:0% 26%;
-   animation:surligne .9s ease 1s forwards}
-p{margin:16px 0;color:var(--encre2)}
-p.chapeau{font-size:20px;color:var(--encre);margin-top:22px}
-strong{color:var(--encre)}
-a{color:var(--or);text-decoration:none;border-bottom:1px solid var(--grille)}
-a:hover{border-bottom-color:var(--or)}
-ul{margin:16px 0 16px 22px;color:var(--encre2)}li{margin:8px 0}
 
-/* BANDEAU DES MESURES — il fait défiler les chiffres du jour, et RIEN D'AUTRE. Aucune
-   annonce reprise : ce sont celles d'autres plateformes, protégées et sous CGU, et un
-   décideur qui voit défiler des missions ouvertes lit « elle cherche du travail ».
-   La piste est dupliquee et l'animation translate de -50%, d'ou une boucle sans couture. */
-.bandeau{background:var(--encre);overflow:hidden;white-space:nowrap;padding:11px 0}
-.piste{display:inline-block;animation:defile 46s linear infinite;
-       font:600 14px/1 var(--mono);letter-spacing:.6px;color:#fff}
-/* ⚠ SUR FOND SOMBRE, L'OR DU CORPS DE TEXTE NE PASSE PLUS. Mesure : l'or #8a6a1f du
-   design sur l'encre #1b1815 tombe a 3,50:1 — sous le seuil de 4,5 pour du 14 px, et
-   l'audit l'a refuse. C'est a cela que sert l'or lumineux recolte sur le design :
-   var(--orlum) sur la meme encre mesure 8,80:1. Un seul or ne peut pas servir les deux
-   fonds ; c'est pour cette raison que le design en porte deux. */
-.piste i{font-style:normal;padding:0 8px;color:var(--orlum)}
-.piste s{text-decoration:none;padding:0 22px;color:var(--orlum);opacity:.7}
-@keyframes defile{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-/* Une animation infinie est une gêne réelle pour qui souffre de troubles vestibulaires :
-   le réglage système l'arrête, il ne la ralentit pas. */
-@media(prefers-reduced-motion:reduce){.piste{animation:none}}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #8a6a1f;outline-offset:2px}
 
-/* RANGÉE DE LIENS « Linktree » — profils publics, téléphone, email. Même langage
-   visuel que le sélecteur de langue : pastilles bordées, chasse fixe. */
-.liens{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
-.liens a{display:inline-flex;align-items:center;justify-content:center;
-   gap:9px;min-width:46px;width:auto;height:46px;padding:0 14px;
-   white-space:nowrap;   /* un libelle ne doit JAMAIS se casser mot par mot */
-   border:1px solid var(--grille);
-   color:var(--encre2);border-bottom:1px solid var(--grille);
-   transition:color .15s ease,border-color .15s ease,transform .15s ease}
-.liens a:not(:has(.lb)){padding:0}   /* logo seul : on garde le carre */
-.liens a:hover{transform:translateY(-2px)}
-.liens a.p-in:hover{color:#0A66C2;border-color:#0A66C2}
-.liens a.p-malt:hover{color:#FC5757;border-color:#FC5757}
-.liens a.p-tel:hover{color:var(--vertvif);border-color:var(--vertvif)}
-.liens a.p-mail:hover{color:#EA4335;border-color:#EA4335}
+@view-transition{navigation:auto}
+a,button{transition:color .15s ease,background-color .15s ease,border-color .15s ease}
+@media print{#prog,nav[aria-label]{display:none!important}body{background:#fff!important}footer{background:#fff!important;color:#524c42!important}footer a{color:#524c42!important}}
 
-.liens svg{width:19px;height:19px;flex:none}
-
-/* BANDE DE CRÉDIBILITÉ + DISPONIBILITÉ — la réassurance en haut de page : SES chiffres
-   de livraison (dossier technique), pas ceux du marché. */
-.bande-preuve{display:flex;flex-wrap:wrap;gap:8px 0;margin:20px 0 0;
-   font:600 14px/1.5 var(--mono);color:var(--encre2)}
-.bande-preuve span{white-space:nowrap}
-.bande-preuve i{font-style:normal;color:var(--or);padding:0 10px}
-.dispo{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;
-   border:1px solid var(--grille);padding:7px 14px;font-size:14px;color:var(--encre)}
-.dispo::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--vertvif);flex:none}
-
-/* SECTEURS — légitimité par association, sans nom de client. */
-.secteurs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
-.secteurs span{border:1px solid var(--grille);padding:6px 12px;font-size:14px;
-   color:var(--encre2);white-space:nowrap}
-
-/* COMMENT ON DÉMARRE — 3 marches numérotées : le premier contact perd son inconnu. */
-.etapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:0;
-   margin:28px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
-.et{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
-.et .n{font-weight:800;font-size:28px;line-height:1;color:var(--orclair);letter-spacing:-.5px}
-.et h3{margin:10px 0 8px;font-size:20px}
-.et p{margin:0;font-size:14px}
-
-/* TÉMOIGNAGES — rendus seulement s'il en existe de vrais. */
-.temoin{border-left:4px solid var(--or);padding:4px 0 4px 20px;margin:24px 0}
-.temoin p{margin:0;font-size:20px;color:var(--encre)}
-/* EB Garamond n'existe qu'en italique — c'est son emploi dans le design : la citation.
-   Elle serait un mauvais secours de titrage (des titres en italique) : elle n'est donc
-   PAS dans --titre. */
-blockquote{font:italic 400 21px/1.55 var(--citation);color:var(--encre)}
-.temoin .qui{margin-top:10px;font-size:14px;color:var(--muet)}
-
-/* APPEL FLOTTANT — le geste reste à un clic partout dans la page. Pastille discrète,
-   pas une barre ; masquée à l'impression. */
-.flottant{position:fixed;right:18px;bottom:18px;z-index:5;background:var(--or);
-   color:#fff;font-weight:700;font-size:14px;padding:13px 20px;border-bottom:0;
-   box-shadow:0 6px 22px -6px rgba(28,26,23,.45)}
-.flottant:hover{filter:brightness(.92);border-bottom:0}
-@media print{.flottant{display:none}}
-
-/* COMPARATEUR DE TJM — l'offre que personne d'autre ne peut faire : la mediane
-   MESUREE du jour, par role. Donnees embarquees a la generation, zero appel reseau. */
-.calc{border:1px solid var(--grille);padding:24px 22px;margin:26px 0}
-.calc h3{margin:0 0 6px}
-.calc .roles{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
-.calc .roles button{border:1px solid var(--grille);background:var(--fond);
-   color:var(--encre2);padding:9px 14px;cursor:pointer;font-size:14px;font-weight:600}
-.calc .roles button:hover{border-color:var(--or)}
-.calc .roles button[aria-pressed="true"]{border-color:var(--or);color:var(--encre);
-   box-shadow:inset 0 -3px 0 var(--or)}
-.calc .res{display:flex;flex-wrap:wrap;gap:14px 44px;align-items:baseline}
-.calc .res b{font-weight:800;font-size:38px;line-height:1;color:var(--or);
-   letter-spacing:-1px}
-.calc .res span{font-size:14px;color:var(--muet)}
-.calc .ecart{font-size:14px;color:var(--encre2);margin-top:12px}
-
-/* POURQUOI MOI — trois differences nommables, meme grille que les declencheurs. */
-
-/* LE RYTHME SOMBRE/CLAIR — full-bleed depuis une colonne centree. ⚠ 50vw compte la
-   barre de defilement : overflow-x:clip sur body l'empeche de creer un defilement
-   horizontal fantome. */
-.sombre{background:var(--encre);color:var(--aplat);
-   margin:66px calc(50% - 50vw) 0;padding:58px calc(50vw - 50%) 64px}
-.sombre h2{color:#fff;margin-top:0}
-body.accueil .sombre h2::before{color:var(--orlum)}
-.sombre .decl{border-color:var(--surfilet)}
-.sombre .d{border-color:var(--surfilet)}
-.sombre .d h3{color:#fff}
-.sombre .d p{color:var(--surtexte)}
-
-/* Le surlignage vit plus haut, avec les titres : une seule regle, animee. */
-
-/* BARRE DE PROGRESSION de lecture — 3 px d'or, en haut de tout. */
-#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--or);z-index:9}
-
-/* PIED DE PAGE EDITORIAL — bande sombre structuree, il repond au bandeau du haut. */
-footer.pied{background:var(--encre);color:var(--surtexte);
-   margin:0 calc(50% - 50vw);
-   /* 118px en bas, pas 46 : la pastille flottante « votre parcours » est fixee a
-      16px du bas sur 63px de haut, et elle RECOUVRAIT la derniere ligne du pied de
-      page — les trois liens legaux, en entier sur mobile. Des mentions legales
-      cachees par un element flottant ne sont pas des mentions legales. */
-   padding:52px calc(50vw - 50%) 118px;border-top:0}
-footer.pied .cols{display:flex;flex-wrap:wrap;gap:34px 70px;justify-content:space-between}
-footer.pied .marque{color:var(--orlum)}
-footer.pied .filet{background:var(--orlum);width:80px;height:4px;margin:14px 0 0}
-footer.pied h4{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:var(--gris);margin:0 0 12px}
-footer.pied a{display:block;color:var(--aplat);border-bottom:0;font-size:14px;
-   padding:8px 0}
-footer.pied a:hover{color:var(--orlum)}
-footer.pied .bas{margin-top:40px;padding-top:18px;border-top:1px solid var(--surfilet);
-   font-size:12.5px;color:var(--gris);display:flex;flex-wrap:wrap;gap:8px 26px}
-footer.pied .bas a{display:inline-block;color:var(--gris);font-size:12.5px;
-   padding:7px 0}
-footer.pied .bas a:hover{color:var(--orlum)}
-
-/* FINITIONS */
-body{overflow-x:clip}
-[id]{scroll-margin-top:70px}
-.bandeau:hover .piste{animation-play-state:paused}
-.m .v,.mi .ch b,.calc .res b{font-variant-numeric:tabular-nums}
-.temoin{position:relative}
-.temoin::before{content:"«";position:absolute;left:-10px;top:-30px;
-   font:800 84px/1 Georgia,serif;color:var(--or);opacity:.14;pointer-events:none}
-
-/* LE PARCOURS EN SCENE — meme mecanique que les temoignages. */
-.mi-scene{border:1px solid var(--grille);border-left:4px solid var(--vert);
-   background:var(--fond2);padding:26px 30px;margin:14px 0 0;min-height:250px;
-   transition:opacity .26s ease}
-.mi-scene.fondu{opacity:0}
-.mi-scene .r{font-weight:700;font-size:20px;color:var(--encre)}
-.mi-scene .meta{font:600 12.5px/1.5 'Consolas',ui-monospace,monospace;
-   letter-spacing:1px;text-transform:uppercase;color:var(--muet);margin-top:6px}
-.mi-scene p{margin:13px 0 15px}
-.mi-scene .ch{display:flex;flex-wrap:wrap;gap:14px 38px}
-.mi-scene .ch div{font-size:12.5px;color:var(--muet);max-width:210px}
-.mi-scene .ch b{display:block;font-weight:800;font-size:28px;line-height:1.1;
-   color:var(--or);letter-spacing:-.5px;margin-bottom:3px;
-   font-variant-numeric:tabular-nums}
-
-.mi-reco{position:relative;margin-top:20px;border-top:1px solid var(--grille);
-   padding:18px 0 0 26px}
-.mi-reco::before{content:"«";position:absolute;left:-6px;top:6px;
-   font:800 46px/1 Georgia,serif;color:var(--or);opacity:.22;pointer-events:none}
-.mi-reco p{margin:0;font-size:18px;color:var(--encre);line-height:1.55}
-.mi-reco .qui{margin-top:10px;font-size:12.5px;color:var(--muet)}
-
-/* TEMOIGNAGES EN SCENE — une rangee de boutons (les entreprises en vitrine), une
-   citation a la fois. Le guillemet geant reste le decor de la scene. */
-.temo-nav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
-.temo-nav button{border:1px solid var(--grille);background:var(--fond);
-   color:var(--encre2);padding:14px 22px;cursor:pointer;min-height:66px;
-   transition:transform .18s ease,box-shadow .18s ease}
-.temo-nav button{display:inline-flex;align-items:center;gap:10px}
-.temo-nav button .mono{display:inline-flex;align-items:center;justify-content:center;
-   width:30px;height:30px;background:var(--encre);color:#fff;
-   font:700 11px/1 'Consolas',ui-monospace,monospace;letter-spacing:.5px;flex:none}
-.temo-nav button[aria-pressed="true"] .mono{background:var(--or)}
-.temo-nav .mlogo{height:34px;width:auto;max-width:130px;object-fit:contain;flex:none}
-.temo-nav button:hover{border-color:var(--or);transform:translateY(-2px);
-   box-shadow:0 8px 18px -10px rgba(141,104,24,.5)}
-.temo-nav button[aria-pressed="true"]{border-color:var(--or);color:var(--encre);
-   box-shadow:inset 0 -3px 0 var(--or)}
-.temoin-scene{position:relative;border:1px solid var(--grille);
-   border-left:4px solid var(--or);background:var(--fond2);padding:30px 30px 24px 34px;
-   margin:14px 0 0;min-height:210px;transition:opacity .28s ease}
-.temoin-scene.fondu{opacity:0}
-.temoin-scene::before{content:"«";position:absolute;left:10px;top:-26px;
-   font:800 84px/1 Georgia,serif;color:var(--or);opacity:.14;pointer-events:none}
-.temoin-scene p{margin:0;font-size:20px;color:var(--encre);line-height:1.55}
-.temoin-scene .qui{margin-top:14px;font-size:14px;color:var(--muet)}
-
-/* A EMPORTER — trois documents offerts, en cartes. */
-.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:0;
-   margin:26px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
-.kit a{display:block;padding:22px 20px;border-right:1px solid var(--grille);
-   border-bottom:1px solid var(--grille);color:var(--encre);
-   border-bottom-style:solid;text-decoration:none}
-.kit a:hover{background:var(--fond2)}
-.kit b{display:block;font-size:20px;font-weight:700;margin-bottom:8px}
-.kit span{display:block;font-size:14px;color:var(--encre2)}
-.kit i{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
-   letter-spacing:1px;color:var(--or);margin-top:14px;font-style:normal}
-.tarifs{display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));
-   gap:14px;margin:18px 0 8px}
-.to{border:1px solid var(--grille);padding:24px 20px;display:flex;
-   flex-direction:column}
-.to.phare{border-color:var(--or);box-shadow:inset 0 4px 0 var(--or)}
-.to h3{margin:0 0 4px;font-size:20px}
-.to .prix{font-weight:800;font-size:38px;line-height:1.1;color:var(--or);
-   letter-spacing:-1px;font-variant-numeric:tabular-nums}
-.to .prix small{font-size:14px;font-weight:600;color:var(--muet);letter-spacing:0}
-.to .ht{font-size:12.5px;color:var(--muet);margin-top:2px}
-.to ul{margin:14px 0 18px 18px;flex:1}
-.to li{margin:6px 0;font-size:14px}
-.to .cta2{text-align:center}
-/* les CGV : un sous-titre, et une annexe encadree. Les lignes de pointilles du
-   formulaire de retractation debordaient de 3 px en mobile — elles n'offrent aucun
-   point de coupure, il faut l'autoriser explicitement. */
-/* le deroule d'une inscription en formation : la contrainte legale, en argument */
-.insc{margin-top:28px;border:1px solid var(--grille);padding:22px 20px;
-      background:var(--carte)}
-.insc h3{margin:0 0 14px;font-size:17px;letter-spacing:-.2px}
-.insc-e{margin:0 0 18px;padding-left:22px;font-size:14.5px;line-height:1.6}
-.insc-e li{margin:0 0 9px;color:var(--encre2)}
-.insc-e b{color:var(--encre)}
-.insc-t{width:100%;border-collapse:collapse;margin:0 0 12px}
-.insc-t th{font:600 10px/1.3 'Consolas',ui-monospace,monospace;letter-spacing:.8px;
-           text-transform:uppercase;color:var(--muet);text-align:right;
-           padding:0 8px 7px;border-bottom:1px solid var(--grille)}
-.insc-t th:first-child{text-align:left}
-.insc-t td{padding:9px 8px;border-bottom:1px solid var(--grille);
-           font-size:14px;text-align:right;white-space:nowrap}
-.insc-t td:first-child{text-align:left;font-weight:700}
-.insc-t td b{color:var(--or-fort)}
-.insc-n{margin:0;font-size:13px;line-height:1.55;color:var(--muet)}
-/* les missions fraiches : une liste dense, lisible, ou l'age se voit */
-.mis{list-style:none;margin:0 0 26px;padding:0}
-.mis li{padding:10px 0;border-bottom:1px solid var(--grille)}
-.mi-t{font-weight:700;font-size:15.5px;display:block;margin-bottom:3px;
-      padding:6px 0}   /* 34 px de cible tactile, plancher WCAG 2.5.8 */
-.mi-m{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--muet);
-      align-items:baseline}
-.mi-m b{color:var(--or-fort)}
-.mi-a{font:600 12px/1.6 'Consolas',ui-monospace,monospace;letter-spacing:.6px;
-      text-transform:uppercase;color:var(--vert)}
-.mi-s{font:600 12px/1.6 'Consolas',ui-monospace,monospace;color:var(--muet)}
-.mis-av{border-left:3px solid var(--or);background:var(--carte);padding:12px 16px;
-        font-size:14px;line-height:1.6;margin:0 0 28px}
-.mrc-s{font-size:17px;color:var(--encre2);max-width:56ch;margin:0 0 26px}
-.mrc{margin:0 0 22px;padding-left:22px;font-size:15.5px;line-height:1.65;
-     max-width:60ch}
-.mrc li{margin:0 0 10px}
-.mrc-n{font-size:14px;color:var(--muet);max-width:60ch;margin:0 0 24px}
-.mrc-a{margin:0}
-.cgv-s{font-size:15px;color:var(--encre2);max-width:62ch;margin:0 0 26px}
-.annexe{margin-top:36px;border:1px solid var(--grille);padding:20px 18px}
-.annexe h2{margin-top:0}
-.annexe .an-i{font-size:14px;color:var(--muet)}
-.annexe p{overflow-wrap:anywhere}
-/* le bloc de consentement : sobre, mais impossible a rater */
-.cons{margin-top:18px;border-top:1px solid var(--grille);padding-top:14px}
-.cx{display:flex;gap:9px;align-items:flex-start;margin:0 0 10px;
-    font-size:13px;line-height:1.5;color:var(--encre2);cursor:pointer}
-.cx input{flex:0 0 auto;width:17px;height:17px;margin:1px 0 0;
-          accent-color:var(--or);cursor:pointer}
-.cx a{color:var(--or-fort);text-decoration:underline}
-.cons .cta{width:100%;text-align:center;margin-top:4px}
-.cons .cta[aria-disabled="true"]{opacity:.45;filter:grayscale(1)}
-.cons-m{margin:8px 0 0;font-size:13px;font-weight:700;color:#a3341f}
-.cons-d{margin:10px 0 0;font-size:12.5px;line-height:1.5;color:var(--muet)}
-.cons-d a{color:var(--muet);text-decoration:underline}
-.tarifs-note{font-size:14px;color:var(--encre2);border-left:4px solid var(--vert);
-   background:#f7faf8;padding:12px 16px;margin:14px 0 0}
-/* LES GUIDES : quatre fiches, prix a l'unite. Le fanion « en preparation » dit la
-   verite tant que le PDF n'est pas ecrit. */
-.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
-   gap:16px;margin:20px 0 8px}
-.gv{position:relative;border:1px solid var(--grille);padding:22px 20px;
-   display:flex;flex-direction:column;background:var(--fond);
-   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
-.gv:hover{border-color:var(--or);transform:translateY(-2px);
-   box-shadow:0 10px 24px -14px rgba(141,104,24,.5)}
-.gv h3{margin:0 0 6px;font-size:19px}
-.gv .gv-s{font-size:14px;color:var(--encre2);margin:0 0 14px}
-.gv .prix{font-weight:800;font-size:32px;line-height:1.1;color:var(--or);
-   letter-spacing:-1px;font-variant-numeric:tabular-nums}
-.gv .prix small{font-size:13px;font-weight:600;color:var(--muet);letter-spacing:0}
-.gv .ht{font-size:12.5px;color:var(--muet);margin-top:2px}
-.gv ul{margin:12px 0 18px 18px;flex:1}
-.gv li{margin:6px 0;font-size:14px}
-.gv .cta,.gv .cta2{align-self:flex-start}
-.gv-f{font:600 12.5px/1.5 'Consolas',ui-monospace,monospace;color:var(--muet);
-   margin:2px 0 10px;letter-spacing:.4px}
-.gv-prep{position:absolute;top:10px;right:10px;background:var(--encre2);color:#fff;
-   font:600 10.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1.5px;
-   text-transform:uppercase;padding:5px 8px}
-.gv-biblio{margin:14px 0 0;font-size:14px}
-/* l'ECHELLE de TJM : une grandeur continue se regle, elle ne se coche pas */
-/* LE TABLEAU DES ROLES : des lignes cliquables (maillage interne) plutot qu'un
-   tableau muet. Le role de la page en cours est en relief. */
-/* LE BLOC DE CITATION : la phrase toute prete, copiable. Sobre exprès — c'est un
-   outil, pas une reclame. */
-.citer{border:1px solid var(--grille);border-left:4px solid var(--or);
-   padding:22px 24px;margin:30px 0}
-.citer h2{border-top:0;padding-top:0;margin:0 0 8px;font-size:20px}
-.citer h2::before{display:none}
-.citer p{color:var(--encre2);font-size:15px;margin:0 0 14px}
-.citer blockquote{margin:0 0 16px;padding:14px 16px;background:var(--fond2);
-   font-size:15.5px;line-height:1.55;color:var(--encre)}
-.tjtab{border:1px solid var(--grille);margin:18px 0 8px}
-.tjr{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;
-   padding:13px 16px;border-bottom:1px solid var(--grille);color:var(--encre);
-   border-left:3px solid transparent}
-.tjr:last-child{border-bottom:0}
-.tjr b{font-weight:800;color:var(--or);font-variant-numeric:tabular-nums;
-   min-width:92px;text-align:right}
-.tjr i{font-style:normal;color:var(--muet);font-size:14px;
-   font-variant-numeric:tabular-nums;min-width:74px;text-align:right}
-.tjr-t{background:var(--fond2);font:600 12px/1 'Consolas',ui-monospace,monospace;
-   letter-spacing:1.5px;text-transform:uppercase;color:var(--muet)}
-.tjr-t b,.tjr-t i{color:var(--muet);font-weight:600;font-size:12px}
-a.tjr:hover{background:var(--fond2);border-left-color:var(--or)}
-a.tjr.on{border-left-color:var(--or);background:var(--fond2);font-weight:700}
-.jauge{margin:4px 0 14px;max-width:460px}
-.jauge input[type=range]{width:100%;accent-color:var(--or);height:26px;
-   cursor:pointer}
-.jauge .jauge-v{display:inline-block;font:800 22px/1 Inter,'Segoe UI',system-ui,
-   sans-serif;color:var(--or);font-variant-numeric:tabular-nums;margin-left:2px}
-.jauge .jauge-b{display:flex;justify-content:space-between;font:600 12px/1
-   'Consolas',ui-monospace,monospace;color:var(--muet);margin-top:2px}
-.biblio{border:1px solid var(--grille);padding:26px 24px;margin-top:26px;
-   max-width:560px}
-.biblio input{width:100%;padding:13px 14px;border:1px solid var(--grille);
-   font:600 16px/1.2 'Consolas',ui-monospace,monospace;letter-spacing:1px;
-   margin:8px 0 16px;background:var(--fond);color:var(--encre)}
-.biblio input:focus-visible{outline:2px solid var(--or);outline-offset:1px}
-.bmsg{margin:14px 0 0;font-size:14px;min-height:20px}
-.bmsg.ko{color:#9b2c1f}
-.bmsg.ok{color:#1f6b3a}
-.flux-tarifs{margin:10px 0 4px}
-.ctc-actes{display:flex;gap:12px;flex-wrap:wrap;align-items:center;
-   margin:14px 0 2px}
-#ctcPayer[hidden]{display:none}
-.to.sel{cursor:pointer;position:relative}
-.to.sel input{position:absolute;opacity:0;pointer-events:none}
-.to.sel:hover{border-color:var(--or)}
-.reco-badge{position:absolute;top:10px;right:10px;background:var(--or);color:#fff;
-   font:700 10.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1.2px;
-   text-transform:uppercase;padding:5px 9px}
-.to.sel:has(input:checked){border-color:var(--or);
-   box-shadow:inset 0 4px 0 var(--or),0 10px 22px -14px rgba(141,104,24,.5)}
-.to.sel:has(input:focus-visible){outline:2px solid var(--or);outline-offset:2px}
-.duree{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1.2px;
-   text-transform:uppercase;color:var(--muet);margin:2px 0 10px}
-.garanties{display:flex;flex-wrap:wrap;gap:8px 22px;margin:12px 0 2px;
-   font-size:13.5px;font-weight:600;color:var(--encre2)}
-.garanties span{border-left:3px solid var(--vert);padding-left:9px}
-.payer{margin-top:auto;justify-content:center}
-.kit-cat{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:var(--muet);margin:30px 0 12px}
-.kit .bientot{display:block;padding:22px 20px;border:1px dashed var(--grille);
-   border-left:1px dashed var(--grille)}
-.kit .bientot b{display:block;font-size:20px;font-weight:700;margin-bottom:8px;
-   color:var(--encre2)}
-.kit .bientot span{display:block;font-size:14px;color:var(--muet)}
-.kit .bientot i{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
-   letter-spacing:1px;color:var(--muet);margin-top:14px;font-style:normal;
-   border:1px solid var(--grille);padding:4px 8px}
-
-/* ENTREE DE SECTION : un filet ouvre la section, un trait or la signe, le titre
-   porte seul. Plus de numerotation : avec le portail elle sautait d'un parcours a
-   l'autre (le kit devenait « 01 » en outillage) — demande de Claire. */
-body.accueil h2{border-top:1px solid var(--grille);padding-top:20px;
-   margin:56px 0 12px;position:relative}
-body.accueil h2::before{content:"";position:absolute;top:-1px;left:0;
-   width:56px;height:3px;background:var(--or)}
-body.accueil h2 + p{margin-top:0;color:var(--encre2);max-width:74ch}
-body.accueil .sombre h2{border-top-color:rgba(255,255,255,.18)}
-/* les etiquettes de groupe de la boite a outils s'alignent sur ce rythme */
-.kit-cat{margin-top:26px}
-
-/* APPARITION AU DEFILEMENT — la classe .rv est posee PAR le script : sans JavaScript
-   la page est entierement visible, et prefers-reduced-motion coupe tout. */
-.rv{opacity:0;transform:translateY(16px);
-    transition:opacity .55s ease,transform .55s ease}
-.rv.vu{opacity:1;transform:none}
-
-/* MICRO-INTERACTIONS — les gestes se soulevent, le clavier se voit. */
-.cta,.cta2,.kit a{transition:transform .18s ease,box-shadow .18s ease,
-   background .18s ease}
-.cta:hover,.cta2:hover{transform:translateY(-2px);
-   box-shadow:0 10px 22px -10px rgba(141,104,24,.5)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:2px}
-
-/* LE PORTRAIT recoit un aplat decale — le geste editorial des pages mode. */
-.cadre{position:relative;display:inline-block}
-.cadre::before{content:"";position:absolute;top:16px;left:16px;right:-16px;
-   bottom:-16px;background:var(--aplat);z-index:-1}
-.cadre .portrait{position:relative}
-
-/* FENETRE DE CONTACT — le formulaire QUALIFIANT. Rien ne part vers le site :
-   il fabrique l'email chez le visiteur. */
-.fluxwrap{overflow:hidden;max-height:0;opacity:0;transform:translateY(16px);
-   transition:max-height .6s ease,opacity .5s ease .08s,transform .5s ease .08s}
-.fluxwrap.on{max-height:2800px;opacity:1;transform:none}
-.ctc{border:1px solid var(--grille);border-top:4px solid var(--or);
-   padding:30px 30px 24px;background:var(--fond2);color:var(--encre);margin:26px 0 6px}
-.ctc .etbloc{display:none}
-.ctc .etbloc.on{display:block}
-.ctc .etapes{margin:12px 0 26px;border-color:var(--grille)}
-.ctc .et{padding:14px 16px;background:var(--fond)}
-.ctc .et .n{font-size:20px}
-.ctc .et h3{margin:8px 0 4px;font-size:14px}
-.ctc .et p{font-size:12.5px}
-.ctc h3{margin:0 0 16px;font-size:20px}
-.ctc .types{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
-.ctc .types label{border:1px solid var(--grille);padding:9px 14px;cursor:pointer;
-   font-size:14px;font-weight:600;color:var(--encre2)}
-.ctc .types input{position:absolute;opacity:0;pointer-events:none}
-.ctc .types label:has(input:checked){border-color:var(--or);color:var(--encre);
-   box-shadow:inset 0 -3px 0 var(--or)}
-.ctc .qbloc{display:none}
-.ctc .qbloc.on{display:block}
-.ctc .types.pt{margin:4px 0 12px}
-.ctc .types.pt label{padding:7px 11px;font-size:12.5px}
-.ctc .champs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ctc .champs .large{grid-column:1/-1}
-.ctc input[type=text],.ctc input[type=email],.ctc input[type=tel],.ctc textarea{
-   width:100%;border:1px solid var(--grille);background:var(--fond2);color:var(--encre);
-   padding:10px 12px;font:400 14px/1.5 Inter,'Segoe UI',system-ui,sans-serif}
-.ctc textarea{min-height:88px;resize:vertical}
-.ctc .etq{display:block;font-size:12.5px;color:var(--muet);margin:0 0 4px}
-.ctc .sugg{margin-top:14px}
-.ctc .sugg a{display:block;border-left:4px solid var(--vert);background:#f7faf8;
-   padding:10px 14px;margin:6px 0;font-size:13px;font-weight:600;color:var(--encre);
-   border-bottom:0}
-.ctc .sugg a:hover{background:#eef6f1}
-.ctc .sugg a.urgent{border-left-color:var(--or);background:var(--fond2)}
-.ctc .sugg a.urgent:hover{background:var(--aplat)}
-.ctc .preuve-mini{margin-top:16px;padding-left:14px;border-left:3px solid var(--or);
-   font-size:13px;color:var(--encre2);font-style:italic}
-.ctc .preuve-mini span{display:block;font-style:normal;font-size:12.5px;
-   color:var(--muet);margin-top:3px}
-.ctc .types label:has(input:focus-visible){outline:2px solid var(--or);
-   outline-offset:2px}
-@media(max-width:640px){.ctc .champs{grid-template-columns:1fr}
-   .ctc{padding:22px 18px 20px}}
-.ctc .apps{display:flex;gap:10px;margin-top:18px}
-.ctc .app{flex:1;display:inline-flex;align-items:center;justify-content:center;
-   gap:9px;border:1px solid var(--grille);background:var(--fond);color:var(--encre);
-   padding:13px;cursor:pointer;font-size:14px;font-weight:700;
-   transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
-.ctc .app:hover{transform:translateY(-2px);border-color:var(--or);
-   box-shadow:0 8px 18px -10px rgba(141,104,24,.5)}
-.ctc .app svg{width:20px;height:20px;flex:none}
-.ctc .defaut{font-size:12.5px;color:var(--muet);margin:12px 0 0;text-align:center}
-.ctc .defaut a{color:var(--muet)}
-.ctc .note-priv{font-size:12.5px;color:var(--muet);margin:14px 0 0}
-
-/* NAVIGATION COLLANTE — composant transpose de chanel.com : chaque section est a un
-   clic, le defilement n'est plus le seul chemin. Pleine largeur de la colonne. */
-.snav{position:sticky;top:0;z-index:6;background:var(--fond);
-   border-bottom:1px solid var(--grille);margin:26px -26px 0;padding:0 26px;
-   display:flex;gap:24px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
-.snav::-webkit-scrollbar{display:none}
-.snav a{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1.5px;
-   text-transform:uppercase;color:var(--muet);padding:14px 0 12px;
-   border-bottom:2px solid transparent}
-.snav a:hover{color:var(--encre);border-bottom-color:var(--or)}
-
-/* CARROUSEL DU RELEVE — glissement horizontal a crans (chanel.com, « Les
-   incontournables ») : la planche suivante depasse, invitation a feuilleter. */
-.carrousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
-   padding:4px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.carrousel figure{flex:none;width:min(74%,420px);scroll-snap-align:start;margin:0}
-.carrousel img{width:100%;height:auto;display:block;border:1px solid var(--grille)}
-.carrousel figcaption{font-size:12.5px;color:var(--muet);margin-top:7px}
-.car-tete{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.car-fl{display:flex;gap:8px}
-.car-fl button{border:1px solid var(--grille);background:var(--fond);color:var(--encre);
-   width:38px;height:38px;cursor:pointer;font-size:18px;line-height:1}
-.car-fl button:hover{border-color:var(--or)}
-
-/* LES PORTES D'ORIENTATION — le jeu de piste du héros. Une couche d'orientation,
-   pas une barrière : la page reste entièrement lisible dessous. */
-.portes-q{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:var(--muet);margin:22px 0 10px}
-/* L'ARRIVEE EST DENSE : l'identite complete DOIT tenir au-dessus des portes.
-   body.garde n'existe que sur l'accueil (pose par le JS la ou il y a des portes). */
-body.garde h1{font-size:clamp(30px,4vw,44px);margin:20px 0 0}
-body.garde .intro{margin-top:16px;gap:26px;grid-template-columns:1fr 186px}
-@media (max-width:700px){body.garde .intro{grid-template-columns:1fr}}
-body.garde .chapeau{font-size:18px;margin-top:16px}
-body.garde .bande-preuve{margin-top:14px}
-body.garde .dispo{margin-top:12px}
-/* LA PREUVE AVANT LE CHOIX : les logos de ses clients (sans les noms) et une
-   phrase de recommandation. C'est ce qui doit etre lu avant de cliquer. */
-.kit-1{max-width:520px;margin-top:18px}
-.hero-preuves{margin-top:16px;padding-top:14px;border-top:1px solid var(--grille)}
-.hp-t{font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:2px;
-   text-transform:uppercase;color:var(--muet);margin-bottom:10px}
-.hp-rail{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;--k:1}
-/* MEME BOITE pour tous : un logo large est borne par la largeur, un logo carre
-   par la hauteur — c'est ce qui egalise la presence de chaque marque */
-.hp-rail img{width:calc(var(--lw)*var(--k));height:calc(var(--lh)*var(--k));
-   object-fit:contain;object-position:left center;
-   filter:grayscale(1);opacity:.62;transition:opacity .2s ease,filter .2s ease}
-.hp-rail img:hover{filter:none;opacity:1}
-.hero-reco{margin:14px 0 0;padding-left:16px;border-left:3px solid var(--or);
-   font-size:16px;line-height:1.45;color:var(--encre)}
-.hero-reco span{display:block;margin-top:7px;font-size:12.5px;color:var(--muet);
-   font-family:'Consolas',ui-monospace,monospace;letter-spacing:.5px}
-@media (max-width:700px){.hp-rail{--k:.82}.hero-reco{font-size:15.5px}}
-.portes-i{font-weight:500;letter-spacing:0;text-transform:none;
-   font-family:inherit;font-size:13px;color:var(--muet)}
-.portes{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
-   gap:10px}
-.portes button{position:relative;border:1px solid var(--grille);
-   background:var(--fond);color:var(--encre2);padding:16px 44px 14px 18px;
-   cursor:pointer;font-family:inherit;text-align:left;display:flex;
-   flex-direction:column;gap:6px;min-height:118px;
-   animation:pcarte .5s ease both;
-   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease,
-      background-color .16s ease}
-.portes button:nth-child(2){animation-delay:.06s}
-.portes button:nth-child(3){animation-delay:.12s}
-.portes button:nth-child(4){animation-delay:.18s}
-@keyframes pcarte{from{opacity:0;transform:translateY(14px)}
-   to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.portes button{animation:none}}
-.pico{width:22px;height:22px;color:var(--or);flex:none}
-.portes .ptit{font-size:15.5px;font-weight:700;color:var(--encre)}
-.portes .psub{font-size:12.5px;font-weight:500;color:var(--muet);line-height:1.45}
-.portes .pfl{position:absolute;right:14px;bottom:10px;font-size:19px;
-   color:var(--or);transition:transform .16s ease}
-.portes button:hover{border-color:var(--or);transform:translateY(-3px);
-   box-shadow:0 10px 22px -12px rgba(141,104,24,.55)}
-.portes button:hover .pfl{transform:translateX(4px)}
-.portes button[aria-pressed="true"]{border-color:var(--encre);
-   background:var(--encre);box-shadow:0 12px 26px -14px rgba(28,26,23,.6)}
-.portes button[aria-pressed="true"] .ptit{color:#fff}
-.portes button[aria-pressed="true"] .psub{color:rgba(255,255,255,.62)}
-.portes button[aria-pressed="true"] .pico,
-.portes button[aria-pressed="true"] .pfl{color:var(--orlum)}
-.portes button[aria-pressed="true"] .pfl{transform:rotate(90deg)}
-/* l'air du portail : tant qu'aucune porte n'est choisie, un vide volontaire
-   separe les cartes du pied de page sombre */
-body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) .page{
-   padding-bottom:48px}
-body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) footer.pied{
-   display:none}
-/* le menu des sections n'a de sens qu'une fois un parcours ouvert : avant le
-   choix, l'arrivee ne montre que l'identite et les portes */
-body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.pvu):not(.tout) .snav{
-   display:none}
-.ptout{margin:12px 0 0;text-align:right}
-.ptout a{font-size:12.5px;color:var(--muet);border-bottom:1px solid var(--grille)}
-.ptout a:hover{color:var(--encre);border-color:var(--or)}
-.ppuce{position:fixed;bottom:16px;right:16px;z-index:60;background:var(--encre);
-   color:#fff;display:flex;align-items:center;gap:12px;padding:10px 14px;
-   font-size:13px;box-shadow:0 14px 30px -14px rgba(28,26,23,.65);
-   animation:pdevoile .4s ease both}
-.ppuce[hidden]{display:none}
-.ppuce b{color:var(--orlum);font-weight:700}
-.ppuce button{background:none;border:0;color:var(--orlum);cursor:pointer;font:inherit;
-   font-size:13px;text-decoration:underline;padding:11px 6px}
-.ppuce button:hover{color:#fff}
-@media print{.ppuce{display:none}}
-/* ecrans peu hauts (portables 768) : l'ecran d'arrivee se compacte pour tenir
-   sans ascenseur — uniquement du rythme vertical, rien ne disparait */
-@media (min-width:900px) and (max-height:820px){
-   h1{font-size:clamp(30px,4.6vw,40px);margin-top:8px}
-   .portes-q{margin:10px 0 8px}
-   .portes button{min-height:88px;padding:12px 44px 10px 16px}
-   .pilules{margin-top:10px}
-   body.garde .intro{margin-top:12px;grid-template-columns:1fr 168px}
-   body.garde .chapeau{font-size:17px;margin-top:12px}
-   body.garde .bande-preuve{margin-top:10px}
-   body.garde .dispo{margin-top:8px}
-   .hero-preuves{margin-top:12px;padding-top:12px}
-   .hp-t{margin-bottom:8px}
-   .hp-rail{--k:.9}
-   .hero-reco{margin-top:10px;font-size:15px}
-}
-/* cibles tactiles : tout lien du pied de page et le selecteur de langue font
-   au moins 34 px de haut au doigt, sans bouger la maquette */
-/* LE PORTAIL : sous le heros, rien ne s'affiche avant le choix d'une porte ;
-   la selection revele les groupes de SON parcours, en fondu. Les compteurs CSS
-   ne comptent pas les sections masquees : la numerotation suit le parcours. */
-body.garde:not(.p0):not(.p1):not(.p2):not(.p3):not(.tout)
-   [data-grp]:not(.gvu){display:none}
-body.p1 [data-grp="quand"],body.p1 [data-grp="livre"],
-body.p1 [data-grp="releve"],body.p1 [data-grp="kit"],
-body.p2 [data-grp="quand"],body.p2 [data-grp="livre"],
-body.p2 [data-grp="releve"],
-body.p3 [data-grp="quand"],body.p3 [data-grp="livre"],
-body.p3 [data-grp="kit"]{display:none}
-body.p0 #ctcTypezone,body.p1 #ctcTypezone,body.p2 #ctcTypezone,
-body.p3 #ctcTypezone{display:none}
-body.p0 .kg-form,body.p2 .kg-form,body.p3 .kg-form{display:none}
-body.p0 [data-grp="guides"],body.p2 [data-grp="guides"],
-body.p3 [data-grp="guides"]{display:none}
-/* le menu des sections ne propose QUE les sections du parcours ouvert */
-body.p1 .snav{display:none}
-body.p2 .snav a:not([href="#kit"]),
-body.p3 .snav a:not([href="#releve"]){display:none}
-/* les titres d'entree du flux : un seul visible */
-.fin{display:none;margin-top:30px}
-.fin .chapeau{margin-bottom:0}
-.fin .gestes{margin-top:14px}
-body:not(.p0):not(.p1):not(.p2):not(.p3) .fin-def,
-body.p0 .fin-p0,body.p1 .fin-p1,body.p2 .fin-p2,
-body.p3 .fin-p3{display:block}
-.ft{display:none;margin:0 0 14px}
-.fi{display:none;margin:0 0 20px;color:var(--encre2);max-width:66ch}
-body.p3 .fi-p3{display:block}
-body:not(.p0):not(.p1):not(.p2):not(.p3) .ft-def,
-body.p0 .ft-p0,body.p1 .ft-p1,body.p2 .ft-p2,body.p3 .ft-p3{display:block}
-.ctc .ft{font-size:clamp(21px,2.6vw,27px);border-top:0;padding-top:0}
-.ctc-h{margin-top:30px}
-#ctc.tf:not(.infos) .qf-info,#ctc.tf:not(.infos) #ctcSuite{display:none}
-body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
-body.p3 [data-grp],body.tout [data-grp],
-body.garde [data-grp].gvu{animation:pdevoile .55s ease both}
-@keyframes pdevoile{from{opacity:0;transform:translateY(16px)}
-   to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){
-   body.p0 [data-grp],body.p1 [data-grp],body.p2 [data-grp],
-   body.p3 [data-grp]{animation:none}}
-.pp{overflow:hidden;max-height:0;opacity:0;visibility:hidden;
-   transform:translateY(10px);
-   transition:max-height .5s ease,opacity .4s ease .06s,transform .4s ease .06s}
-.pp.on{max-height:400px;opacity:1;visibility:visible;transform:none}
-.pp p{margin:16px 0 4px;color:var(--encre)}
-.pp .gestes{margin-top:10px}
-.cta-mini{display:inline-flex;align-items:center;background:var(--or);color:#fff;
-   font-weight:700;font-size:14px;padding:12px 18px;border-bottom:0;
-   transition:transform .15s ease,box-shadow .15s ease}
-.cta-mini:hover{filter:brightness(.92);transform:translateY(-2px);border-bottom:0;
-   box-shadow:0 8px 18px -10px rgba(141,104,24,.55)}
-
-/* SELECTEUR DE LANGUE en haut à droite */
-.langues{display:flex;gap:8px;flex:none;padding-top:2px}
-.langues a,.langues span{display:inline-flex;align-items:center;gap:7px;
-        border:1px solid var(--grille);padding:11px 10px;color:var(--muet);
-        font:600 12.5px/1 'Consolas',ui-monospace,monospace;letter-spacing:1px}
-.langues a:hover{border-color:var(--or);color:var(--encre)}
-.langues .on{border-color:var(--or);color:var(--encre)}
-.langues svg{width:22px;height:11px;display:block;flex:none}
-
-/* INTRO AVEC PHOTO — on achète une mission de pilotage à une personne, pas à un tableau
-   de chiffres. La v1 n'avait aucun visage. */
-.intro{display:grid;grid-template-columns:1fr 218px;gap:36px;align-items:end;margin-top:26px}
-.portrait{width:218px;height:auto;display:block}
-
-/* ⚠ LES FILETS SE DESSINENT SUR LES CELLULES, jamais sur le conteneur — deux fois
-   que ce piège a coûté un défaut visible. Un fond de conteneur se voyait en carré gris
-   dans la 6e case vide (v1) ; une bordure basse de conteneur courait sur toute la
-   largeur d'une dernière ligne à moitié remplie (v2). Bordure DROITE + BASSE sur chaque
-   cellule, HAUTE + GAUCHE sur le conteneur : une case absente ne dessine rien, quel que
-   soit le nombre de mesures. Même principe pour .decl. */
-.mesures{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));
-         gap:0;margin:34px 0;
-         border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
-.m{background:var(--fond);padding:24px 20px;
-   border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
-.m .v{font-weight:800;font-size:38px;line-height:1;color:var(--or);letter-spacing:-1px}
-.m .l{font-size:14px;margin-top:9px;color:var(--encre)}
-.m .s{font-size:12.5px;margin-top:4px;color:var(--muet)}
-
-/* DECLENCHEURS — « quand m'appeler ». Le lecteur doit se reconnaître en cinq secondes. */
-.decl{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:0;
-      margin:28px 0;border-top:1px solid var(--grille);border-left:1px solid var(--grille)}
-.d{padding:22px 20px;border-right:1px solid var(--grille);border-bottom:1px solid var(--grille)}
-.d h3{margin:0 0 8px;font-size:20px}
-.d p{margin:0}
-.d.cliquable{cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,
-   background .16s ease}
-.d.cliquable:hover{background:var(--fond2);transform:translateY(-2px);
-   box-shadow:0 10px 22px -12px rgba(141,104,24,.45)}
-.d.cliquable:focus-visible{outline:2px solid var(--or);outline-offset:2px}
-.d .act{display:inline-block;font:600 12.5px/1 'Consolas',ui-monospace,monospace;
-   letter-spacing:1px;color:var(--or);margin-top:14px;font-style:normal}
-
-/* PREUVES — secteur et chiffres, jamais de nom de client. */
-.preuves{border-top:1px solid var(--grille);margin:30px 0}
-.mi{padding:24px 0;border-bottom:1px solid var(--grille)}
-.mi .r{font-weight:700;font-size:20px;color:var(--encre)}
-.mi .meta{font:600 12.5px/1.5 'Consolas',ui-monospace,monospace;letter-spacing:1px;
-          text-transform:uppercase;color:var(--muet);margin-top:6px}
-.mi p{margin:13px 0 15px}
-.mi .ch{display:flex;flex-wrap:wrap;gap:14px 38px}
-.mi .ch div{font-size:12.5px;color:var(--muet);max-width:210px}
-.mi .ch b{display:block;font-weight:800;font-size:28px;line-height:1.1;color:var(--or);
-          letter-spacing:-.5px;margin-bottom:3px}
-
-.note{border-left:4px solid var(--vert);background:#f7faf8;padding:16px 20px;
-      margin:30px 0;color:var(--encre2)}
-.gestes{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:22px 0 0}
-.cta{display:inline-block;background:var(--or);color:#fff;font-weight:700;
-     padding:16px 30px;border:0;border-bottom:0}
-.cta:hover{filter:brightness(.92);border-bottom:0}
-.cta2{display:inline-block;border:1px solid var(--or);color:var(--or);font-weight:700;
-      padding:15px 26px;background:var(--fond);cursor:pointer;font-size:18px;
-      font-family:inherit}
-.cta2:hover{background:var(--fond2);border-bottom-color:var(--or)}
-/* JETONS DOCUMENTS — legers a cote du geste principal : la hierarchie se lit,
-   le telechargement reste a un clic. */
-.gestes .doc{display:inline-flex;align-items:center;gap:9px;
-   border:1px solid var(--grille);border-bottom:1px solid var(--grille);
-   color:var(--encre2);font:600 12.5px/1 'Consolas',ui-monospace,monospace;
-   letter-spacing:.6px;padding:13px 16px;
-   transition:transform .15s ease,border-color .15s ease,color .15s ease}
-.gestes .doc::after{content:"↓";color:var(--or);font-size:14px}
-.gestes .doc:hover{border-color:var(--or);color:var(--encre);transform:translateY(-2px)}
-footer{margin:86px 0 60px;padding-top:26px;border-top:1px solid var(--grille);
-       font-size:14px;color:var(--muet)}
-footer a{color:var(--muet)}
-.nav{margin-top:14px}.nav a{margin-right:18px;font-size:14px}
-.legende{font-size:14px;color:var(--muet)}
-.maj{font-size:14px;color:var(--muet)}
-@media(max-width:720px){.intro{grid-template-columns:1fr}.portrait{width:172px}}
-@media(max-width:640px){body{font-size:17px}.m .v{font-size:32px}
-       .tete{flex-direction:column;gap:14px}}
 </style>
-</head><body class="">
-<div id="prog"></div>
-<div class="bandeau" role="complementary" aria-label="The project-management market, today"><div class="piste"><i>2,940</i>project-management assignments online<s>&middot;</s><i>550 €</i>median published day rate<s>&middot;</s><i>37 %</i>disappear within 7 days<s>&middot;</s><i>10 %</i>fully remote<s>&middot;</s><i>700 €</i>the best-paid role<s>&middot;</s><i>21</i>platforms tracked<s>&middot;</s><i>2,940</i>project-management assignments online<s>&middot;</s><i>550 €</i>median published day rate<s>&middot;</s><i>37 %</i>disappear within 7 days<s>&middot;</s><i>10 %</i>fully remote<s>&middot;</s><i>700 €</i>the best-paid role<s>&middot;</s><i>21</i>platforms tracked<s>&middot;</s></div></div>
-<div class="page">
-<header>
-  <div class="tete">
-    <div>
-      <div class="marque">Claire Van De Sype &middot; PMO · direction de projet</div>
-      <div class="filet"></div>
+<script>addEventListener("unhandledrejection",function(e){var m=String((e.reason&&e.reason.message)||e.reason||"");if(/transition/i.test(m)&&/skip|abort/i.test(m))e.preventDefault();},true);</script>
+<html><head><meta name="generator" content="claude-design"><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Freelance PMO & project director — Claire Van De Sype","url":"https://pmo-laboratory.com/en/","email":"claire.vandesype@pmo-laboratory.com","sameAs":["https://www.linkedin.com/in/claire-vandesype","https://www.malt.fr/profile/clairevandesype"],"inLanguage":"en","areaServed":["Île-de-France","Hauts-de-France","France"],"knowsAbout":["direction de projet","PMO","gouvernance de portefeuille","pilotage financier de projet","conduite du changement"],"founder":{"@type":"Person","name":"Claire Van De Sype","jobTitle":"PMO · direction de projet","sameAs":["https://www.linkedin.com/in/claire-vandesype"]}}</script><script type="application/ld+json">{"license": "https://pmo-laboratory.com/donnees.html", "isAccessibleForFree": true, "creator": {"@type": "Person", "name": "Claire Van De Sype", "url": "https://pmo-laboratory.com/", "sameAs": ["https://www.linkedin.com/in/claire-vandesype", "https://www.malt.fr/profile/clairevandesype"]}, "publisher": {"@type": "Organization", "name": "pmo-laboratory.com", "url": "https://pmo-laboratory.com/"}, "distribution": [{"@type": "DataDownload", "encodingFormat": "text/html", "contentUrl": "https://pmo-laboratory.com/en/data.html"}], "keywords": ["Paris and Île-de-France", "day rate", "freelance", "project management", "PMO", "project manager", "remote work", "France", "market"], "spatialCoverage": {"@type": "Place", "name": "Paris and Île-de-France", "address": {"@type": "PostalAddress", "addressCountry": "FR"}}, "temporalCoverage": "2026-08-21", "datePublished": "2026-08-21", "dateModified": "2026-08-21", "inLanguage": "en", "@context": "https://schema.org", "@type": "Dataset", "name": "Project-management day rate in Paris: 600 €/day", "description": "Measured median day rate in Paris: 600 € per day, from 771 priced ads. Range, volume and actual remote share.", "url": "https://pmo-laboratory.com/day-rate-paris.html", "citation": "According to Claire Van De Sype’s record of the French project-management market (pmo-laboratory.com), measured on 21 August 2026, the median day rate of a freelance Paris and Île-de-France in France stands at €600 per day, across 771 listings.", "measurementTechnique": "How I measure"}</script></head></html><html><head><style>.sv1:hover{background:#fbf8f1}.sv2:hover{color:#d8b25e}table,thead,tbody,tr,th,td{position:relative;z-index:1}[aria-hidden="true"]{z-index:0}footer a{padding:9px 8px;margin:0 -8px;min-height:34px;min-width:34px;box-sizing:border-box}</style></head></html></head>
+<body>
+
+
+<div data-screen-label="Day rate Paris EN — Ink and Gold">
+<div id="prog" style="position:fixed;top:0;left:0;height:3px;width:0;background:#8a6a1f;z-index:9"></div>
+<div style="max-width:1000px;margin:0 auto;padding:0 32px">
+  <header style="padding-top:42px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px">
+      <div><a href="index.html" style="font:600 13px/1 'IBM Plex Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:#6e675c">Claire Van De Sype · PMO · project direction</a><div style="width:110px;height:3px;background:#8a6a1f;margin-top:15px;transform-origin:left;animation:drawx .9s ease .2s both"></div></div>
+      <nav style="display:flex;gap:8px;font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:1px" aria-label="English / Français"><span style="border:1px solid #8a6a1f;color:#1b1815;padding:10px 13px">EN</span><a href="day-rate-paris.html" hreflang="fr" lang="fr" style="border:1px solid #e6e0d3;color:#6e675c;padding:10px 13px">FR</a></nav>
     </div>
-    <nav class="langues" aria-label="Français / English"><span class="on" aria-current="true"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"/><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="3"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/><rect width="60" height="30" fill="none" stroke="#d8d2c6"/></svg><b>EN</b></span><a href="../tjm-paris.html" hreflang="fr" title="Lire cette page en français" lang="fr"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="20" height="30" fill="#0055A4"/><rect x="20" width="20" height="30" fill="#fff"/><rect x="40" width="20" height="30" fill="#EF4135"/><rect width="60" height="30" fill="none" stroke="#d8d2c6"/></svg><b>FR</b></a></nav>
+  </header>
+  <h1 style="font:400 42px/1.22 Prata,serif;margin:52px 0 0;letter-spacing:-.5px;animation:rise .7s ease both">Freelance project-management day rate in <em style="font-style:normal;background:linear-gradient(transparent 72%,#eadfbe 72%)">Paris and Île-de-France</em></h1>
+  <p style="font-size:19px;line-height:1.7;color:#524c42;margin:22px 0 0;max-width:64ch;animation:rise .7s ease .15s both">Across the project-management assignment ads collected in Paris and Île-de-France, the median day rate stands at <b style="color:#1b1815">600 € per day</b>. That figure rests on 771 ads publishing a rate, out of 1,629 ads collected in this area.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;margin-top:34px;border-top:1px solid #e6e0d3;border-left:1px solid #e6e0d3;animation:rise .7s ease .25s both">
+    <div style="padding:26px 22px;border-right:1px solid #e6e0d3;border-bottom:1px solid #e6e0d3;background:#fff"><div data-count data-to="600" data-suf=" €" style="font:400 42px/1 Prata,serif;color:#8a6a1f;font-variant-numeric:tabular-nums">0</div><div style="font-size:13.5px;margin-top:10px">median rate in this area</div></div>
+    <div style="padding:26px 22px;border-right:1px solid #e6e0d3;border-bottom:1px solid #e6e0d3;background:#fff"><div data-count data-to="757" style="font:400 42px/1 Prata,serif;color:#8a6a1f;font-variant-numeric:tabular-nums">0</div><div style="font-size:13.5px;margin-top:10px">ads with a rate</div></div>
+    <div style="padding:26px 22px;border-right:1px solid #e6e0d3;border-bottom:1px solid #e6e0d3;background:#fff"><div data-count data-to="1629" style="font:400 42px/1 Prata,serif;color:#8a6a1f;font-variant-numeric:tabular-nums">1,629</div><div style="font-size:13.5px;margin-top:10px">ads collected</div></div>
   </div>
-  <div class="liens"><a class="p-in" href="https://www.linkedin.com/in/claire-vandesype" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a class="p-malt" href="https://www.malt.fr/profile/clairevandesype" rel="noopener" aria-label="Malt" title="Malt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M5.1 8l13.8 8M18.9 8 5.1 16"/></svg></a><a class="p-tel" href="tel:+33643653506" aria-label="Call Claire Van De Sype" title="Call Claire Van De Sype"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span class="lb">Call</span></a><a class="p-mail" onclick="return ctcOuvre('')" href="mailto:claire.vandesype@pmo-laboratory.com?subject=Getting%20in%20touch&body=Hello%20Claire%2C%0A%0APurpose%20of%20contact%3A%20%0ALast%20name%3A%20%0AFirst%20name%3A%20%0ACompany%3A%20%0AEmail%3A%20%0APhone%3A%20%0A%0AMy%20need%20in%20a%20few%20lines%3A%20%0A" aria-label="Email claire.vandesype@pmo-laboratory.com" title="Email claire.vandesype@pmo-laboratory.com"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 6.4a1.9 1.9 0 0 1 3-1.5L12 10l7-5.1a1.9 1.9 0 0 1 3 1.5V18a1.6 1.6 0 0 1-1.6 1.6H17V9.9l-5 3.6-5-3.6v9.7H3.6A1.6 1.6 0 0 1 2 18Z"/></svg><span class="lb">Email</span></a></div>
-</header>
-
-<h1>Freelance project-management day rate in Paris and Île-de-France</h1>
-<p class="chapeau">Across the project-management assignment ads collected in Paris and Île-de-France, the median day rate stands at <b>600 € per day</b>. That figure rests on 771 ads publishing a rate, out of 1,629 ads collected in this area.</p>
-<div class="mesures"><div class="m"><div class="v">600 €</div><div class="l">measured median day rate</div></div><div class="m"><div class="v">1,629</div><div class="l">ads collected in this area</div></div><div class="m"><div class="v">771</div><div class="l">ads publishing a rate</div></div></div>
-<p class="legende">Measured on 21 August 2026.</p>
-<h2>What the gap with the national market means</h2><p>This area pays <b>50 € more</b> per day than the national median (550 €). Over a year of 200 billed days, that gap is <b>10,000 €</b>.</p><p>The middle half of priced ads in this area falls between <b>520 €</b> and <b>654 €</b>. Below the first quartile a rate invites questions; above the third it needs a scope to justify it.</p>
-<h2>Remote work in this area</h2><p>Of the 910 ads in this area that state their arrangement, <b>27</b> are fully remote, i.e. 3 %. The rest split between hybrid and on-site.</p>
-<h2>Every measured area, best paid first</h2>
-<div class="tjtab"><div class="tjr tjr-t"><span>Area</span><b>Median day rate</b>
-  <i>Ads</i></div><a class="tjr on" href="./day-rate-paris.html"><span>Paris and Île-de-France</span><b>600 €</b><i>1,629</i></a><a class="tjr" href="./day-rate-lille.html"><span>Lille</span><b>590 €</b><i>99</i></a><div class="tjr"><span>Nice · Sophia *</span><b>580 €</b><i>22</i></div><a class="tjr" href="./day-rate-nantes.html"><span>Nantes</span><b>550 €</b><i>87</i></a><div class="tjr"><span>Bordeaux *</span><b>550 €</b><i>63</i></div><div class="tjr"><span>Rennes *</span><b>550 €</b><i>55</i></div><a class="tjr" href="./day-rate-le-mans.html"><span>Le Mans</span><b>530 €</b><i>31</i></a><a class="tjr" href="./day-rate-niort.html"><span>Niort</span><b>520 €</b><i>65</i></a><div class="tjr"><span>Strasbourg *</span><b>500 €</b><i>23</i></div><a class="tjr" href="./day-rate-lyon.html"><span>Lyon</span><b>490 €</b><i>136</i></a><a class="tjr" href="./day-rate-marseille-aix.html"><span>Marseille and Aix</span><b>490 €</b><i>94</i></a><a class="tjr" href="./day-rate-normandy.html"><span>Normandy</span><b>470 €</b><i>44</i></a><a class="tjr" href="./day-rate-toulouse.html"><span>Toulouse</span><b>460 €</b><i>69</i></a></div>
-<p class="legende">Areas marked with an asterisk rest on fewer than twenty-five priced ads: an order of magnitude, not a negotiating benchmark.</p>
-
-<h2>And by role</h2>
-<p>Medians by role are measured nationally: a single area does not hold enough priced ads to be split by role without inventing figures.</p>
-<p class="legende"><a href="./day-rate-project-director.html">project director</a> · <a href="./day-rate-project-manager.html">project manager</a> · <a href="./day-rate-pmo.html">PMO</a> · <a href="./day-rate-business-analyst.html">business analyst</a> · <a href="./day-rate-product-owner.html">product owner</a></p>
-
-<h2>How I measure</h2>
-<p>Every morning a collector records the project-management assignments published in France on freelance platforms, keeping only freelance listings. The figure shown is the median of advertised rates — not an average, which a single extreme figure would distort. Listings without a rate do not count towards the median but do count towards volumes. The measurement is redone at every publication: this page is never a memory.</p>
-<div class="gestes">
-  <a class="cta" href="./#guides">The market guide — €29 incl. VAT</a>
-  <a class="doc" href="./#quand">Talk about your assignment</a>
-</div>
-<div class="citer"><h2>How to cite this figure</h2><p>These measurements are free to cite, including commercially, on one condition: name the source and link to the page. Copy the sentence below.</p><blockquote id="citTexte">According to Claire Van De Sype’s record of the French project-management market (pmo-laboratory.com), measured on 21 August 2026, the median day rate of a freelance Paris and Île-de-France in France stands at €600 per day, across 771 listings.</blockquote><button type="button" class="cta2" onclick="citCopie(this)" data-ok="Copied.">Copy the citation</button></div><script>function citCopie(b){var t=document.getElementById("citTexte").textContent.trim();navigator.clipboard.writeText(t).then(function(){var v=b.textContent;b.textContent=b.getAttribute("data-ok");setTimeout(function(){b.textContent=v;},2500);});}</script>
-<script type="application/ld+json">{"license": "https://pmo-laboratory.com/donnees.html", "isAccessibleForFree": true, "creator": {"@type": "Person", "name": "Claire Van De Sype", "url": "https://pmo-laboratory.com/", "sameAs": ["https://www.linkedin.com/in/claire-vandesype", "https://www.malt.fr/profile/clairevandesype"]}, "publisher": {"@type": "Organization", "name": "pmo-laboratory.com", "url": "https://pmo-laboratory.com/"}, "distribution": [{"@type": "DataDownload", "encodingFormat": "text/html", "contentUrl": "https://pmo-laboratory.com/en/data.html"}], "keywords": ["Paris and Île-de-France", "day rate", "freelance", "project management", "PMO", "project manager", "remote work", "France", "market"], "spatialCoverage": {"@type": "Place", "name": "Paris and Île-de-France", "address": {"@type": "PostalAddress", "addressCountry": "FR"}}, "temporalCoverage": "2026-08-21", "datePublished": "2026-08-21", "dateModified": "2026-08-21", "inLanguage": "en", "@context": "https://schema.org", "@type": "Dataset", "name": "Project-management day rate in Paris: 600 €/day", "description": "Measured median day rate in Paris: 600 € per day, from 771 priced ads. Range, volume and actual remote share.", "url": "https://pmo-laboratory.com/day-rate-paris.html", "citation": "According to Claire Van De Sype’s record of the French project-management market (pmo-laboratory.com), measured on 21 August 2026, the median day rate of a freelance Paris and Île-de-France in France stands at €600 per day, across 771 listings.", "measurementTechnique": "How I measure"}</script>
-
-</div>
-<footer class="pied">
-<div class="page">
-  <div class="cols">
-    <div>
-      <div class="marque">Claire Van De Sype</div>
-      <div class="filet"></div>
-      <a href="mailto:claire.vandesype@pmo-laboratory.com?subject=Getting%20in%20touch&body=Hello%20Claire%2C%0A%0APurpose%20of%20contact%3A%20%0ALast%20name%3A%20%0AFirst%20name%3A%20%0ACompany%3A%20%0AEmail%3A%20%0APhone%3A%20%0A%0AMy%20need%20in%20a%20few%20lines%3A%20%0A" style="margin-top:16px">claire.vandesype@pmo-laboratory.com</a>
-      <a href="tel:+33643653506">Call</a>
-      <a href="https://calendly.com/claire-vandesype" rel="noopener">Book 30 minutes</a>
+  <p style="font-size:13px;color:#6e675c;margin-top:12px">Measured on 21 August 2026.</p>
+  <div style="position:relative;margin-top:60px;border-top:1px solid #e6e0d3;padding-top:26px">
+    <span aria-hidden="true" style="position:absolute;top:16px;right:0;font:400 100px/1 Prata,serif;color:#f2ecdd;pointer-events:none;user-select:none">01</span>
+    <div style="width:56px;height:3px;background:#8a6a1f;margin-top:-27px"></div>
+    <h2 style="font:400 30px/1.2 Prata,serif;margin:0">What the gap with the national market means</h2>
+    <p style="font-size:16px;line-height:1.75;color:#524c42;margin:16px 0 0;max-width:72ch">This area pays <b style="color:#1b1815">50 € more</b> per day than the national median (550 €). Over a year of 200 billed days, that gap is <b style="color:#1b1815">10,000 €</b>.</p>
+    <p style="font-size:16px;line-height:1.75;color:#524c42;margin:14px 0 0;max-width:72ch">The middle half of priced ads in this area falls between <b style="color:#1b1815">520 €</b> and <b style="color:#1b1815">654 €</b>. Below the first quartile a rate invites questions; above the third it needs a scope to justify it.</p>
+  </div>
+  <div style="position:relative;margin-top:60px;border-top:1px solid #e6e0d3;padding-top:26px">
+    <span aria-hidden="true" style="position:absolute;top:16px;right:0;font:400 100px/1 Prata,serif;color:#f2ecdd;pointer-events:none;user-select:none">02</span>
+    <div style="width:56px;height:3px;background:#8a6a1f;margin-top:-27px"></div>
+    <h2 style="font:400 30px/1.2 Prata,serif;margin:0">Remote work in this area</h2>
+    <p style="font-size:16px;line-height:1.75;color:#524c42;margin:16px 0 0;max-width:72ch">Of the 910 ads in this area that state their arrangement, <b style="color:#1b1815">26</b> are fully remote, i.e. 3 %. The rest split between hybrid and on-site.</p>
+  </div>
+  <div style="position:relative;margin-top:60px;border-top:1px solid #e6e0d3;padding-top:26px">
+    <span aria-hidden="true" style="position:absolute;top:16px;right:0;font:400 100px/1 Prata,serif;color:#f2ecdd;pointer-events:none;user-select:none">03</span>
+    <div style="width:56px;height:3px;background:#8a6a1f;margin-top:-27px"></div>
+    <h2 style="font:400 30px/1.2 Prata,serif;margin:0">Every measured area, best paid first</h2>
+    <div style="border:1px solid #e6e0d3;margin-top:24px;background:#fff">
+      <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;padding:13px 18px;border-bottom:1px solid #e6e0d3;background:#faf7f1;font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;color:#6e675c"><span>Area</span><span style="min-width:92px;text-align:right">Median rate</span><span style="min-width:74px;text-align:right">Ads</span></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille);background:var(--aplat)"><span>Paris</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">600 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">771</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Lyon</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">490 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">51</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Lille</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">590 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">48</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Marseille · Aix</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">490 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">29</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Nantes</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">550 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">34</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Toulouse</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">460 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">24</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Niort</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">520 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">49</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Bordeaux</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">550 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">24</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Rennes</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">550 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">20</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Normandie</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">470 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">27</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Le Mans</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">530 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">24</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Strasbourg</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">500 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">10</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Nice · Sophia</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">580 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">11</i></div>
+      <div style="display:grid;grid-template-columns:1fr 92px 74px;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--grille)"><span>Bruxelles</span><b style="font:400 18px/1 Prata,serif;color:#8a6a1f;min-width:92px;text-align:right;font-variant-numeric:tabular-nums">670 €</b><i style="font-style:normal;color:#6e675c;font-size:14px;min-width:74px;text-align:right">18</i></div>
+      
     </div>
-    <div>
-      <h4>Navigate</h4>
-      <a href="./">Home</a>
-      <a href="https://www.linkedin.com/in/claire-vandesype" rel="noopener">LinkedIn</a>
-      <a href="https://www.malt.fr/profile/clairevandesype" rel="noopener">Malt</a>
-    </div>
-    <div>
-      <h4>Documents</h4>
-      <a href="../dt/DT_Claire_VanDeSype_FR.pdf" download>Dossier FR</a>
-      <a href="../dt/DT_Claire_VanDeSype_EN.pdf" download>Dossier EN</a>
-      <a href="../releve/le-releve.pdf" download>The market record</a>
-      <a href="../library.html">Your library</a>
+    <p style="font-size:13px;color:#6e675c;margin-top:12px">Areas marked with an asterisk rest on fewer than twenty-five priced ads: an order of magnitude, not a negotiation reference.</p>
+  </div>
+  <div style="position:relative;margin-top:60px;border-top:1px solid #e6e0d3;padding-top:26px">
+    <span aria-hidden="true" style="position:absolute;top:16px;right:0;font:400 100px/1 Prata,serif;color:#f2ecdd;pointer-events:none;user-select:none">04</span>
+    <div style="width:56px;height:3px;background:#8a6a1f;margin-top:-27px"></div>
+    <h2 style="font:400 30px/1.2 Prata,serif;margin:0">And by role</h2>
+    <p style="font-size:16px;line-height:1.75;color:#524c42;margin:16px 0 0;max-width:72ch">Medians by role are measured nationally: no single area has enough priced ads to be split by role without talking nonsense.</p>
+    <p style="font-size:14px;color:#6e675c;margin-top:12px"><a href="day-rate-project-director.html">project director</a> · <a href="day-rate-project-manager.html">project manager</a> · <a href="day-rate-pmo.html">PMO</a> · <a href="day-rate-business-analyst.html">business analyst</a> · <a href="day-rate-product-owner.html">product owner</a></p>
+  </div>
+  <div style="position:relative;margin-top:60px;border-top:1px solid #e6e0d3;padding-top:26px">
+    <span aria-hidden="true" style="position:absolute;top:16px;right:0;font:400 100px/1 Prata,serif;color:#f2ecdd;pointer-events:none;user-select:none">05</span>
+    <div style="width:56px;height:3px;background:#8a6a1f;margin-top:-27px"></div>
+    <h2 style="font:400 30px/1.2 Prata,serif;margin:0">How I measure</h2>
+    <p style="font-size:16px;line-height:1.75;color:#524c42;margin:16px 0 0;max-width:72ch">Every morning, a collector gathers the project-management assignments published in France on freelance platforms, keeping only freelance listings. The displayed rate is the median of announced rates — not an average, which a single extreme figure would distort. Listings without a rate do not count in the median, but do count in the volumes. The measurement is redone at every publication: this page is never a memory.</p>
+  </div>
+  <div style="border:1px solid #e6e0d3;border-left:4px solid #8a6a1f;background:#fff;padding:28px 30px;margin:56px 0 0">
+    <div style="font:400 21px/1.3 Prata,serif">How to cite this figure</div>
+    <p style="font-size:14px;color:#524c42;margin:10px 0 16px;line-height:1.6">These measurements are free to cite, including commercially, on one condition: name the source and link to the page. Copy the sentence below.</p>
+    <blockquote style="margin:0 0 18px;padding:16px 18px;background:#faf7f1;font-size:15px;line-height:1.6;color:#1b1815">"Median project-management day rate in Paris and Île-de-France: €600, measured on 1,025 listings. Claire Van De Sype, pmo-laboratory.com, August 21, 2026."</blockquote>
+    <button type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText);this.textContent=this.dataset.ok" style="border:1px solid #8a6a1f;color:#8a6a1f;font-weight:700;font-size:14.5px;padding:13px 22px;background:#fbfaf7;cursor:pointer;font-family:inherit" class="sv1">Copy the citation</button>
+  </div>
+  <p style="font-size:13.5px;color:#6e675c;margin:24px 0 60px"><a href="index.html">← Back to the home page</a> · <a href="day-rate-pmo.html">PMO day rate</a></p>
+</div>
+<footer style="background:#1b1815;color:#cfc7b8">
+  <div style="max-width:1000px;margin:0 auto;padding:48px 32px 40px">
+    <div style="display:flex;flex-wrap:wrap;gap:30px 70px;justify-content:space-between;align-items:flex-start">
+      <div><div style="font:600 13px/1 'IBM Plex Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:#d8b25e">Claire Van De Sype</div><div style="width:70px;height:3px;background:#d8b25e;margin-top:14px"></div></div>
+      <div style="display:flex;gap:34px;font-size:14px"><a href="index.html" style="color:#e8e2d5" class="sv2">Home</a><a href="https://www.linkedin.com/in/claire-vandesype" rel="noopener" style="color:#e8e2d5" class="sv2">LinkedIn</a><a href="https://www.malt.fr/profile/clairevandesype" rel="noopener" style="color:#e8e2d5" class="sv2">Malt</a></div>
+      <div style="font-size:12.5px;color:#8f887b">Terms · Sale terms · Privacy</div>
     </div>
   </div>
-  <div class="bas">
-    <span>Claire Van De Sype &middot; PMO · direction de projet</span>
-    <a href="./terms.html">Terms of use</a>
-    <a href="./terms-of-sale.html">Terms and conditions of sale</a>
-    <a href="./privacy.html">Privacy</a>
-  </div>
-</div>
 </footer>
-<script>
-var CTC={to:"claire.vandesype@pmo-laboratory.com",offre:"",
- su:{mission:"Steering assignment",formation:"Training",
-     autre:"Contact"},
- ph:{mission:"A few lines: the programme or portfolio concerned, and what triggered your search.",formation:"Where are you today — studies, first job, career change? And where do you want to go?",
-     autre:"Tell me everything in a few lines."},
- et:{type:"Your request is about:",nom:"Last name",prenom:"First name",
-     soc:"Company",email:"Your email",tel:"Phone",
-     besoin:"Your need"}};
-var CTCS={"docs": {"Slipping programme": {"t": "Meanwhile: my first 10 moves", "h": "../kit/reprise-programme-en.pdf"}, "Unreadable portfolio": {"t": "Meanwhile: the portfolio dashboard", "h": "../kit/tableau-de-bord-en.pdf"}, "Budget to frame": {"t": "Meanwhile: the arbitration grid", "h": "../kit/grille-arbitrage-en.pdf"}, "Master plan / transformation": {"t": "Meanwhile: the scenario grid", "h": "../kit/grille-scenarios-en.pdf"}, "Starter": {"t": "Taste it first: the workbook excerpt", "h": "../kit/cahier-extrait-en.pdf"}, "Complete": {"t": "Taste it first: the workbook excerpt", "h": "../kit/cahier-extrait-en.pdf"}, "Guided": {"t": "Taste it first: the workbook excerpt", "h": "../kit/cahier-extrait-en.pdf"}}, "urgents": ["Urgent (under a month)"], "cal": "https://calendly.com/claire-vandesype", "cal_t": "It is urgent? Book 30 minutes right now"};
-function ctcJauge(r){
- var o=r.parentNode.querySelector('.jauge-v');
- if(o)o.textContent=r.value+" €";}
-function ctcInfos(){
- var c=document.getElementById('ctc');if(c)c.classList.add('infos');
- return false;}
-function ctcPayeClic(a){
- /* pas encore de lien de paiement : le clic ouvre le formulaire de pre-inscription
-    au lieu de ne rien faire */
- if(a.getAttribute('data-info')){ctcInfos();
-  var s=document.getElementById('ctcSuite');
-  if(s)s.scrollIntoView({behavior:'smooth',block:'start'});return false;}
- return true;}
-function ctcMajPayer(){
- var b=document.getElementById('ctcPayer');if(!b)return;
- var r=document.querySelector('input[name=ctcq_formation_1]:checked');
- if(!r){b.hidden=true;return;}
- var pay=r.getAttribute('data-pay');
- if(pay){b.href=pay;b.target='_blank';b.removeAttribute('data-info');
-  b.textContent=r.getAttribute('data-lab');}
- else{b.href='#quand';b.removeAttribute('target');b.setAttribute('data-info','1');
-  b.textContent=r.getAttribute('data-lab0');}
- b.hidden=false;}
-function ctcSugg(){
- ctcMajPayer();
- var z=document.getElementById('ctcSugg');if(!z)return;
- var out=[];
- var qs=document.querySelectorAll('#ctc .qbloc.on input:checked');
- for(var i=0;i<qs.length;i++){
-   var d=CTCS.docs[qs[i].value];
-   if(d)out.push('<a href="'+d.h+'" download>'+d.t+' &#8595;</a>');
-   if(CTCS.urgents.indexOf(qs[i].value)>=0)
-     out.push('<a href="'+CTCS.cal+'" rel="noopener" class="urgent">'
-              +CTCS.cal_t+' &#8594;</a>');
- }
- z.innerHTML=out.join("");}
-function ctcType(){
- var t=document.querySelector('input[name=ctct]:checked').value;
- document.getElementById('ctcBesoin').placeholder=CTC.ph[t];
- var bs=document.querySelectorAll('#ctc .qbloc');
- for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
- var b=document.getElementById('qb-'+t);if(b)b.classList.add('on');
- var cl=document.body.classList;
- ['p2','p3'].forEach(function(p){if(cl.contains(p)){
-   var q=document.getElementById('qb-'+p);if(q)q.classList.add('on');}});
- var es=document.querySelectorAll('#ctc .etbloc');
- for(var j=0;j<es.length;j++)es[j].classList.remove('on');
- var e=document.getElementById('et-'+t);if(e)e.classList.add('on');
- /* SKARAB a ses propres « trois pas » : ceux du type « autre » n'ont pas de sens
-    pour quelqu'un qui rejoint une liste d'apport d'affaires */
- if(cl.contains('p3')){
-  var ea=document.getElementById('et-autre');if(ea)ea.classList.remove('on');
-  var e3=document.getElementById('et-p3');if(e3)e3.classList.add('on');}
- var c=document.getElementById('ctc');
- if(c){if(t==='formation')c.classList.add('tf');
-  else{c.classList.remove('tf');}c.classList.remove('infos');}
- ctcSugg();}
-function porteTout(){
- document.body.classList.remove('p0','p1','p2','p3');
- document.body.classList.add('tout');
- var bs=document.querySelectorAll('.portes button');
- for(var j=0;j<bs.length;j++)bs[j].setAttribute('aria-pressed','false');
- var ps=document.querySelectorAll('.pp');
- for(var k=0;k<ps.length;k++)ps[k].classList.remove('on');
- var pu=document.getElementById('ppuce');if(pu)pu.hidden=true;
- return false;}
-function ppuceGo(){
- var pt=document.querySelector('.portes');
- if(pt)pt.scrollIntoView({behavior:'smooth',block:'center'});}
-function porteMaj(i,b){
- var ps=document.querySelectorAll('.pp');
- var deja=b.getAttribute('aria-pressed')==='true';
- var bs=b.parentNode.querySelectorAll('button');
- for(var j=0;j<bs.length;j++)bs[j].setAttribute('aria-pressed','false');
- for(var k=0;k<ps.length;k++)ps[k].classList.remove('on');
- document.body.classList.remove('p0','p1','p2','p3','tout');
- var vs=document.querySelectorAll('.gvu');
- for(var m=0;m<vs.length;m++)vs[m].classList.remove('gvu');
- document.body.classList.remove('pvu');
- if(deja){var pu0=document.getElementById('ppuce');
-  if(pu0)pu0.hidden=true;return;}
- b.setAttribute('aria-pressed','true');
- document.body.classList.add('p'+i);
- /* la porte a qualifie le visiteur : on fixe le type de demande */
- var tp=['mission','formation','autre','autre'][i];
- var rt=document.querySelector('input[name=ctct][value='+tp+']');
- if(rt){rt.checked=true;if(typeof ctcType==='function')ctcType();}
- var pu=document.getElementById('ppuce');
- if(pu){pu.hidden=false;
-  var pt=b.querySelector('.ptit');
-  document.getElementById('ppuce-t').textContent=pt?pt.textContent:'';}
- /* une porte « directe » n'a pas de piste : on amene a sa section, en haut */
- var vers=b.getAttribute('data-vers');
- if(vers){
-  if(vers==='fluxwrap'||vers==='offres'){ctcReveal();}
-  var c=document.getElementById(vers);
-  if(c)setTimeout(function(){
-    c.scrollIntoView({behavior:'smooth',block:'start'});},240);
-  return;}
- var p=document.getElementById('pp-'+i);if(p){p.classList.add('on');
-  setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'nearest'});},180);}}
-/* LE PORTAIL : pose par le JS seulement -> sans JS (moteurs, lecteurs), tout reste
-   visible. Chaque enfant de .page recoit le groupe de son h2 ; le formulaire est
-   le groupe 'flux'. Rien dessous tant qu'aucune porte n'est choisie. */
-document.addEventListener('DOMContentLoaded',function(){
- var pt=document.querySelector('.portes');if(!pt)return;
- var page=pt.closest('.page');if(!page)return;
- var grp=null,ks=page.children,i,el,h;
- for(i=0;i<ks.length;i++){el=ks[i];
-  if(el.id==='fluxwrap'){el.setAttribute('data-grp','flux');continue;}
-  /* la cloture n'appartient a AUCUNE section : elle est choisie par le parcours,
-     sinon elle heriterait du groupe de la derniere section et disparaitrait */
-  if(el.classList.contains('fin')){continue;}
-  h=(el.tagName==='H2')?el:(el.querySelector?el.querySelector('h2[id]'):null);
-  if(h&&h.id)grp=h.id;
-  if(grp)el.setAttribute('data-grp',grp);}
- document.body.classList.add('garde');
- /* un lien interne vers une section gardee la revele (pied de page, CTA) ;
-    defaultPrevented = lien deja gere en JS, on ne revele rien par accident */
- document.addEventListener('click',function(ev){
-  if(ev.defaultPrevented)return;
-  var a=ev.target.closest?ev.target.closest('a[href^="#"]'):null;
-  if(!a)return;
-  var id=a.getAttribute('href').slice(1);if(!id)return;
-  var c=document.getElementById(id);if(!c)return;
-  var g=c.closest('[data-grp]');if(!g)return;
-  var grp=g.getAttribute('data-grp');
-  var els=document.querySelectorAll('[data-grp="'+grp+'"]');
-  for(var i=0;i<els.length;i++)els[i].classList.add('gvu');
-  document.body.classList.add('pvu');});});
-function ctcReveal(){
- var w=document.getElementById('fluxwrap');if(!w)return false;
- w.classList.add('on');
- setTimeout(function(){w.scrollIntoView({behavior:'smooth',block:'start'});},80);
- return true;}
-function ctcOuvreSit(sit){
- // demande de Claire : la SITUATION n'est jamais pre-cochee — c'est au visiteur de
- // la choisir. La carte ne fait qu'ouvrir le flux en mode mission.
- if(!ctcReveal())return;
- CTC.offre="";
- document.querySelector('input[name=ctct][value=mission]').checked=true;
- ctcType();}
-function ctcOuvreForm(){
- if(!ctcReveal())return true;
- CTC.offre="";
- document.querySelector('input[name=ctct][value=formation]').checked=true;
- ctcType();return false;}
-/* Le consentement d'achat d'un guide : deux cases, un bouton inerte tant qu'il
-   manque l'une des deux. On horodate le consentement et on le passe au lien de
-   paiement pour que la preuve se retrouve a l'encaissement. */
-function guMaj(c){
-  var a=document.getElementById('cs-'+c+'-a'),b=document.getElementById('cs-'+c+'-b');
-  var go=document.getElementById('cs-'+c+'-go'),m=document.getElementById('cs-'+c+'-m');
-  if(!a||!b||!go)return;
-  var ok=a.checked&&b.checked;
-  go.setAttribute('aria-disabled',ok?'false':'true');
-  if(ok&&m)m.hidden=true;
-}
-function guClic(c){
-  var a=document.getElementById('cs-'+c+'-a'),b=document.getElementById('cs-'+c+'-b');
-  var go=document.getElementById('cs-'+c+'-go'),m=document.getElementById('cs-'+c+'-m');
-  if(!a||!b||!go)return true;
-  if(!(a.checked&&b.checked)){
-    if(m)m.hidden=false;
-    (a.checked?b:a).focus();
-    return false;                      /* rien ne part : le clic est annule */
+</div>
+
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { copied: false };
+  componentDidMount() {
+    const els = Array.from(document.querySelectorAll('[data-count]'));
+    els.forEach((el, i) => {
+      const to = parseFloat(el.dataset.to), suf = el.dataset.suf || '';
+      const t0 = performance.now() + 300 + i * 120, d = 1300;
+      const f = (now) => {
+        const p = Math.min(1, Math.max(0, (now - t0) / d));
+        const e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(to * e).toLocaleString('en-GB') + suf;
+        if (p < 1) requestAnimationFrame(f);
+      };
+      requestAnimationFrame(f);
+      setTimeout(() => { if (document.hidden) el.textContent = to.toLocaleString('en-GB') + suf; }, 2200);
+    });
+    this._onScroll = () => {
+      const p = document.getElementById('prog');
+      if (!p) return;
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      p.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+    };
+    addEventListener('scroll', this._onScroll, { passive: true });
   }
-  try{
-    var ref='consent-'+c+'-'+new Date().toISOString().replace(/[:.]/g,'-');
-    var u=new URL(go.getAttribute('href'));
-    u.searchParams.set('client_reference_id',ref);
-    go.setAttribute('href',u.toString());
-  }catch(e){}
-  return true;
+  componentWillUnmount() { removeEventListener('scroll', this._onScroll); }
+  renderVals() {
+    const base = "display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;padding:15px 18px;color:#1b1815;";
+    const B = [
+      ["Paris et Île-de-France — this page", "600 €", "1 589", true],
+      ["Lille", "590 €", "95"], ["Nice · Sophia *", "580 €", "21"],
+      ["Nantes", "550 €", "84"], ["Bordeaux *", "550 €", "60"],
+      ["Rennes *", "550 €", "52"], ["Le Mans", "530 €", "31"],
+      ["Niort", "520 €", "61"], ["Strasbourg *", "500 €", "22"],
+      ["Marseille et Aix-en-Provence", "490 €", "92"], ["Lyon", "480 €", "129"],
+      ["Normandie", "470 €", "43"], ["Toulouse", "460 €", "68"]
+    ];
+    const citation = "According to Claire Van De Sype's record of the French project-management market (pmo-laboratory.com), measured on 21 August 2026, the median day rate of a freelance project-management assignment in Paris and Île-de-France stands at €600 per day, across 757 listings.";
+    return {
+      bassins: B.map((b, i) => ({
+        nom: b[0], tjm: b[1], n: b[2],
+        style: base + (i < B.length - 1 ? "border-bottom:1px solid #e6e0d3;" : "") +
+          (b[3] ? "border-left:3px solid #8a6a1f;background:#fdfbf7;font-weight:700" : "border-left:3px solid transparent")
+      })),
+      citation,
+      copieLabel: this.state.copied ? "Copied." : "Copy the citation",
+      copier: () => {
+        navigator.clipboard.writeText(citation).then(() => {
+          this.setState({ copied: true });
+          setTimeout(() => this.setState({ copied: false }), 2500);
+        });
+      }
+    };
+  }
 }
-function ctcOuvre(offre){
- if(!ctcReveal())return true;
- CTC.offre=offre||"";
- if(offre){var r=document.querySelector('input[name=ctct][value=formation]');
-   r.checked=true;}
- ctcType();
- if(offre){var os=document.querySelectorAll('#qb-formation input');
-   for(var i=0;i<os.length;i++)if(os[i].value===offre)os[i].checked=true;}
- return false;}
-function ctcGo(mode){
- var t=document.querySelector('input[name=ctct]:checked').value;
- var v=function(id){return document.getElementById(id).value;};
- var su=CTC.su[t]+(CTC.offre?" — "+CTC.offre:"");
- var lignes=[CTC.et.type+" "+document.querySelector(
-   'input[name=ctct]:checked').parentNode.textContent.trim()];
- var qs=document.querySelectorAll('#ctc .qbloc.on input:checked');
- for(var k=0;k<qs.length;k++){
-   lignes.push(qs[k].getAttribute('data-q')+" "+qs[k].value);
-   if(k===0)su+=" — "+qs[k].value;}
- var js=document.querySelectorAll('#ctc .qbloc.on input[type=range]');
- for(var m=0;m<js.length;m++)
-   lignes.push(js[m].getAttribute('data-q')+" "+js[m].value+" €");
- if(CTC.offre)lignes.push("Offre : "+CTC.offre);
- lignes.push(CTC.et.nom+" : "+v('ctcNom'),CTC.et.prenom+" : "+v('ctcPrenom'),
-   CTC.et.soc+" : "+v('ctcSoc'),CTC.et.email+" : "+v('ctcEmail'),
-   CTC.et.tel+" : "+v('ctcTel'),"",CTC.et.besoin+" :",v('ctcBesoin'));
- var bd=lignes.join("\n");
- if(mode==='gmail'){
-   window.open('https://mail.google.com/mail/?view=cm&fs=1&to='
-     +encodeURIComponent(CTC.to)+'&su='+encodeURIComponent(su)
-     +'&body='+encodeURIComponent(bd),'_blank','noopener');
- }else if(mode==='outlook'){
-   window.open('https://outlook.office.com/mail/deeplink/compose?to='
-     +encodeURIComponent(CTC.to)+'&subject='+encodeURIComponent(su)
-     +'&body='+encodeURIComponent(bd),'_blank','noopener');
- }else{
-   location.href='mailto:'+CTC.to+'?subject='+encodeURIComponent(su)
-     +'&body='+encodeURIComponent(bd);
- }
- }
 </script>
-<script>
-(function(){
- if(matchMedia('(prefers-reduced-motion: reduce)').matches
-    ||!('IntersectionObserver' in window))return;
- var els=document.querySelectorAll(
-   'h2,.mesures,.d,.mi,.calc,.carrousel figure,.temoin,.et,.gestes,.kit a');
- var io=new IntersectionObserver(function(es){es.forEach(function(e){
-   if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target);}});},
-   {rootMargin:'0px 0px -8% 0px'});
- els.forEach(function(el){el.classList.add('rv');io.observe(el);});
-})();
-(function(){
- var pr=document.getElementById('prog');if(!pr)return;
- addEventListener('scroll',function(){var h=document.documentElement;
-   var m=h.scrollHeight-h.clientHeight;
-   pr.style.width=(m>0?(h.scrollTop/m)*100:0)+'%';},{passive:true});
-})();
-</script>
-</body></html>
+</body>
+</html>
