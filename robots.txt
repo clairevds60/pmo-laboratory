@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clairevandesype.com/sitemap.xml
