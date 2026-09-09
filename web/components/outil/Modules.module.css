@@ -1,0 +1,374 @@
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---------- module row ---------- */
+
+.module {
+  padding: 76px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 52px;
+  align-items: center;
+}
+
+.moduleLast {
+  border-bottom: none;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.kicker {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.kickerNum {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--cyan);
+}
+
+.kickerLabel {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.14;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  text-wrap: balance;
+}
+
+.rule {
+  width: 72px;
+  height: 3px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan), 0 0 22px var(--cyan);
+}
+
+.text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 4px;
+}
+
+.bullet {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.bulletDot {
+  width: 7px;
+  height: 7px;
+  margin-top: 7px;
+  flex: none;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+/* ---------- panel shell ---------- */
+
+.panel {
+  min-width: 0;
+  border: 1px solid rgba(0, 217, 255, 0.24);
+  background: var(--panel);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 217, 255, 0.1);
+}
+
+.panelHead {
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--panel-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.note {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.chip {
+  padding: 5px 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+}
+
+/* ---------- 01 portefeuille ---------- */
+
+.pfBody {
+  padding: 14px 20px 20px;
+}
+
+.pfRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.3fr);
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pfRowLast {
+  border-bottom: none;
+}
+
+.pfName {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.pfChips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- 02 charge ---------- */
+
+.chBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.chProfil {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.chBarWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chTrack {
+  flex: 1;
+  min-width: 0;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.09);
+  position: relative;
+  overflow: hidden;
+}
+
+.barFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.chPct {
+  font-size: 12px;
+  font-weight: 700;
+  width: 46px;
+  text-align: right;
+  flex: none;
+}
+
+.chNote {
+  padding-top: 6px;
+}
+
+/* ---------- 03 arbitrage ---------- */
+
+.arBody {
+  padding: 16px 20px 20px;
+}
+
+.arHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 56px 56px 48px 56px;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.arHeadRight {
+  text-align: right;
+}
+
+.arRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 56px 56px 48px 56px;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 12.5px;
+  align-items: center;
+}
+
+.arName {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.arNum {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.arScore {
+  text-align: right;
+  font-weight: 800;
+}
+
+.arNote {
+  padding-top: 13px;
+}
+
+/* ---------- 04 risques ---------- */
+
+.rqBody {
+  padding: 14px 20px 20px;
+}
+
+.rqRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.2fr);
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rqRowLast {
+  border-bottom: none;
+}
+
+.rqName {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.rqMeta {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rqOwner {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* ---------- 05 budget ---------- */
+
+.bdBody {
+  padding: 22px 20px;
+}
+
+.bdStats {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bdStatNum {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.bdStatLabel {
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 4px;
+}
+
+.bdBars {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bdBarRow {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 52px;
+  gap: 12px;
+  align-items: center;
+}
+
+.bdBarLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.bdTrack {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.09);
+  position: relative;
+  overflow: hidden;
+}
+
+.bdBarValue {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: right;
+}
+
+.bdNote {
+  padding-top: 16px;
+}

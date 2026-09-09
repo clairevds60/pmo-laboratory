@@ -1,0 +1,73 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    130% 150% at 18% 0%,
+    var(--purple) 0%,
+    var(--purple-deep) 44%,
+    var(--purple-dark) 80%,
+    var(--bg) 100%
+  );
+}
+
+.pulse {
+  position: absolute;
+  left: 20%;
+  top: 0;
+  width: 1000px;
+  height: 1000px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(0, 217, 255, 0.28), transparent 66%);
+  animation: pmolab-pulse 3.6s ease-in-out infinite;
+}
+
+.content {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 78px 32px 66px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrowDash {
+  display: inline-block;
+  width: 26px;
+  height: 3px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan), 0 0 20px var(--cyan);
+}
+
+.eyebrowText {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(32px, 4.6vw, 58px);
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  max-width: 960px;
+  text-wrap: balance;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.28), 0 0 70px rgba(0, 217, 255, 0.55);
+}
+
+.lead {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 720px;
+}
