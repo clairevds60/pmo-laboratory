@@ -80,6 +80,10 @@
   color: #fff;
 }
 
+.linkActive {
+  color: var(--cyan);
+}
+
 .cta {
   display: inline-block;
   padding: 12px 22px;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./Nav.module.css";
 
 const LINKS = [
@@ -13,6 +14,7 @@ const LINKS = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     function onScroll() {
@@ -40,7 +42,11 @@ export default function Nav() {
         </div>
         <div className={styles.links}>
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className={styles.link}>
+            <a
+              key={l.href}
+              href={l.href}
+              className={`${styles.link} ${pathname === l.href ? styles.linkActive : ""}`}
+            >
               {l.label}
             </a>
           ))}
