@@ -1,0 +1,55 @@
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 82px 32px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.headRow {
+  display: flex;
+  gap: 26px;
+  align-items: baseline;
+  max-width: 860px;
+}
+
+.headNum {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 217, 255, 0.75);
+  padding-top: 6px;
+  flex: none;
+}
+
+.headBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  text-wrap: balance;
+}
+
+.link {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}

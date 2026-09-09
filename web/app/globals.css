@@ -1,0 +1,101 @@
+:root {
+  --bg: #0c0618;
+  --bg-alt: #0a0416;
+  --purple: #6b46c1;
+  --purple-deep: #341c72;
+  --purple-dark: #120a26;
+  --cyan: #00d9ff;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --green: #10b981;
+  --panel: #100a20;
+  --panel-head: #0d0719;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+}
+
+body {
+  color: #fff;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+}
+
+@keyframes pmolab-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.68;
+  }
+}
+
+@keyframes pmolab-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes pmolab-rays {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pmolab-gridmove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 44px;
+  }
+}
+
+@keyframes pmolab-sweep {
+  0% {
+    transform: translateX(-140%);
+  }
+  100% {
+    transform: translateX(340%);
+  }
+}
+
+@keyframes pmolab-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  animation: pmolab-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}

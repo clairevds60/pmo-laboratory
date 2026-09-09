@@ -1,0 +1,102 @@
+.section {
+  position: relative;
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 48px;
+  align-items: start;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.headRow {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.intro {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+}
+.intro strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 26px;
+}
+
+.stat {
+  border-top: 2px solid var(--cyan);
+  padding-top: 16px;
+}
+
+.statNum {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+}
+
+.statLabel {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 6px;
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logosLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.logoRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.logoPlate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  padding: 12px 18px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.logoImg {
+  max-height: 30px;
+  max-width: 112px;
+  width: auto;
+  height: auto;
+  display: block;
+}

@@ -1,0 +1,250 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    130% 150% at 22% 8%,
+    var(--purple) 0%,
+    var(--purple-deep) 42%,
+    var(--purple-dark) 78%,
+    var(--bg) 100%
+  );
+}
+
+.grid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 340px;
+  opacity: 0.22;
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(0, 217, 255, 0.35) 0 2px,
+      transparent 2px 66px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 217, 255, 0.35) 0 2px,
+      transparent 2px 66px
+    );
+  transform: perspective(520px) rotateX(66deg);
+  transform-origin: bottom;
+  animation: pmolab-gridmove 3s linear infinite;
+}
+
+.rays {
+  position: absolute;
+  left: 18%;
+  top: -6%;
+  width: 1500px;
+  height: 1500px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(0, 217, 255, 0.1) 9deg,
+    transparent 18deg,
+    transparent 88deg,
+    rgba(0, 217, 255, 0.07) 97deg,
+    transparent 106deg,
+    transparent 178deg,
+    rgba(0, 217, 255, 0.1) 187deg,
+    transparent 196deg,
+    transparent 268deg,
+    rgba(0, 217, 255, 0.07) 277deg,
+    transparent 286deg
+  );
+  animation: pmolab-rays 34s linear infinite;
+}
+
+.pulse {
+  position: absolute;
+  left: 20%;
+  top: 0;
+  width: 1000px;
+  height: 1000px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    closest-side,
+    rgba(0, 217, 255, 0.3),
+    rgba(0, 217, 255, 0.08) 46%,
+    transparent 66%
+  );
+  animation: pmolab-pulse 3.4s ease-in-out infinite;
+}
+
+.content {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 88px 32px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 56px;
+  align-items: start;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-width: 0;
+}
+
+.eyebrowWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.eyebrowDash {
+  display: inline-block;
+  width: 26px;
+  height: 3px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan), 0 0 20px var(--cyan);
+}
+
+.eyebrowText {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.ruler {
+  height: 12px;
+  max-width: 340px;
+  background-image: repeating-linear-gradient(
+      90deg,
+      rgba(0, 217, 255, 0.45) 0 1px,
+      transparent 1px 11px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 217, 255, 0.95) 0 1px,
+      transparent 1px 55px
+    );
+  background-size: 100% 5px, 100% 12px;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.3), 0 0 70px rgba(0, 217, 255, 0.55);
+}
+
+.lead {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 620px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 580px;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 17px 30px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 26px rgba(0, 217, 255, 0.6);
+  white-space: nowrap;
+}
+.btnPrimary:hover {
+  background: #fff;
+  color: var(--bg);
+}
+
+.btnSecondary {
+  padding: 17px 30px;
+  border: 1px solid rgba(0, 217, 255, 0.5);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.btnSecondary:hover {
+  background: rgba(0, 217, 255, 0.14);
+}
+
+.priceNote {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.72);
+}
+.priceNote strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+  padding-top: 14px;
+}
+
+.featureList {
+  border-left: 2px solid rgba(0, 217, 255, 0.5);
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.featureTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.featureText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.caption {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.62);
+  text-align: center;
+}
