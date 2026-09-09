@@ -14,7 +14,7 @@ export default function Footer() {
             L&apos;outil PPM en ligne pour piloter un portefeuille — dans votre navigateur.
           </div>
           <a
-            href="https://www.linkedin.com/company/112968932/"
+            href="https://www.linkedin.com/company/pmo-lab/"
             className={styles.brandLink}
           >
             PMO Lab sur LinkedIn →
