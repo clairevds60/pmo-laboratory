@@ -1,0 +1,51 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg), #180c33 45%, var(--bg));
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  width: 1600px;
+  height: 1600px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(0, 217, 255, 0.16), transparent 62%);
+  animation: pmolab-pulse 4s ease-in-out infinite;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2px;
+  background: rgba(0, 217, 255, 0.16);
+}
+
+.card {
+  padding: 38px 34px;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.num {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--cyan);
+}
+
+.cardTitle {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.cardText {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.76);
+}
