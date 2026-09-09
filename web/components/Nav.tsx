@@ -36,10 +36,10 @@ export default function Nav() {
     <div className={`${styles.nav} ${scrolled ? styles.navScrolled : ""}`}>
       <div className={styles.progress} style={{ width: `${progress}%` }} />
       <div className={`${styles.inner} ${scrolled ? styles.innerScrolled : ""}`}>
-        <div className={styles.logo}>
+        <a href="/" className={styles.logo} aria-label="PMO Lab — accueil">
           <span className={styles.logoPmo}>PMO</span>
           <span className={styles.logoLab}>LAB</span>
-        </div>
+        </a>
         <div className={styles.links}>
           {LINKS.map((l) => (
             <a
