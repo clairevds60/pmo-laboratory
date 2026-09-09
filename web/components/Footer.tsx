@@ -24,12 +24,12 @@ export default function Footer() {
           <div className={styles.column}>
             <div className={styles.columnTitle}>L&apos;atelier</div>
             <a href="/atelier" className={styles.columnLink}>Claire Van De Sype</a>
-            <a href="https://clairevandesype.com/" className={styles.columnLink}>Modèles gratuits</a>
+            <a href="https://clairevandesype.com/" className={styles.columnLink}>Modèles sous licence</a>
             <a href="https://www.linkedin.com/in/claire-vandesype" className={styles.columnLink}>LinkedIn</a>
           </div>
         </div>
       </div>
-      <div className={styles.bottom}>PMO Laboratory · pmo-laboratory.com</div>
+      <div className={styles.bottom}>PMO Laboratory · © Claire Van De Sype · Tous droits réservés</div>
     </div>
   );
 }
