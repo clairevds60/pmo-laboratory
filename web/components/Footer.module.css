@@ -54,6 +54,13 @@
   line-height: 1.6;
 }
 
+.brandLink {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
 .columns {
   display: flex;
   gap: 56px;

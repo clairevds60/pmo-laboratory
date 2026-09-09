@@ -13,6 +13,12 @@ export default function Footer() {
           <div className={styles.tagline}>
             L&apos;outil PPM en ligne pour piloter un portefeuille — dans votre navigateur.
           </div>
+          <a
+            href="https://www.linkedin.com/company/112968932/"
+            className={styles.brandLink}
+          >
+            PMO Lab sur LinkedIn →
+          </a>
         </div>
         <div className={styles.columns}>
           <div className={styles.column}>
